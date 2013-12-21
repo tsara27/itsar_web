@@ -1,0 +1,28 @@
+<table class="table table-striped table-bordered tabelku">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Nama Tipe Pengguna</th>
+			<th>Dibuat Oleh</th>
+			<th>Waktu Dibuat</th>
+			<th>Terakhir Diperbaharui</th>
+			<th colspan="2" style="text-align: center">Operasi</th>			
+		</tr>
+	</thead>
+	<tbody>
+		
+		<% @usr_table.each_with_index do |usertype, hh| %>
+		  <tr>
+		  	<td><%= (@hhh.to_i + hh + 1) %></td>
+		    <td><%= usertype.utypename %></td>
+		    <td></td>
+		    <td><%= usertype.created_at %></td>
+		    <td><%= usertype.updated_at %></td>
+		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + usertype.id.to_s + "/edit_usertype" %></td>			
+			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + usertype.id.to_s + "/delete_usertype", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+	</table>
+	<%= will_paginate @usr_table, :id => "ajax_paginate" %>
+  

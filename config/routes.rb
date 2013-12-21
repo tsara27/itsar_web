@@ -14,6 +14,12 @@ ItsarWeb::Application.routes.draw do
   #resources :usertype
   #resources :itsar_group
 
+  #USER ROUTES
+  match '/:id/edit_itsargroup' => 'itsar_group#edit_itsargroup'
+  match '/itsar_group/:id/update_itsar_group' => 'itsar_group#update_itsargroup'
+  match '/:id/delete_itsargroup' => 'itsar_group#delete_itsar_group'
+  match '/search_itsargroup' => 'itsar_group#search'
+
   #ITSARGROUP ROUTES
   match '/:id/edit_itsargroup' => 'itsar_group#edit_itsargroup'
   match '/itsar_group/:id/update_itsar_group' => 'itsar_group#update_itsargroup'

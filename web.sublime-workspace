@@ -250,38 +250,6 @@
 				"buffer_size": 2423,
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "app/views/itsar_group/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 2326,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/itsar_group/_tabel.html.erb",
-			"settings":
-			{
-				"buffer_size": 989,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 2358,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/tsara27/public_html/index.html",
-			"settings":
-			{
-				"buffer_size": 85,
-				"line_ending": "Unix"
-			}
 		}
 	],
 	"build_system": "",
@@ -312,6 +280,10 @@
 	},
 	"file_history":
 	[
+		"/Workbook/Charity/itsar_web/config/routes.rb",
+		"/Workbook/Charity/itsar_web/app/views/itsar_group/_tabel.html.erb",
+		"/Workbook/Charity/itsar_web/app/views/itsar_group/index.html.erb",
+		"/home/tsara27/public_html/index.html",
 		"/Workbook/itsar_web/test/functional/itsar_group_controller_test.rb",
 		"/Workbook/itsar_web/app/views/usertype/index.html.erb",
 		"/Workbook/itsar_web/app/models/t_usertype.rb",
@@ -435,11 +407,7 @@
 		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/students/index.html.erb",
 		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/show.html.erb",
 		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/Gemfile",
-		"/home/tsara27/.config/sublime-text-2/Packages/User/Preferences.sublime-settings",
-		"/home/tsara27/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/app/views/layouts/application.html.erb",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/app/views/people/_form.html.erb",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/app/helpers/tidy_form_builder.rb"
+		"/home/tsara27/.config/sublime-text-2/Packages/User/Preferences.sublime-settings"
 	],
 	"find":
 	{
@@ -523,7 +491,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -548,7 +516,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 351.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -565,8 +533,8 @@
 						"selection":
 						[
 							[
-								1161,
-								1161
+								614,
+								614
 							]
 						],
 						"settings":
@@ -576,115 +544,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 195.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/views/itsar_group/index.html.erb",
-					"settings":
-					{
-						"buffer_size": 2326,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1867,
-								1867
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 390.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/itsar_group/_tabel.html.erb",
-					"settings":
-					{
-						"buffer_size": 989,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 2358,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								840,
-								840
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/home/tsara27/public_html/index.html",
-					"settings":
-					{
-						"buffer_size": 85,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								85,
-								85
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
