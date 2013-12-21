@@ -1,0 +1,87 @@
+$(document).ready(function(){
+	urlnya = $(location).attr('href').split('?');
+	atr_isian = $('#form_isian').attr('action');
+	ini_url = (atr_isian + "?" + urlnya[1]);
+
+	$('#form_isian').attr('action', ini_url);
+	$('#submit_btn').attr('disabled','disabled');
+	nmsf = 0;
+    nmsa = 0;
+
+    if($('#submit_btn').val('Perbaharui'))
+    {
+        nmsf = 1;
+        nmsa = 1;
+    }
+
+    //Validasi nama grup
+	$('#name_group').keyup(function(){
+      nms = /^([a-z 0-9])+$/i.test($('#name_group').val());
+         if(!nms)
+        {
+            nmsf = 0;
+            $("#v_name_group").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z dan 0-9.</div>').hide().fadeIn(300);
+        }
+        else if($('#name_group').val().length < 3 || $('#name_group').val().length > 25)
+        {
+            nmsf = 0;
+            $("#v_name_group").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            nmsf = 1;
+            $("#v_name_group").html('');
+        }
+    });
+
+    //Validasi nama sekolah
+    $('#name_school').keyup(function(){
+      nms = /^([a-z 0-9])+$/i.test($('#name_school').val());
+         if(!nms)
+        {
+            nmsa = 0;
+            $("#v_name_school").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z dan 0-9.</div>').hide().fadeIn(300);
+        }
+        else if($('#name_school').val().length < 3 || $('#name_school').val().length > 25)
+        {
+            nmsa = 0;
+            $("#v_name_school").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            nmsa = 1;
+            $("#v_name_school").html('');
+        }
+    });
+
+    $('#form_isian').change(function(){
+        if(nmsf == 1 && nmsa == 1)
+        {
+            $('#submit_btn').removeAttr('disabled','disabled');
+        }
+        else if(nmsf == 0 || nmsa == 0)
+        {
+            $('#submit_btn').attr('disabled','disabled');
+        }
+    });
+
+
+    	// $('#submit_btn').removeAttr('disabled','disabled');
+// $("#ajax_paginate").find("a").each(function(){
+// 	var linkElement = $(this);
+// 	var paginationURL = linkElement.attr("href");
+// 	linkElement.attr({"url": paginationURL,"href":"#"});
+// 	linkElement.click(function(){
+// 		$("#post_id").html('<div align="center"><br/><img src="/assets/images/loading.gif"/></div>')
+// 		$("#post_id").load($(this).attr('url'));
+// 		return false;
+// 	}); 
+// 	});
+
+ $('#clear_form').click(function(){
+         $("input").val('');
+     });
+
+
+
+});

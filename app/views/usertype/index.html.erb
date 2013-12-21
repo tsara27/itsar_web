@@ -1,0 +1,46 @@
+<nav class="navbar" role="navigation">
+	<div class="navbar-header"><a class="navbar-brand" href="#">Form Isian Tipe Pengguna<%= @nama_form %></a></div>
+</nav>
+<% if flash[:notice_success] %>
+	<div class="alert alert-success"><%= flash[:notice_success] %></div>
+<% end %>
+<% if flash[:notice_failed] %>
+	<div class="alert alert-danger"><%= flash[:notice_failed] %></div>
+<% end %>
+<%= form_tag({:action => @aksi_form},:class => "form-horizontal", :role => "form", :id => "form_isian") do %>
+  <div class="form-group">
+    <label for="name_usertype" class="col-lg-2 control-label">Nama Tipe Pengguna</label>
+    <div class="col-lg-4">
+    	<%= 
+    	 	text_field_tag(:name_usertype,@aa,:class => "form-control", :placeholder => "Admin", :id => "name_usertype") 
+    	%>
+      <span class="help-block">Maksimal 25 karakter dan hanya menggunakan karakter huruf.</span>
+    </div>
+    <div class="col-lg-4" id="v_name_usertype"></div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10 btn-group">
+      <button type="button" class="btn btn-default" id="clear_form">Bersihkan</button>
+      <button type="submit" class="btn btn-default" id="submit_btn"><%= @nama_btn %></button>
+    </div>
+  </div>
+<% end %>
+<nav class="navbar" role="navigation">
+	<div class="navbar-header">
+    <a class="navbar-brand" href="#">Tabel Tipe Pengguna</a>
+  </div>
+  
+  <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "form", :id => "form_pencarian") do %>
+      <div class="form-group">
+        <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari nama role...") %>
+      </div>
+      <button type="submit" class="btn btn-default">Cari</button>
+  <% end %>
+</nav>
+
+
+<div id="table_itsar">
+	<%= render partial: 'tabel' %>
+</div>
+
+<%= javascript_include_tag "usertype/script.js.erb" %>

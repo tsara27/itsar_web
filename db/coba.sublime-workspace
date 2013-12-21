@@ -1,0 +1,931 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sc",
+				"schname"
+			],
+			[
+				"nms",
+				"nmsa"
+			],
+			[
+				"itsar",
+				"itsar_group"
+			],
+			[
+				"els",
+				"else"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"html",
+				"html_safe"
+			],
+			[
+				"pa",
+				"page"
+			],
+			[
+				"form",
+				"form_tag"
+			],
+			[
+				"j",
+				"jlm_offset"
+			],
+			[
+				"a",
+				"attr"
+			],
+			[
+				"us",
+				"usr"
+			],
+			[
+				"re",
+				"respond_to"
+			],
+			[
+				"nam",
+				"name_usertype"
+			],
+			[
+				"id",
+				"idperson"
+			],
+			[
+				"u",
+				"utypef"
+			],
+			[
+				"ut",
+				"utypename"
+			],
+			[
+				"fo",
+				"form-control"
+			],
+			[
+				"uty",
+				"utypename"
+			],
+			[
+				"en",
+				"end"
+			],
+			[
+				"la",
+				"layout"
+			],
+			[
+				"th",
+				"thead	Tag"
+			],
+			[
+				"jq",
+				"jquery"
+			],
+			[
+				"fac",
+				"fancybox"
+			],
+			[
+				"app",
+				"application"
+			],
+			[
+				"awa",
+				"awards"
+			],
+			[
+				"studen",
+				"student_id"
+			],
+			[
+				"st",
+				"student"
+			],
+			[
+				"in",
+				"index"
+			],
+			[
+				"na",
+				"name"
+			],
+			[
+				"opt",
+				"options"
+			],
+			[
+				"req",
+				"required"
+			],
+			[
+				"fiel",
+				"field_class"
+			],
+			[
+				"op",
+				"options"
+			],
+			[
+				"photo",
+				"photo_filename"
+			],
+			[
+				"ex",
+				"exist"
+			],
+			[
+				"file",
+				"file_data"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"num",
+				"num_words"
+			],
+			[
+				"sel",
+				"self"
+			],
+			[
+				"se",
+				"self"
+			],
+			[
+				"i",
+				"if	if … end"
+			],
+			[
+				"valida",
+				"validates_presence_of"
+			],
+			[
+				"val",
+				"validates_presence_of"
+			],
+			[
+				"all",
+				"allow_nil"
+			],
+			[
+				"vali",
+				"validates_numeriticality_of"
+			],
+			[
+				"grad",
+				"graduation_year"
+			],
+			[
+				"mod",
+				"mod	module .. module_function .. end"
+			],
+			[
+				"mo",
+				"mod	module .. end"
+			],
+			[
+				"bu",
+				"button_source"
+			],
+			[
+				"so",
+				"sort"
+			],
+			[
+				"h",
+				"h3	Tag"
+			],
+			[
+				"count",
+				"country"
+			],
+			[
+				"eac",
+				"each"
+			],
+			[
+				"entry",
+				"Entry"
+			],
+			[
+				"h2",
+				"h2	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Workbook/coba/config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 1611,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Workbook/coba/app/views/cobian/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 135,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Workbook/coba/app/controllers/cobian_controller.rb",
+			"settings":
+			{
+				"buffer_size": 101,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Workbook/coba/app/models/cobian.rb",
+			"settings":
+			{
+				"buffer_size": 81,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Workbook/coba/db/development.sqlite3",
+			"settings":
+			{
+				"buffer_size": 15360,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Workbook/coba/db/migrate/20131211102359_create_t_cobians.rb",
+			"settings":
+			{
+				"buffer_size": 178,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Workbook/coba/app/models/t_cobian.rb",
+			"settings":
+			{
+				"buffer_size": 83,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Workbook/coba/Gemfile",
+		"/Workbook/coba/db/migrate/20131211101144_create_cobians.rb",
+		"/Workbook/coba/app/controllers/cobian.rb",
+		"/Workbook/coba/lib/templates/erb/scaffold/_form.html.erb",
+		"/Workbook/coba/config/initializers/simple_form.rb",
+		"/Workbook/coba/app/views/coba.html.erb",
+		"/Workbook/coba/app/views/coba/index.html.erb",
+		"/Workbook/coba/app/controllers/application_controller.rb",
+		"/Workbook/itsar_web/app/controllers/usertype_controller.rb",
+		"/Workbook/itsar_web/db/schema.rb",
+		"/Workbook/itsar_web/app/models/t_itsar.rb",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/additional.css.scss",
+		"/home/tsara27/.config/sublime-text-2/Packages/SideBarEnhancements/messages/11.13.2012.1305.0.txt",
+		"/Workbook/itsar_web/app/controllers/itsar_group_controller.rb",
+		"/Workbook/itsar_web/app/assets/javascripts/application.js",
+		"/media/tsara27/DF0F-B829/Harus_di_print/harus_di_print.txt",
+		"/media/tsara27/DF0F-B829/ubnpathl.txt",
+		"/Workbook/itsar_web/app/views/usertype/_tabel.html.erb",
+		"/Workbook/itsar_web/config/routes.rb",
+		"/Workbook/itsar_web/app/views/layouts/admin_layout.html.erb",
+		"/home/tsara27/Downloads/flatroIconPack_v1.7/read-me.txt",
+		"/Data/Document/Smart_Medicine/English/Babylon Dictionary/English-Indonesian -= by www.topan.web.id =-/English-Indonesian ~  c a t a t  a n  ~.txt",
+		"/run/user/tsara27/gvfs/obex:host=%5BE0%3A63%3AE5%3A4C%3A2C%3A3C%5D/CDAInfo.txt",
+		"/Data/Movie/don't afraid of the dark/URGENT !! HARAP BACA !!.txt",
+		"/Data/Document/Smart_Medicine/English/Babylon Dictionary/Indonesian-English -= by www.topan.web.id =-/Indonesian-English.dict",
+		"/home/tsara27/vccard/vcard4j-1.1.3/README",
+		"/home/tsara27/vccard/vcard4j-1.1.3/TODO",
+		"/Workbook/itsar_web/app/assets/javascripts/usertype/script.js.erb",
+		"/Workbook/itsar_web/app/views/usertype/index.html.erb",
+		"/media/tsara27/TOSHIBA/Beyond the Blackboard/Beyond_The_Blackboard.srt",
+		"/home/tsara27/W7Act/Ask Me.txt",
+		"/Workbook/itsar_web/#Itsar_HTML_sample/assets/font-awesome/docs/assets/less/twbs-222/pagination.less",
+		"/Workbook/itsar_web/app/views/usertype/_posts.html.erb",
+		"/home/tsara27/.cache/.fr-6fZRKI/readme.txt",
+		"/Data/Theme, Icon, Fonts/Fonts/Rockwell/stylesheet.css",
+		"/Workbook/itsar_web/app/assets/javascripts/usertype/script.js",
+		"/Workbook/itsar_web/app/assets/javascripts/usertype/jsa.js.erb",
+		"/Workbook/itsar_web/Gemfile",
+		"/opt/lampp/htdocs/Basic/agent/modules/menu_parent/views/menu_form.php",
+		"/Workbook/itsar_web/app/views/layouts/sub_admin/_footer.html.erb",
+		"/Workbook/itsar_web/app/views/layouts/sub_admin/_content.html.erb",
+		"/Workbook/itsar_web/app/models/t_usertype.rb",
+		"/opt/lampp/htdocs/Basic/agent/views/admin-template.php",
+		"/opt/lampp/htdocs/Basic/style_agent/js/mandatory.js",
+		"/Data/Backup/DB/localhost.sql",
+		"/Workbook/itsar_web/app/views/layouts/sub_admin/_header.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/db/schema.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/views/people/index.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/controllers/entries_controller.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/models/entry.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/app/models/person.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/app/controllers/people_controller.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/controllers/people_controller.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/models/person.rb",
+		"/Workbook/itsar_web/app/assets/stylesheets/bootstrap.min.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/font_call.css",
+		"/Workbook/itsar_web/app/views/layouts/application.html.erb",
+		"/Workbook/itsar_web/#Itsar_HTML_sample/form_fileupload.html",
+		"/Workbook/itsar_web/#Itsar_HTML_sample/itsar_form_1.html",
+		"/Workbook/itsar_web/config/application.rb",
+		"/Workbook/itsar_web/app/assets/stylesheets/login.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/font-call.css",
+		"/Workbook/itsar_web/app/assets/javascripts/itsar_group.js.coffee",
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/bower.json",
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/CNAME",
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/README.md",
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/LICENSE",
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/dist/css/bootstrap.css",
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/dist/css/bootstrap.min.css",
+		"/home/tsara27/.config/sublime-text-2/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/fancybox/jquery.fancybox.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/metro.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/style.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/style_default.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/style_responsive.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/font-awesome/font-awesome.css",
+		"/Workbook/itsar_web/#Itsar_HTML_sample/assets/font-awesome/css/font-awesome.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/bootstrap/bootstrap.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/bootstrap/css/bootstrap.css",
+		"/Workbook/itsar_web/#Itsar_HTML_sample/assets/bootstrap/css/bootstrap.css",
+		"/Workbook/itsar_web/db/migrate/20130804062220_t_user.rb",
+		"/Workbook/itsar_web/app/controllers/user_controller.rb",
+		"/Workbook/itsar_web/app/views/layouts/login.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/learning_rails/app/controllers/hello_controller.rb",
+		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout.css.scss",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/learning_rails/app/views/layouts/application.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/learning_rails/app/views/layouts/hello.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/learning_rails/app/views/layouts/standardLayout.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/learning_rails/app/controllers/application_controller.rb",
+		"/Workbook/itsar_web/app/views/itsar_group/index.html.erb",
+		"/Workbook/itsar_web/app/models/t_user.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/models/student.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/models/award.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/db/schema.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/db/schema.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/new_guestbook/db/seeds.rb",
+		"/Workbook/itsar_web/app/models/login.rb",
+		"/Workbook/itsar_web/app/controllers/login_controller.rb",
+		"/Workbook/itsar_web/db/development.sqlite3",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/_form.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/controllers/awards_controller.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/edit.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/new.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/index.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/views/layouts/application.html.erb",
+		"/Workbook/itsar_web/app/views/login/index.html.erb",
+		"/Workbook/itsar_web/app/models/.gitkeep",
+		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/specimen_files/grid_12-825-55-15.css",
+		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/OpenSans-Regular-demo.html",
+		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/specimen_files/specimen_stylesheet.css",
+		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/stylesheet.css",
+		"/media/tsara27/DF0F-B829/login/login.html",
+		"/media/tsara27/DF0F-B829/login/css.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/login_default.css",
+		"/media/tsara27/DF0F-B829/Admin Lab Main Files/admin lab template/login.html",
+		"/media/tsara27/DF0F-B829/Admin Lab Main Files/admin lab template/css/style.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/login_responsive.scss",
+		"/media/tsara27/DF0F-B829/Admin Lab Main Files/admin lab template/css/style_responsive.css",
+		"/media/tsara27/DF0F-B829/Admin Lab Main Files/admin lab template/css/style_default.css",
+		"/Workbook/itsar_web/app/assets/stylesheets/login_default.css.scss",
+		"/Workbook/itsar_web/app/assets/stylesheets/login.css.scss",
+		"/Workbook/itsar_web/app/views/login/login.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/controllers/students_controller.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/config/routes.rb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/students/show.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/students/index.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/show.html.erb",
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/Gemfile"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"coba",
+			"idperson",
+			"usertype",
+			"name_group",
+			"name_usertype",
+			"th",
+			"=\"",
+			"\">\n",
+			"body",
+			"font_call",
+			"%>\n",
+			"admin_layout//",
+			"../img/",
+			"../img",
+			"../img/",
+			"img",
+			"script",
+			"scr",
+			"index",
+			"local",
+			"url",
+			"'Open Sans'",
+			"icon",
+			"http://dl.dropbox.com/u/94346812/cssdeck/fonts",
+			"\"../images/login",
+			"\"../images",
+			"login",
+			"\"../img",
+			"'../img",
+			"img",
+			"validates_numeriticality_of",
+			"form_for",
+			"bold"
+		],
+		"highlight": true,
+		"in_selection": true,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"idgroup",
+			"itsargroup",
+			"name_school",
+			"name_group",
+			"td",
+			"admin_layout/",
+			"url",
+			"local",
+			"font-url",
+			"'open_sansregular'",
+			"Pictos",
+			"images/fonts/Pictos",
+			"\"login",
+			"\"../images/login",
+			"\"../images",
+			"'../images",
+			"validates_numericality_of"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Workbook/coba/config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 1611,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								586,
+								586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Workbook/coba/app/views/cobian/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								39,
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Workbook/coba/app/controllers/cobian_controller.rb",
+					"settings":
+					{
+						"buffer_size": 101,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								91,
+								91
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Workbook/coba/app/models/cobian.rb",
+					"settings":
+					{
+						"buffer_size": 81,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Workbook/coba/db/development.sqlite3",
+					"settings":
+					{
+						"buffer_size": 15360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/Workbook/coba/db/migrate/20131211102359_create_t_cobians.rb",
+					"settings":
+					{
+						"buffer_size": 178,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								140,
+								140
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Workbook/coba/app/models/t_cobian.rb",
+					"settings":
+					{
+						"buffer_size": 83,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								78,
+								78
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 27.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"sche",
+				"db/schema.rb"
+			],
+			[
+				"user",
+				"app/controllers/usertype_controller.rb"
+			],
+			[
+				"s",
+				"db/schema.rb"
+			],
+			[
+				"agination",
+				"#Itsar_HTML_sample/assets/font-awesome/docs/assets/less/twbs-222/pagination.less"
+			],
+			[
+				"_pos",
+				"app/views/usertype/_posts.html.erb"
+			],
+			[
+				"add",
+				"app/assets/stylesheets/admin_layout/additional.css.scss"
+			],
+			[
+				"_hea",
+				"app/views/layouts/sub_admin/_header.html.erb"
+			],
+			[
+				"addi",
+				"app/assets/stylesheets/admin_layout/additional.css.scss"
+			],
+			[
+				"applica",
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"login",
+				"app/views/login/index.html.erb"
+			],
+			[
+				"lo",
+				"app/views/login/index.html.erb"
+			],
+			[
+				"show",
+				"app/views/students/show.html.erb"
+			],
+			[
+				"_f",
+				"app/views/awards/_form.html.erb"
+			],
+			[
+				"award",
+				"app/controllers/awards_controller.rb"
+			],
+			[
+				"inde",
+				"app/views/students/index.html.erb"
+			],
+			[
+				"_for",
+				"app/views/awards/_form.html.erb"
+			],
+			[
+				"sho",
+				"app/views/awards/show.html.erb"
+			],
+			[
+				"stu",
+				"app/controllers/students_controller.rb"
+			],
+			[
+				"stude",
+				"app/models/student.rb"
+			],
+			[
+				"_",
+				"app/views/awards/_form.html.erb"
+			],
+			[
+				"awar",
+				"app/models/award.rb"
+			],
+			[
+				"rou",
+				"config/routes.rb"
+			],
+			[
+				"wra",
+				"app/views/wrapping_tidy_form_builder.rb"
+			],
+			[
+				"peop",
+				"app/assets/stylesheets/people.css.scss"
+			],
+			[
+				"ti",
+				"app/helpers/tidy_form_builder.rb"
+			],
+			[
+				"bck",
+				"app/views/people/bck_selc"
+			],
+			[
+				"form",
+				"app/views/people/_form.html.erb"
+			],
+			[
+				"person",
+				"app/models/person.rb"
+			],
+			[
+				"_add",
+				"db/migrate/20130717103452_add_photo_extension_to_person.rb"
+			],
+			[
+				"_crea",
+				"db/migrate/20130702150244_create_people.rb"
+			],
+			[
+				"pers",
+				"app/models/person.rb"
+			],
+			[
+				"",
+				"app/models/person.rb"
+			],
+			[
+				"model",
+				"app/models/person.rb"
+			],
+			[
+				"help",
+				"app/helpers/people_helper.rb"
+			],
+			[
+				"edit",
+				"app/views/people/edit.html.erb"
+			],
+			[
+				"new",
+				"app/views/people/new.html.erb"
+			],
+			[
+				"_peop",
+				"db/migrate/20130702150244_create_people.rb"
+			],
+			[
+				"per",
+				"app/models/person.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 251.0,
+	"status_bar_visible": true
+}
