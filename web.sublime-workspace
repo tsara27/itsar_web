@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"rec",
+				"records"
+			],
+			[
 				"it",
 				"itsar_grp"
 			],
@@ -236,10 +240,42 @@
 	"buffers":
 	[
 		{
-			"file": "app/controllers/usertype_controller.rb",
+			"file": "app/controllers/user_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2423,
+				"buffer_size": 2447,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/routes.rb",
+			"settings":
+			{
+				"buffer_size": 2641,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/user/index.html.erb",
+			"settings":
+			{
+				"buffer_size": 4307,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/user/_tabel.html.erb",
+			"settings":
+			{
+				"buffer_size": 949,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/schema.rb",
+			"settings":
+			{
+				"buffer_size": 1906,
 				"line_ending": "Unix"
 			}
 		},
@@ -280,9 +316,11 @@
 	},
 	"file_history":
 	[
+		"/Workbook/Charity/itsar_web/app/views/itsar_group/index.html.erb",
+		"/Workbook/Charity/itsar_web/app/views/usertype/index.html.erb",
+		"/Workbook/Charity/itsar_web/app/controllers/itsar_group_controller.rb",
 		"/Workbook/Charity/itsar_web/config/routes.rb",
 		"/Workbook/Charity/itsar_web/app/views/itsar_group/_tabel.html.erb",
-		"/Workbook/Charity/itsar_web/app/views/itsar_group/index.html.erb",
 		"/home/tsara27/public_html/index.html",
 		"/Workbook/itsar_web/test/functional/itsar_group_controller_test.rb",
 		"/Workbook/itsar_web/app/views/usertype/index.html.erb",
@@ -405,9 +443,7 @@
 		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/config/routes.rb",
 		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/students/show.html.erb",
 		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/students/index.html.erb",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/show.html.erb",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/Gemfile",
-		"/home/tsara27/.config/sublime-text-2/Packages/User/Preferences.sublime-settings"
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/students/app/views/awards/show.html.erb"
 	],
 	"find":
 	{
@@ -415,7 +451,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 		]
@@ -425,6 +461,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"itsar_grp",
+			"TItsar",
 			"idperson",
 			"usertype",
 			"name_group",
@@ -464,6 +502,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"usr_table",
+			"TUser",
 			"idgroup",
 			"itsargroup",
 			"name_school",
@@ -491,23 +531,23 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/controllers/usertype_controller.rb",
+					"file": "app/controllers/user_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2423,
+						"buffer_size": 2447,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								937,
-								937
+								195,
+								195
 							]
 						],
 						"settings":
@@ -523,6 +563,117 @@
 				},
 				{
 					"buffer": 1,
+					"file": "config/routes.rb",
+					"settings":
+					{
+						"buffer_size": 2641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								585,
+								585
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/views/user/index.html.erb",
+					"settings":
+					{
+						"buffer_size": 4307,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3227,
+								3227
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 717.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/user/_tabel.html.erb",
+					"settings":
+					{
+						"buffer_size": 949,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								945,
+								945
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "db/schema.rb",
+					"settings":
+					{
+						"buffer_size": 1906,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								819,
+								819
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "app/controllers/itsar_group_controller.rb",
 					"settings":
 					{
@@ -533,8 +684,8 @@
 						"selection":
 						[
 							[
-								614,
-								614
+								448,
+								448
 							]
 						],
 						"settings":
@@ -543,7 +694,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 195.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -597,12 +748,12 @@
 		"selected_items":
 		[
 			[
-				"route",
-				"config/routes.rb"
+				"itsa",
+				"app/controllers/itsar_group_controller.rb"
 			],
 			[
-				"itsa",
-				"test/functional/itsar_group_controller_test.rb"
+				"route",
+				"config/routes.rb"
 			],
 			[
 				"it",

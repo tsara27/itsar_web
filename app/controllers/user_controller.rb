@@ -4,6 +4,7 @@ class UserController < ApplicationController
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Pengguna Baru"
 		@aksi_form = "save_user"
+		@city_id = "1"
 		@records = TItsar.order('created_at ASC')
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i

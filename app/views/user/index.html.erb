@@ -73,11 +73,8 @@
   <div class="form-group">
     <label for="organisasi" class="col-lg-2 control-label">Organisasi</label>
     <div class="col-lg-4">
-    	<% @records.each do |row| %>
-    		<%= radio_button_tag 'field_name', row.id, '1' %>
-        <%= row.gname %>
-        <%= select_tag(:gender, options_for_select(@records,:gname,:id), :class => "form-control", :id => "gender") %>
-      <% end %>
+      <%= select_tag(:persona, options_from_collection_for_select(@records, :id, :gname,'2')) %>
+
       <span class="help-block keterangan">Gunakan email yang aktif.</span>
     </div>
     <div class="col-lg-4" id="v_emaiL_address"></div>
