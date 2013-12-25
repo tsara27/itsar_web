@@ -11,31 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130804062220) do
+ActiveRecord::Schema.define(:version => 20131224071921) do
 
   create_table "t_itsars", :force => true do |t|
-    t.string   "gname",      :limit => 25, :null => false
-    t.string   "schname",    :limit => 25, :null => false
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "gname",      :limit => 25,                  :null => false
+    t.string   "schname",    :limit => 25,                  :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.string   "iduser",                   :default => "0", :null => false
   end
 
   create_table "t_users", :force => true do |t|
-    t.string   "nme",        :limit => 45,  :null => false
-    t.string   "usrnme",     :limit => 25,  :null => false
-    t.string   "passwd",     :limit => 100, :null => false
-    t.string   "mail",       :limit => 25,  :null => false
-    t.integer  "gndr",       :limit => 1,   :null => false
-    t.integer  "usrtype",    :limit => 1,   :null => false
-    t.integer  "itsar_id",   :limit => 1,   :null => false
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.string   "nme",        :limit => 45,                   :null => false
+    t.string   "usrnme",     :limit => 25,                   :null => false
+    t.string   "passwd",     :limit => 100,                  :null => false
+    t.string   "mail",       :limit => 25,                   :null => false
+    t.integer  "gndr",       :limit => 1,                    :null => false
+    t.integer  "usrtype",    :limit => 1,                    :null => false
+    t.integer  "itsar_id",   :limit => 1,                    :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "iduser",                    :default => "0", :null => false
   end
 
   create_table "t_usertypes", :force => true do |t|
-    t.string   "utypename",  :limit => 25, :null => false
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "utypename",  :limit => 25,                  :null => false
+    t.datetime "created_at",                                :null => false
+    t.datetime "updated_at",                                :null => false
+    t.string   "iduser",                   :default => "0", :null => false
   end
 
 end

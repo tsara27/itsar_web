@@ -6,6 +6,8 @@ class UserController < ApplicationController
 		@aksi_form = "save_user"
 		@city_id = "1"
 		@records = TItsar.order('created_at ASC')
+		@records_role = TUsertype.order('created_at ASC')
+		@meter = "0"
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
@@ -17,17 +19,23 @@ class UserController < ApplicationController
 	end
 
 	def save_user
-		@a = params[:name_group]
-		@b = params[:name_school]
-		unless @a && @b.blank?
-			@simpen = TUser.create({:gname => @a, :schname => @b})
+		@a = params[:fullname]
+		@b = params[:name_user]
+		@c = params[:password_user]
+		@d = params[:email_address]
+		@e = params[:organisasi]
+		@f = params[:role_type]
+		@g = params[:gender]
+
+		unless @a && @b && @c && @d && @e && @f.blank?
+			@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e})
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
 
 		if params[:page]
-			redirect_to "/itsar_group?page="+params[:page]
+			redirect_to "/user?page="+params[:page]
 		else
-			redirect_to "/itsar_group"
+			redirect_to "/user"
 		end
 	end
 
@@ -73,5 +81,10 @@ class UserController < ApplicationController
 		idgroup = TUser.find(params[:id])
 		idgroup.destroy
 		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
+	end
+
+	def callback_username
+		@nama_user = TUser.where("usrnme = ?", params[:name_user]).count
+		render text: @nama_user
 	end
 end

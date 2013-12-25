@@ -1,0 +1,1 @@
+alamat_default = "http://localhost:3000/";

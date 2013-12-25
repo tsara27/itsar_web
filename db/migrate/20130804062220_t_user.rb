@@ -8,6 +8,7 @@ class TUser < ActiveRecord::Migration
   		tabel.integer :gndr, limit: 1, null: false, index: true #Gender
   		tabel.integer :usrtype, limit: 1, null: false, index: true #Usertype
   		tabel.integer :itsar_id, limit: 1, null: false, index: true #Id ITSAR
+      tabel.integer :iduser, null: false, index: true #Id Pengguna
   		tabel.timestamps #Update and Create timestamps
 
   	end

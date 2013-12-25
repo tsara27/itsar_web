@@ -1,0 +1,144 @@
+$(document).ready(function(){
+	urlnya = $(location).attr('href').split('?');
+	atr_isian = $('#form_isian').attr('action');
+	ini_url = (atr_isian + "?" + urlnya[1]);
+
+	$('#form_isian').attr('action', ini_url);
+	$('#submit_btn').attr('disabled','disabled');
+	fullname_validation = 0;
+    name_user_validation = 0;
+    password_validation = 0;
+    email_address_validation = 0;
+
+    if($('#submit_btn').val('Perbaharui'))
+    {
+        fullname_validation = 1;
+        name_user_validation = 1;
+        password_validation = 1;
+        email_address_validation = 1;
+    }
+
+    //Validasi nama lengkap
+	$('#fullname').keyup(function(){
+      nms = /^([a-z ])+$/i.test($('#fullname').val());
+         if(!nms)
+        {
+            fullname_validation = 0;
+            $("#v_fullname").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
+        }
+        else if($('#fullname').val().length < 3 || $('#fullname').val().length > 25)
+        {
+            fullname_validation = 0;
+            $("#v_fullname").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            fullname_validation = 1;
+            $("#v_fullname").html('');
+        }
+    });
+
+    //Validasi nama pengguna
+    $('#name_user').keyup(function(){
+        nms = /^([a-z0-9_])+$/i.test($('#name_user').val());
+        if(!nms)
+        {
+            name_user_validation = 0;
+            $("#v_name_user").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dan underscore.</div>').hide().fadeIn(300);
+        }
+        else if($('#name_user').val().length < 3 || $('#name_user').val().length > 25)
+        {
+            name_user_validation = 0;
+            $("#v_name_user").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            $.post(alamat_default+"user/callback_username/",{name_user : $('#name_user').val()},function(msg){
+            if(msg != 0)
+            {
+                name_user_validation = 0;
+                $("#v_name_user").html('<div class="alert alert-danger">Username tidak dapat digunakan.</div>');
+            }});
+            name_user_validation = 1;
+            $("#v_name_user").html('<div class="alert alert-success">Username bisa digunakan.</div>');
+           
+        }
+    });
+
+    //Validasi password
+    $('#password_user_b, #password_user').bind("keyup keypress",function(){
+      nms = /^([a-z0-9_ -])+$/i.test($('#password_user').val());
+      nma = /^([a-z0-9_ -])+$/i.test($('#password_user_b').val());
+        if(!nms || !nma)
+        {
+            password_validation = 0;
+            $("#v_password_user").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dan underscore. Kedua kolom harus diisi.</div>').hide().fadeIn(300);
+        }
+        else if($('#password_user').val().length < 3 || $('#password_user').val().length > 25 || $('#password_user_b').val().length < 3 || $('#password_user_b').val().length > 25)
+        {
+            password_validation = 0;
+            $("#v_password_user").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+        }
+        else if($('#password_user').val() != $('#password_user_b').val())
+        {
+            password_validation = 0;
+            $("#v_password_user").html('<div class="alert alert-danger">Password harus sama.</div> ');
+        }
+        else if(nms && nma)
+        {
+            password_validation = 1;
+            $("#v_password_user").html('');
+        }
+    });
+
+    //Validasi email
+    $('#email_address').keyup(function(){
+      nms = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/i.test($('#email_address').val());
+         if(!nms)
+        {
+            email_address_validation = 0;
+            $("#v_email_address").html('<div class="alert alert-danger">Isi dengan email yang valid.</div>').hide().fadeIn(300);
+        }
+        else if($('#email_address').val().length < 5 || $('#email_address').val().length > 50)
+        {
+            email_address_validation = 0;
+            $("#v_email_address").html('<div class="alert alert-danger">Isian harus terdiri dari 5 sampai 50 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            email_address_validation = 1;
+            $("#v_email_address").html('');
+        }
+    });
+
+    $('#form_isian').change(function(){
+        if(fullname_validation == 1 && name_user_validation == 1 && password_validation == 1 && email_address_validation == 1)
+        {
+            $('#submit_btn').removeAttr('disabled','disabled');
+        }
+        else if(fullname_validation == 0 || name_user_validation == 0 || password_validation == 0 || email_address_validation == 0)
+        {
+            $('#submit_btn').attr('disabled','disabled');
+        }
+    });
+
+
+    	// $('#submit_btn').removeAttr('disabled','disabled');
+// $("#ajax_paginate").find("a").each(function(){
+// 	var linkElement = $(this);
+// 	var paginationURL = linkElement.attr("href");
+// 	linkElement.attr({"url": paginationURL,"href":"#"});
+// 	linkElement.click(function(){
+// 		$("#post_id").html('<div align="center"><br/><img src="/assets/images/loading.gif"/></div>')
+// 		$("#post_id").load($(this).attr('url'));
+// 		return false;
+// 	}); 
+// 	});
+
+ $('#clear_form').click(function(){
+         $("input").val('');
+     });
+
+
+
+});

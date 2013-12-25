@@ -2,7 +2,12 @@
 	<thead>
 		<tr>
 			<th>No</th>
-			<th>Nama Tipe Pengguna</th>
+			<th>Nama Lengkap</th>
+			<th>Username</th>
+			<th>Email</th>
+			<th>Jenis Kelamin</th>
+			<th>Tipe Pengguna</th>
+			<th>Organisasi</th>
 			<th>Dibuat Oleh</th>
 			<th>Waktu Dibuat</th>
 			<th>Terakhir Diperbaharui</th>
@@ -11,15 +16,26 @@
 	</thead>
 	<tbody>
 		
-		<% @usr_table.each_with_index do |usertype, hh| %>
+		<% @usr_table.each_with_index do |row, hh| %>
 		  <tr>
 		  	<td><%= (@hhh.to_i + hh + 1) %></td>
-		    <td><%= usertype.utypename %></td>
-		    <td></td>
-		    <td><%= usertype.created_at %></td>
-		    <td><%= usertype.updated_at %></td>
-		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + usertype.id.to_s + "/edit_usertype" %></td>			
-			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + usertype.id.to_s + "/delete_usertype", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
+		    <td><%= row.nme %></td>
+		    <td><%= row.usrnme %></td>
+		    <td><%= row.mail %></td>
+		    <td><%= if row.gndr == 1
+		    		row.gndr = "Laki-laki"
+		    		else
+		    		row.gndr = "Perempuan"
+		    	end
+
+		    %></td>
+		    <td><%= row.usrtype %></td>
+		    <td><%= row.itsar_id %></td>
+		    <td><%= row.iduser %></td>
+		    <td><%= row.created_at %></td>
+		    <td><%= row.updated_at %></td>
+		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + row.id.to_s + "/edit_user" %></td>			
+			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + row.id.to_s + "/delete_user", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
 		  </tr>
 		<% end %>
 	</tbody>

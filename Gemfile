@@ -21,6 +21,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'database_cleaner'
 
 gem 'will_paginate'
 

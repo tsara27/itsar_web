@@ -15,10 +15,10 @@ ItsarWeb::Application.routes.draw do
   #resources :itsar_group
 
   #USER ROUTES
-  match '/:id/edit_itsargroup' => 'itsar_group#edit_itsargroup'
-  match '/itsar_group/:id/update_itsar_group' => 'itsar_group#update_itsargroup'
-  match '/:id/delete_itsargroup' => 'itsar_group#delete_itsar_group'
-  match '/search_itsargroup' => 'itsar_group#search'
+  match '/pengguna/cek' => 'user#callback_username'
+  match '/user/:id/update_user' => 'user#update_itsargroup'
+  match '/:id/delete_itsargroup' => 'user#delete_user'
+  match '/search_itsargroup' => 'user#search'
 
   #ITSARGROUP ROUTES
   match '/:id/edit_itsargroup' => 'itsar_group#edit_itsargroup'
