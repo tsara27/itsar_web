@@ -23,15 +23,19 @@
 		    <td><%= row.usrnme %></td>
 		    <td><%= row.mail %></td>
 		    <td><%= if row.gndr == 1
-		    		row.gndr = "Laki-laki"
+		    			row.gndr = "Laki-laki"
 		    		else
-		    		row.gndr = "Perempuan"
-		    	end
+		    			row.gndr = "Perempuan"
+		    		end
 
 		    %></td>
-		    <td><%= row.usrtype %></td>
-		    <td><%= row.itsar_id %></td>
-		    <td><%= row.iduser %></td>
+		    <td><%= row.utypename %></td>
+		    <td><%= row.gname %></td>
+		    <td><%= if row.iduser != "0"
+		    	 		a =  TUser.find(row.iduser)
+		    	 		row.iduser = a.usrnme.to_s
+		    	 	end
+		    	 %></td>
 		    <td><%= row.created_at %></td>
 		    <td><%= row.updated_at %></td>
 		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + row.id.to_s + "/edit_user" %></td>			

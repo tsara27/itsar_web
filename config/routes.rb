@@ -16,9 +16,11 @@ ItsarWeb::Application.routes.draw do
 
   #USER ROUTES
   match '/pengguna/cek' => 'user#callback_username'
-  match '/user/:id/update_user' => 'user#update_itsargroup'
+  match '/user/:id/update_user' => 'user#update_user'
   match '/:id/delete_itsargroup' => 'user#delete_user'
   match '/search_itsargroup' => 'user#search'
+  match '/:id/edit_user' => 'user#edit_user'
+
 
   #ITSARGROUP ROUTES
   match '/:id/edit_itsargroup' => 'itsar_group#edit_itsargroup'

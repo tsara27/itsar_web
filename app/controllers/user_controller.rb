@@ -4,7 +4,6 @@ class UserController < ApplicationController
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Pengguna Baru"
 		@aksi_form = "save_user"
-		@city_id = "1"
 		@records = TItsar.order('created_at ASC')
 		@records_role = TUsertype.order('created_at ASC')
 		@meter = "0"
@@ -12,9 +11,9 @@ class UserController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.joins('JOIN t_itsar ON t_itsar.id = t_user.itsar_id').order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -39,15 +38,22 @@ class UserController < ApplicationController
 		end
 	end
 
-	def edit_itsargroup
+	def edit_user
 		# Dynamic Variables
 		@nama_btn = "Perbaharui"
-		@nama_form = " - Perbaharui Daftar Organisasi ITSAR"
-		@aksi_form = params[:id] + "/update_itsar_group"
-		ugroupf = TUser.find(params[:id])
-		@aa = ugroupf.gname.to_s
-		@bb = ugroupf.schname.to_s
-		@usr_table = TUser.paginate(:page => params[:page], :per_page => 5)
+		@nama_form = " - Perbaharui Data Pengguna"
+		@aksi_form = params[:id] + "/update_user"
+		@records = TItsar.order('created_at ASC')
+		@records_role = TUsertype.order('created_at ASC')
+		userdata = TUser.find(params[:id])
+		@aa = userdata.nme.to_s
+		@bb = userdata.usrnme.to_s
+		@cc = userdata.mail.to_s
+		@dd = userdata.gndr.to_s
+		@ee = userdata.usrtype
+		@ff = userdata.itsar_id
+		@gg = userdata.passwd
+		@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		respond_to do |format|
 	      format.html { render "index"}
 	    end

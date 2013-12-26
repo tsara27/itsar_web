@@ -35,7 +35,7 @@
     <label for="password_user" class="col-lg-2 control-label">Password</label>
     <div class="col-lg-4">
     	<%= 
-    	 	password_field_tag(:password_user, @cc, :class => "form-control", :id => "password_user",:placeholder => "Masukkan password..") 
+    	 	password_field_tag(:password_user, @gg, :class => "form-control", :id => "password_user",:placeholder => "Masukkan password..") 
     	%>
     </div>
   </div>
@@ -44,7 +44,7 @@
     <label for="password_user_b" class="col-lg-2 control-label"></label>
     <div class="col-lg-4">
     	<%= 
-    	 	password_field_tag(:password_user_b, @cc, :class => "form-control", :id => "password_user_b",:placeholder => "Ketik ulang password..") 
+    	 	password_field_tag(:password_user_b, @gg, :class => "form-control", :id => "password_user_b",:placeholder => "Ketik ulang password..") 
     	%>
     	<span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf dan angka.</span>
     </div>
@@ -55,7 +55,7 @@
     <label for="email_address" class="col-lg-2 control-label">Email</label>
     <div class="col-lg-4">
     	<%= 
-    	 	email_field(:email_address,@dd,:class => "form-control", :placeholder => "shakirar@gmail.com", :id => "email_address") 
+    	 	text_field_tag(:email_address,@cc,:class => "form-control", :placeholder => "shakirar@gmail.com", :id => "email_address") 
     	%>
       <span class="help-block keterangan">Gunakan email yang aktif.</span>
     </div>
@@ -66,10 +66,24 @@
     <label for="gender" class="col-lg-2 control-label">Jenis Kelamin</label>
     <div class="col-lg-4">
       <label class="radio-inline">
-        <%= radio_button_tag(:gender,'1') %>Laki-laki
+        <% 
+          if @dd == "1"
+            gender_checked = "1"
+        %>
+            <%= radio_button_tag(:gender,'1',gender_checked) + 'Laki-laki' %>
+        <% else %>
+            <%= radio_button_tag(:gender,'1')+ 'Laki-laki' %>
+        <% end %>
       </label>
     	<label class="radio-inline">
-        <%= radio_button_tag(:gender,'2') %>Perempuan
+         <% 
+          if @dd == "2"
+            gender_checked = "1"
+        %>
+            <%= radio_button_tag(:gender,'2',gender_checked) + 'Perempuan' %>
+        <% else %>
+            <%= radio_button_tag(:gender,'2')+ 'Perempuan' %>
+        <% end %>
       </label>
     </div>
   </div>
@@ -77,14 +91,14 @@
   <div class="form-group">
     <label for="organisasi" class="col-lg-2 control-label">Organisasi</label>
     <div class="col-lg-4">
-      <%= select_tag(:organisasi, options_from_collection_for_select(@records, :id, :gname,@id_group),:class => "form-control") %>
+      <%= select_tag(:organisasi, options_from_collection_for_select(@records, :id, :gname,@ff),:class => "form-control") %>
     </div>
   </div>
   <!-- Isian -->
   <div class="form-group">
     <label for="role_type" class="col-lg-2 control-label">Tipe Pengguna</label>
     <div class="col-lg-4">
-      <%= select_tag(:role_type, options_from_collection_for_select(@records_role, :id, :utypename,@id_role),:class => "form-control") %>
+      <%= select_tag(:role_type, options_from_collection_for_select(@records_role, :id, :utypename,@ee),:class => "form-control") %>
     </div>
   </div>
   <div class="form-group">

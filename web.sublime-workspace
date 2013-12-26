@@ -267,7 +267,7 @@
 			"file": "app/controllers/user_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2850,
+				"buffer_size": 2996,
 				"line_ending": "Unix"
 			}
 		},
@@ -283,7 +283,7 @@
 			"file": "app/views/user/_tabel.html.erb",
 			"settings":
 			{
-				"buffer_size": 1295,
+				"buffer_size": 1292,
 				"line_ending": "Unix"
 			}
 		},
@@ -296,14 +296,6 @@
 			}
 		},
 		{
-			"file": "config/routes.rb",
-			"settings":
-			{
-				"buffer_size": 2587,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/assets/javascripts/user/script.js.erb",
 			"settings":
 			{
@@ -312,18 +304,10 @@
 			}
 		},
 		{
-			"file": "/opt/lampp/htdocs/Basic/agent/modules/menu_parent/views/menu_form.php",
+			"file": "app/models/t_itsar.rb",
 			"settings":
 			{
-				"buffer_size": 8901,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/t_usertype.rb",
-			"settings":
-			{
-				"buffer_size": 129,
+				"buffer_size": 185,
 				"line_ending": "Unix"
 			}
 		},
@@ -331,15 +315,15 @@
 			"file": "app/models/t_user.rb",
 			"settings":
 			{
-				"buffer_size": 196,
+				"buffer_size": 218,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/models/t_itsar.rb",
+			"file": "app/models/t_usertype.rb",
 			"settings":
 			{
-				"buffer_size": 163,
+				"buffer_size": 151,
 				"line_ending": "Unix"
 			}
 		}
@@ -372,10 +356,13 @@
 	},
 	"file_history":
 	[
+		"/Workbook/Charity/itsar_web/config/routes.rb",
+		"/opt/lampp/htdocs/Basic/agent/modules/menu_parent/views/menu_form.php",
+		"/Workbook/Charity/itsar_web/app/models/t_user.rb",
+		"/Workbook/Charity/itsar_web/app/models/t_usertype.rb",
 		"/Workbook/Charity/itsar_web/app/views/user/callback_username.html.erb",
 		"/opt/lampp/htdocs/Basic/agent/views/admin-template.php",
 		"/media/tsara27/VISTALITE/_Crack/Read me.txt",
-		"/opt/lampp/htdocs/Basic/agent/modules/menu_parent/views/menu_form.php",
 		"/opt/lampp/htdocs/Basic/agent/modules/menu_parent/models/parent_model.php",
 		"/Workbook/Charity/itsar_web/app/views/layouts/admin_layout.html.erb",
 		"/opt/lampp/htdocs/Basic/agent/views/navigation.php",
@@ -392,7 +379,6 @@
 		"/Workbook/Charity/itsar_web/app/views/usertype/_tabel.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/itsar_group/index.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/usertype/index.html.erb",
-		"/Workbook/Charity/itsar_web/config/routes.rb",
 		"/home/tsara27/public_html/index.html",
 		"/Workbook/itsar_web/test/functional/itsar_group_controller_test.rb",
 		"/Workbook/itsar_web/app/views/usertype/index.html.erb",
@@ -497,9 +483,7 @@
 		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/OpenSans-Regular-demo.html",
 		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/specimen_files/specimen_stylesheet.css",
 		"/Data/Theme, Icon, Fonts/Fonts/open-sans-fontfacekit/web fonts/opensans_regular_macroman/stylesheet.css",
-		"/media/tsara27/DF0F-B829/login/login.html",
-		"/media/tsara27/DF0F-B829/login/css.css",
-		"/Workbook/itsar_web/app/assets/stylesheets/login_default.css"
+		"/media/tsara27/DF0F-B829/login/login.html"
 	],
 	"find":
 	{
@@ -603,7 +587,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -611,15 +595,15 @@
 					"file": "app/controllers/user_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2850,
+						"buffer_size": 2996,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								843,
-								843
+								688,
+								688
 							]
 						],
 						"settings":
@@ -656,7 +640,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 741.0,
+						"translation.y": 494.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -666,15 +650,15 @@
 					"file": "app/views/user/_tabel.html.erb",
 					"settings":
 					{
-						"buffer_size": 1295,
+						"buffer_size": 1292,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								701,
-								701
+								780,
+								780
 							]
 						],
 						"settings":
@@ -700,8 +684,8 @@
 						"selection":
 						[
 							[
-								1980,
-								1980
+								865,
+								865
 							]
 						],
 						"settings":
@@ -718,34 +702,6 @@
 				},
 				{
 					"buffer": 4,
-					"file": "config/routes.rb",
-					"settings":
-					{
-						"buffer_size": 2587,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								659,
-								659
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "app/assets/javascripts/user/script.js.erb",
 					"settings":
 					{
@@ -773,29 +729,53 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "/opt/lampp/htdocs/Basic/agent/modules/menu_parent/views/menu_form.php",
+					"buffer": 5,
+					"file": "app/models/t_itsar.rb",
 					"settings":
 					{
-						"buffer_size": 8901,
+						"buffer_size": 185,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4218,
-								4218
+								140,
+								140
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1638.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/models/t_user.rb",
+					"settings":
+					{
+						"buffer_size": 218,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								213,
+								213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -805,67 +785,15 @@
 					"file": "app/models/t_usertype.rb",
 					"settings":
 					{
-						"buffer_size": 129,
+						"buffer_size": 151,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								104,
-								104
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/models/t_user.rb",
-					"settings":
-					{
-						"buffer_size": 196,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								142,
-								142
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/models/t_itsar.rb",
-					"settings":
-					{
-						"buffer_size": 163,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								107,
-								107
+								106,
+								106
 							]
 						],
 						"settings":

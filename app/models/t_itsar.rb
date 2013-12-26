@@ -3,4 +3,5 @@ class TItsar < ActiveRecord::Base
 
   #ITSAR group has many users
   has_many :t_users
+  belongs_to :t_users
 end
