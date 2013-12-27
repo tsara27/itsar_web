@@ -1,12 +1,12 @@
-<form id="form" name="form" action="#" method="post">
+<%= form_tag({:action => @aksi_form}, :role => "form", :id => "form") do %>
   <div id="block">
     <label id="user" for="name">p</label>
-    <input type="text" name="name" id="name" placeholder="Username" required/>
+    <%= text_field_tag(:username,"",:placeholder => "Username", :id => "name") %>
     <label id="pass" for="password">k</label>
-    <input type="password" name="password" id="password" placeholder="Password" required />
+    <%= password_field_tag(:password,"",:placeholder => "Password", :id => "password") %>
     <input type="submit" id="submit" name="submit" value="a"/>
   </div>
-</form>
+<% end %>
 <div id="option"> 
   <p>Sign in</p> 
   <a href="#">forgot?</a>

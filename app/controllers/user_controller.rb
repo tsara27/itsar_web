@@ -1,4 +1,5 @@
 class UserController < ApplicationController
+	before_filter :check_login
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
@@ -6,12 +7,11 @@ class UserController < ApplicationController
 		@aksi_form = "save_user"
 		@records = TItsar.order('created_at ASC')
 		@records_role = TUsertype.order('created_at ASC')
-		@meter = "0"
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr_table = TUser.joins('JOIN t_itsar ON t_itsar.id = t_user.itsar_id').order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
 			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
@@ -25,9 +25,10 @@ class UserController < ApplicationController
 		@e = params[:organisasi]
 		@f = params[:role_type]
 		@g = params[:gender]
+		@h = session[:cur_id]
 
 		unless @a && @b && @c && @d && @e && @f.blank?
-			@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e})
+			@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e, :iduser => @h})
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
 
@@ -62,31 +63,37 @@ class UserController < ApplicationController
 	def search
 		@a = params[:search_form]
 		@nama_btn = "Simpan"
-		@nama_form = " - Buat Daftar Organisasi ITSAR"
-		@aksi_form = "save_itsargroup"
+		@nama_form = " - Buat Pengguna Baru"
+		@aksi_form = "save_user"
+		@records = TItsar.order('created_at ASC')
+		@records_role = TUsertype.order('created_at ASC')
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@usr_table = TUser.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@usr_table = TUser.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end
 
-	def update_itsargroup
-		idgroup = TUser.find(params[:id])
-		idgroup.gname = params[:name_group]
-		idgroup.schname = params[:name_school]
-		idgroup.save
-
-		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
+	def update_user
+		iduser = TUser.find(params[:id])
+		iduser.nme = params[:fullname]
+		iduser.usrnme = params[:name_user]
+		iduser.mail = params[:email_address]
+		iduser.gndr = params[:gender]
+		iduser.usrtype = params[:role_type]
+		iduser.itsar_id = params[:organisasi]
+		iduser.passwd = params[:password_user]
+		iduser.save
+		redirect_to "/user/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
 	end
 
-	def delete_itsar_group
+	def delete_user
 		idgroup = TUser.find(params[:id])
 		idgroup.destroy
-		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
+		redirect_to "/user/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
 	end
 
 	def callback_username

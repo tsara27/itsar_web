@@ -11,13 +11,17 @@ ItsarWeb::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #resources :usertype
+  resources :user
   #resources :itsar_group
+
+  #LOGIN ROUTES
+  match '/sign_in/' => 'login#signin'
+  match '/sign_out/' => 'login#signout'
 
   #USER ROUTES
   match '/pengguna/cek' => 'user#callback_username'
   match '/user/:id/update_user' => 'user#update_user'
-  match '/:id/delete_itsargroup' => 'user#delete_user'
+  match '/:id/delete_user' => 'user#delete_user'
   match '/search_itsargroup' => 'user#search'
   match '/:id/edit_user' => 'user#edit_user'
 
