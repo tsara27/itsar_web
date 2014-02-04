@@ -1,5 +1,5 @@
 class ItsarGroupController < ApplicationController
-	before_filter :check_login
+	# before_filter :check_login
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
@@ -20,7 +20,11 @@ class ItsarGroupController < ApplicationController
 		@b = params[:name_school]
 		@c = session[:cur_id]
 		unless @a && @b.blank?
-			@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => @c})
+			if @c.blank?
+				@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => ""})
+			else
+				@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => @c})
+			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
 

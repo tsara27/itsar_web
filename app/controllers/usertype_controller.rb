@@ -1,5 +1,5 @@
 class UsertypeController < ApplicationController
-	before_filter :check_login
+	# before_filter :check_login
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
@@ -19,7 +19,11 @@ class UsertypeController < ApplicationController
 		@a = params[:name_usertype]
 		@b = session[:cur_id]
 		unless @a.blank?
-			@simpen = TUsertype.create({:utypename => @a,:iduser => @b})
+			unless @b.blank?
+			 	@simpen = TUsertype.create({:utypename => @a,:iduser => @b})
+			else
+				@simpen = TUsertype.create({:utypename => @a,:iduser => "0"})
+			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
 
