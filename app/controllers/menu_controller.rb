@@ -1,9 +1,9 @@
-class ItsarGroupController < ApplicationController
+class MenuController < ApplicationController
 	before_filter :check_login
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
-		@nama_form = " - Buat Daftar Organisasi ITSAR"
+		@nama_form = " - Buat Menu"
 		@aksi_form = "save_itsargroup"
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i

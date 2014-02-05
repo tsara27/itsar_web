@@ -1,5 +1,5 @@
 class UserController < ApplicationController
-	# before_filter :check_login
+	before_filter :check_login
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
@@ -28,7 +28,12 @@ class UserController < ApplicationController
 		@h = session[:cur_id]
 
 		unless @a && @b && @c && @d && @e && @f.blank?
-			@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e, :iduser => @h})
+			if @h.blank?
+				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e, :iduser => "0"})
+
+			else
+				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e, :iduser => @h})
+			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
 

@@ -1,5 +1,5 @@
 class UsertypeController < ApplicationController
-	# before_filter :check_login
+	before_filter :check_login
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
