@@ -628,7 +628,7 @@
 						"settings":
 						{
 							"auto_name": "",
-							"function_name_status_row": 48,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -657,7 +657,7 @@
 						"settings":
 						{
 							"auto_name": "index.html.erb",
-							"function_name_status_row": 128,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -686,7 +686,7 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 128,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -715,8 +715,9 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 5,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
