@@ -2,34 +2,39 @@ $(document).ready(function(){
 	urlnya = $(location).attr('href').split('?');
 	atr_isian = $('#form_isian').attr('action');
 	ini_url = (atr_isian + "?" + urlnya[1]);
-
+    val_submit = $('#submit_btn').val();
 	$('#form_isian').attr('action', ini_url);
 	$('#submit_btn').attr('disabled','disabled');
-	fullname_validation = 0;
-    name_user_validation = 0;
-    password_validation = 0;
-    email_address_validation = 0;
-
-    if($('#submit_btn').val('Perbaharui'))
+    if(val_submit == "Perbaharui")
     {
         fullname_validation = 1;
         name_user_validation = 1;
         password_validation = 1;
         email_address_validation = 1;
     }
+    else if(val_submit == "Simpan")
+    {
+        fullname_validation = 0;
+        name_user_validation = 0;
+        password_validation = 0;
+        email_address_validation = 0;
+    }
+            
+    
+    
 
     //Validasi nama lengkap
-	$('#fullname').keyup(function(){
+	$('#fullname').bind("keyup keypress change",function(){
       nms = /^([a-z ])+$/i.test($('#fullname').val());
          if(!nms)
         {
             fullname_validation = 0;
             $("#v_fullname").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
         }
-        else if($('#fullname').val().length < 3 || $('#fullname').val().length > 25)
+        else if($('#fullname').val().length < 3 || $('#fullname').val().length > 45)
         {
             fullname_validation = 0;
-            $("#v_fullname").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+            $("#v_fullname").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 45 karakter.</div> ');
         }
         else if(nms)
         {
@@ -39,7 +44,7 @@ $(document).ready(function(){
     });
 
     //Validasi nama pengguna
-    $('#name_user').keyup(function(){
+    $('#name_user').bind("keyup keypress change",function(){
         nms = /^([a-z0-9_])+$/i.test($('#name_user').val());
         if(!nms)
         {
@@ -66,7 +71,7 @@ $(document).ready(function(){
     });
 
     //Validasi password
-    $('#password_user_b, #password_user').bind("keyup keypress",function(){
+    $('#password_user_b, #password_user').bind("keyup keypress change",function(){
       nms = /^([a-z0-9_ -])+$/i.test($('#password_user').val());
       nma = /^([a-z0-9_ -])+$/i.test($('#password_user_b').val());
         if(!nms || !nma)
@@ -92,7 +97,7 @@ $(document).ready(function(){
     });
 
     //Validasi email
-    $('#email_address').keyup(function(){
+    $('#email_address').bind("keyup keypress change",function(){
       nms = /^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/i.test($('#email_address').val());
          if(!nms)
         {
@@ -112,6 +117,7 @@ $(document).ready(function(){
     });
 
     $('#form_isian').change(function(){
+        // console.log(fullname_validation+","+name_user_validation+","+password_validation+","+email_address_validation+","+val_submit); 
         if(fullname_validation == 1 && name_user_validation == 1 && password_validation == 1 && email_address_validation == 1)
         {
             $('#submit_btn').removeAttr('disabled','disabled');
