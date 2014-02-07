@@ -2,12 +2,9 @@
 	<thead>
 		<tr>
 			<th>No</th>
-			<th>Nama Lengkap</th>
-			<th>Username</th>
-			<th>Email</th>
-			<th>Jenis Kelamin</th>
-			<th>Tipe Pengguna</th>
-			<th>Organisasi</th>
+			<th>Nama Menu</th>
+			<th>URL</th>
+			<th>Untuk Tipe Pengguna</th>
 			<th>Dibuat Oleh</th>
 			<th>Waktu Dibuat</th>
 			<th>Terakhir Diperbaharui</th>
@@ -16,33 +13,20 @@
 	</thead>
 	<tbody>
 		
-		<% @usr_table.each_with_index do |row, hh| %>
+		<% @menu_query.each_with_index do |row, hh| %>
 		  <tr>
 		  	<td><%= (@hhh.to_i + hh + 1) %></td>
+		    <td><%= row.menu_name %></td>
+		    <td><%= row.url %></td>
+		    <td><%= row.visible_to %></td>
 		    <td><%= row.nme %></td>
-		    <td><%= row.usrnme %></td>
-		    <td><%= row.mail %></td>
-		    <td><%= if row.gndr == 1
-		    			row.gndr = "Laki-laki"
-		    		else
-		    			row.gndr = "Perempuan"
-		    		end
-
-		    %></td>
-		    <td><%= row.utypename %></td>
-		    <td><%= row.gname %></td>
-		    <td><%= if row.iduser != "0"
-		    	 		a =  TUser.find(row.iduser)
-		    	 		row.iduser = a.usrnme.to_s
-		    	 	end
-		    	 %></td>
 		    <td><%= row.created_at %></td>
 		    <td><%= row.updated_at %></td>
-		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + row.id.to_s + "/edit_user" %></td>			
-			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + row.id.to_s + "/delete_user", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
+		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + row.id.to_s + "/edit_menu" %></td>			
+			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + row.id.to_s + "/delete_menu", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
 		  </tr>
 		<% end %>
 	</tbody>
 	</table>
-	<%= will_paginate @usr_table, :id => "ajax_paginate" %>
+	<%= will_paginate @menu_query, :id => "ajax_paginate" %>
   

@@ -4,46 +4,50 @@ class MenuController < ApplicationController
 	def index
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Menu"
-		@aksi_form = "save_itsargroup"
+		@aksi_form = "save_menu"
+		@records_role = TUsertype.order('created_at ASC')
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
-	def save_itsargroup
-		@a = params[:name_group]
-		@b = params[:name_school]
+	def save_menu
+		@a = params[:name_menu]
+		@b = params[:menu_url]
+		@d = params[:role_id].join(',')
 		@c = session[:cur_id]
 		unless @a && @b.blank?
 			if @c.blank?
-				@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => ""})
+				@simpen = TMenu.create({:menu_name => @a, :url => @b, :iduser => "", :visible_to =>","+@d+","})
 			else
-				@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => @c})
+				@simpen = TMenu.create({:menu_name => @a, :url => @b, :iduser => @c, :visible_to =>","+@d+","})
 			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
 
 		if params[:page]
-			redirect_to "/itsar_group?page="+params[:page]
+			redirect_to "/menu_cfg?page="+params[:page]
 		else
-			redirect_to "/itsar_group"
+			redirect_to "/menu_cfg"
 		end
 	end
 
-	def edit_itsargroup
+	def edit_menu
 		# Dynamic Variables
 		@nama_btn = "Perbaharui"
-		@nama_form = " - Perbaharui Daftar Organisasi ITSAR"
-		@aksi_form = params[:id] + "/update_itsar_group"
-		ugroupf = TItsar.find(params[:id])
-		@aa = ugroupf.gname.to_s
-		@bb = ugroupf.schname.to_s
-		@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		@nama_form = " - Perbaharui Menu"
+		@aksi_form = params[:id] + "/update_menu_cfg"
+		@records_role = TUsertype.order('created_at ASC')
+		menu_dtl = TMenu.find(params[:id])
+		@aa = menu_dtl.menu_name.to_s
+		@bb = menu_dtl.url.to_s
+		@cc = menu_dtl.visible_to.split(',')
+		@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		respond_to do |format|
 	      format.html { render "index"}
 	    end
@@ -64,7 +68,7 @@ class MenuController < ApplicationController
 		render :index
 	end
 
-	def update_itsargroup
+	def update_menu
 		idgroup = TItsar.find(params[:id])
 		idgroup.gname = params[:name_group]
 		idgroup.schname = params[:name_school]

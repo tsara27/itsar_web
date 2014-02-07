@@ -10,96 +10,34 @@
 <%= form_tag({:action => @aksi_form},:class => "form-horizontal", :role => "form", :id => "form_isian") do %>
   <!-- Isian -->
   <div class="form-group">
-    <label for="fullname" class="col-lg-2 control-label">Nama Lengkap</label>
+    <label for="name_menu" class="col-lg-2 control-label">Nama Menu</label>
     <div class="col-lg-4">
     	<%= 
-    	 	text_field_tag(:fullname,@aa,:class => "form-control", :placeholder => "Shakira Rahmah", :id => "fullname") 
+    	 	text_field_tag(:name_menu,@aa,:class => "form-control", :placeholder => "Menu", :id => "name_menu") 
     	%>
-      <span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf.</span>
+      <span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf, underscore, dan dash.</span>
     </div>
-    <div class="col-lg-4" id="v_fullname"></div>
+    <div class="col-lg-4" id="v_name_menu"></div>
   </div>
   <!-- Isian -->
   <div class="form-group">
-    <label for="name_user" class="col-lg-2 control-label">Nama Pengguna</label>
+    <label for="menu_url" class="col-lg-2 control-label">Alamat URL</label>
     <div class="col-lg-4">
-    	<%= 
-    	 	text_field_tag(:name_user,@bb,:class => "form-control", :placeholder => "shakira_r", :id => "name_user") 
-    	%>
-      <span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf, angka, dan underscore.</span>
+      <%= 
+        text_field_tag(:menu_url,@bb,:class => "form-control", :placeholder => "/konf_menu", :id => "menu_url") 
+      %>
+      <span class="help-block keterangan">Maksimal 60 karakter dan hanya menggunakan karakter huruf, underscore, dan dash.</span>
     </div>
-    <div class="col-lg-4" id="v_name_user"></div>
+    <div class="col-lg-4" id="v_menu_url"></div>
   </div>
   <!-- Isian -->
   <div class="form-group">
-    <label for="password_user" class="col-lg-2 control-label">Password</label>
+    <label for="role_id" class="col-lg-2 control-label">Tipe Pengguna</label>
     <div class="col-lg-4">
-    	<%= 
-    	 	password_field_tag(:password_user, @gg, :class => "form-control", :id => "password_user",:placeholder => "Masukkan password..") 
-    	%>
+      <%= select_tag(:role_id, options_from_collection_for_select(@records_role, :id, :utypename, @cc),:class => "form-control",:multiple => true) %>
+      <span class="help-block keterangan">Harus memilih setidaknya satu tipe pengguna.</span>
     </div>
-  </div>
-  <!-- Isian -->
-  <div class="form-group">
-    <label for="password_user_b" class="col-lg-2 control-label"></label>
-    <div class="col-lg-4">
-    	<%= 
-    	 	password_field_tag(:password_user_b, @gg, :class => "form-control", :id => "password_user_b",:placeholder => "Ketik ulang password..") 
-    	%>
-    	<span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf dan angka.</span>
-    </div>
-    <div class="col-lg-4" id="v_password_user"></div>
-  </div>
-  <!-- Isian -->
-  <div class="form-group">
-    <label for="email_address" class="col-lg-2 control-label">Email</label>
-    <div class="col-lg-4">
-    	<%= 
-    	 	text_field_tag(:email_address,@cc,:class => "form-control", :placeholder => "shakirar@gmail.com", :id => "email_address") 
-    	%>
-      <span class="help-block keterangan">Gunakan email yang aktif.</span>
-    </div>
-    <div class="col-lg-4" id="v_email_address"></div>
-  </div>
-  <!-- Isian -->
-  <div class="form-group">
-    <label for="gender" class="col-lg-2 control-label">Jenis Kelamin</label>
-    <div class="col-lg-4">
-      <label class="radio-inline">
-        <% 
-          if @dd == "1"
-            gender_checked = "1"
-        %>
-            <%= radio_button_tag(:gender,'1',gender_checked) + 'Laki-laki' %>
-        <% else %>
-            <%= radio_button_tag(:gender,'1')+ 'Laki-laki' %>
-        <% end %>
-      </label>
-    	<label class="radio-inline">
-         <% 
-          if @dd == "2"
-            gender_checked = "1"
-        %>
-            <%= radio_button_tag(:gender,'2',gender_checked) + 'Perempuan' %>
-        <% else %>
-            <%= radio_button_tag(:gender,'2')+ 'Perempuan' %>
-        <% end %>
-      </label>
-    </div>
-  </div>
-  <!-- Isian -->
-  <div class="form-group">
-    <label for="organisasi" class="col-lg-2 control-label">Organisasi</label>
-    <div class="col-lg-4">
-      <%= select_tag(:organisasi, options_from_collection_for_select(@records, :id, :gname,@ff),:class => "form-control") %>
-    </div>
-  </div>
-  <!-- Isian -->
-  <div class="form-group">
-    <label for="role_type" class="col-lg-2 control-label">Tipe Pengguna</label>
-    <div class="col-lg-4">
-      <%= select_tag(:role_type, options_from_collection_for_select(@records_role, :id, :utypename,@ee),:class => "form-control") %>
-    </div>
+    <div class="col-lg-4" id="v_role_id"></div>
   </div>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10 btn-group">
@@ -110,12 +48,12 @@
 <% end %>
 <nav class="navbar" role="navigation">
 	<div class="navbar-header">
-    <a class="navbar-brand" href="#">Tabel Pengguna</a>
+    <a class="navbar-brand" href="#">Tabel Menu</a>
   </div>
   
   <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
   <div class="form-group">
-        <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari nama pengguna...") %>
+        <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari nama menu...") %>
       </div>
         <button type="submit" class="btn btn-default">Cari</button>
     <% end %>
@@ -126,4 +64,4 @@
 	<%= render partial: 'tabel' %>
 </div>
 
-<%= javascript_include_tag "user/script.js.erb" %>
+<%= javascript_include_tag "menu/script.js.erb" %>
