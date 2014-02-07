@@ -21,6 +21,8 @@ ItsarWeb::Application.routes.draw do
   match '/menu_cfg/' => 'menu#index'
   match '/:id/edit_menu' => 'menu#edit_menu'
   match '/:id/delete_menu' => 'menu#delete_menu'
+  match '/menu/:id/update_menu' => 'menu#update_menu'
+
 
   #LOGIN ROUTES
   match '/sign_in/' => 'login#signin'

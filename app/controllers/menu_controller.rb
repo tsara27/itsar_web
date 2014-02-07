@@ -41,45 +41,46 @@ class MenuController < ApplicationController
 		# Dynamic Variables
 		@nama_btn = "Perbaharui"
 		@nama_form = " - Perbaharui Menu"
-		@aksi_form = params[:id] + "/update_menu_cfg"
+		@aksi_form = params[:id] + "/update_menu"
 		@records_role = TUsertype.order('created_at ASC')
 		menu_dtl = TMenu.find(params[:id])
 		@aa = menu_dtl.menu_name.to_s
 		@bb = menu_dtl.url.to_s
 		@cc = menu_dtl.visible_to.split(',')
 		@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		respond_to do |format|
-	      format.html { render "index"}
-	    end
+		render :index
+
 	end
 
 	def search
 		@a = params[:search_form]
 		@nama_btn = "Simpan"
-		@nama_form = " - Buat Daftar Organisasi ITSAR"
-		@aksi_form = "save_itsargroup"
+		@nama_form = " - Buat Menu"
+		@aksi_form = "save_menu"
+		@records_role = TUsertype.order('created_at ASC')
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end
 
 	def update_menu
-		idgroup = TItsar.find(params[:id])
-		idgroup.gname = params[:name_group]
-		idgroup.schname = params[:name_school]
-		idgroup.save
+		idmenu = TMenu.find(params[:id])
+		idmenu.menu_name = params[:name_menu]
+		idmenu.url = params[:menu_url]
+		idmenu.visible_to = ','+params[:role_id].join(',')+','
+		idmenu.save
 
-		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
+		redirect_to "/menu_cfg/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
 	end
 
-	def delete_itsar_group
-		idgroup = TItsar.find(params[:id])
-		idgroup.destroy
-		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
+	def delete_menu
+		idmenu = TMenu.find(params[:id])
+		idmenu.destroy
+		redirect_to "/menu_cfg/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
 	end
 end
