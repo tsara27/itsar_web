@@ -8,6 +8,18 @@
 				"menu_name"
 			],
 			[
+				"upda",
+				"update_menu_cfg"
+			],
+			[
+				"me",
+				"menu_cfg"
+			],
+			[
+				"id",
+				"idmenu"
+			],
+			[
 				"val",
 				"val_submit"
 			],
@@ -42,10 +54,6 @@
 			[
 				"gend",
 				"gender_checked"
-			],
-			[
-				"id",
-				"iduser"
 			],
 			[
 				"to_",
@@ -307,7 +315,7 @@
 			"file": "app/controllers/menu_controller.rb",
 			"settings":
 			{
-				"buffer_size": 3221,
+				"buffer_size": 3232,
 				"line_ending": "Unix"
 			}
 		},
@@ -315,7 +323,7 @@
 			"file": "app/views/menu/index.html.erb",
 			"settings":
 			{
-				"buffer_size": 2817,
+				"buffer_size": 2815,
 				"line_ending": "Unix"
 			}
 		},
@@ -331,7 +339,7 @@
 			"file": "config/routes.rb",
 			"settings":
 			{
-				"buffer_size": 2910,
+				"buffer_size": 2965,
 				"line_ending": "Unix"
 			}
 		},
@@ -348,6 +356,30 @@
 			"settings":
 			{
 				"buffer_size": 116,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/t_menu.rb",
+			"settings":
+			{
+				"buffer_size": 121,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/menu/script.js.erb",
+			"settings":
+			{
+				"buffer_size": 3082,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 441,
 				"line_ending": "Unix"
 			}
 		}
@@ -646,7 +678,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -668,7 +700,7 @@
 						"settings":
 						{
 							"auto_name": "",
-							"function_name_status_row": 25,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -683,25 +715,25 @@
 					"file": "app/controllers/menu_controller.rb",
 					"settings":
 					{
-						"buffer_size": 3221,
+						"buffer_size": 3232,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1758,
-								1758
+								2142,
+								2142
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 48,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 495.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -711,26 +743,26 @@
 					"file": "app/views/menu/index.html.erb",
 					"settings":
 					{
-						"buffer_size": 2817,
+						"buffer_size": 2815,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1676,
-								1676
+								1679,
+								1679
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 36,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -753,7 +785,7 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 7,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -768,26 +800,26 @@
 					"file": "config/routes.rb",
 					"settings":
 					{
-						"buffer_size": 2910,
+						"buffer_size": 2965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								759,
-								759
+								785,
+								785
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 22,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 135.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -810,7 +842,7 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 20,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -833,6 +865,89 @@
 						"selection":
 						[
 							[
+								111,
+								111
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/models/t_menu.rb",
+					"settings":
+					{
+						"buffer_size": 121,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								93,
+								93
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/assets/javascripts/menu/script.js.erb",
+					"settings":
+					{
+						"buffer_size": 3082,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1706,
+								1706
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 360.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": ".gitignore",
+					"settings":
+					{
+						"buffer_size": 441,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
 								0,
 								0
 							]
@@ -840,7 +955,7 @@
 						"settings":
 						{
 							"function_name_status_row": 0,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

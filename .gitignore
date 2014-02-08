@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 /.project
+
+#Ignore sublime project
+/*.sublime*
