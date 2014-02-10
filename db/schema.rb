@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131224071921) do
+ActiveRecord::Schema.define(:version => 20140209015916) do
 
   create_table "t_itsars", :force => true do |t|
     t.string   "gname",      :limit => 25,                  :null => false
@@ -31,6 +31,16 @@ ActiveRecord::Schema.define(:version => 20131224071921) do
   end
 
   add_index "t_menus", ["iduser"], :name => "iduser"
+
+  create_table "t_submenus", :force => true do |t|
+    t.integer  "idpmenu",                  :null => false
+    t.string   "menu_name",  :limit => 50, :null => false
+    t.string   "url",                      :null => false
+    t.string   "visible_to",               :null => false
+    t.integer  "iduser",                   :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "t_users", :force => true do |t|
     t.string   "nme",        :limit => 45,                   :null => false

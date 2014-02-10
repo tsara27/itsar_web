@@ -1,0 +1,67 @@
+<nav class="navbar" role="navigation">
+	<div class="navbar-header"><a class="navbar-brand" href="#">Form Isian<%= @nama_form %></a></div>
+</nav>
+<% if flash[:notice_success] %>
+	<div class="alert alert-success"><%= flash[:notice_success] %></div>
+<% end %>
+<% if flash[:notice_failed] %>
+	<div class="alert alert-danger"><%= flash[:notice_failed] %></div>
+<% end %>
+<%= form_tag({:action => @aksi_form},:class => "form-horizontal", :role => "form", :id => "form_isian") do %>
+  <!-- Isian -->
+  <div class="form-group">
+    <label for="name_menu" class="col-lg-2 control-label">Nama Menu</label>
+    <div class="col-lg-4">
+    	<%= 
+    	 	text_field_tag(:name_menu,@aa,:class => "form-control", :placeholder => "Menu", :id => "name_menu") 
+    	%>
+      <span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf, underscore, dan dash.</span>
+    </div>
+    <div class="col-lg-4" id="v_name_menu"></div>
+  </div>
+  <!-- Isian -->
+  <div class="form-group">
+    <label for="menu_url" class="col-lg-2 control-label">Alamat URL</label>
+    <div class="col-lg-4">
+      <%= 
+        text_field_tag(:menu_url,@bb,:class => "form-control", :placeholder => "/konf_menu", :id => "menu_url") 
+      %>
+      <span class="help-block keterangan">Maksimal 60 karakter dan hanya menggunakan karakter huruf, underscore, dan dash.</span>
+    </div>
+    <div class="col-lg-4" id="v_menu_url"></div>
+  </div>
+  <!-- Isian -->
+  <div class="form-group">
+    <label for="role_id" class="col-lg-2 control-label">Tipe Pengguna</label>
+    <div class="col-lg-4">
+      <%= select_tag(:role_id, options_from_collection_for_select(@records_role, :id, :utypename, @cc),:class => "form-control",:multiple => true) %>
+      <span class="help-block keterangan">Harus memilih setidaknya satu tipe pengguna.</span>
+    </div>
+    <div class="col-lg-4" id="v_role_id"></div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10 btn-group">
+      <button type="button" class="btn btn-default" id="clear_form">Bersihkan</button>
+      <button type="submit" class="btn btn-default" id="submit_btn" value=<%= @nama_btn %>><%= @nama_btn %></button>
+    </div>
+  </div>	
+<% end %>
+<nav class="navbar" role="navigation">
+	<div class="navbar-header">
+    <a class="navbar-brand" href="#">Tabel Menu</a>
+  </div>
+  
+  <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
+  <div class="form-group">
+        <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari nama menu...") %>
+      </div>
+        <button type="submit" class="btn btn-default">Cari</button>
+    <% end %>
+</nav>
+
+
+<div id="table_itsar">
+	<%= render partial: 'tabel' %>
+</div>
+
+<%= javascript_include_tag "menu/script.js.erb" %>

@@ -1,0 +1,2 @@
+class SubMenuController < ApplicationController
+end

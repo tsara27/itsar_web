@@ -379,7 +379,15 @@
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 441,
+				"buffer_size": 477,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Data/Software/App/Aptana_Studio_3/full_uninstall.txt",
+			"settings":
+			{
+				"buffer_size": 321,
 				"line_ending": "Unix"
 			}
 		}
@@ -678,7 +686,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 10,
 			"sheets":
 			[
 				{
@@ -941,7 +949,34 @@
 					"file": ".gitignore",
 					"settings":
 					{
-						"buffer_size": 441,
+						"buffer_size": 477,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								469,
+								469
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Data/Software/App/Aptana_Studio_3/full_uninstall.txt",
+					"settings":
+					{
+						"buffer_size": 321,
 						"regions":
 						{
 						},
