@@ -49,7 +49,7 @@ class SubMenuController < ApplicationController
 		@idmenu = params[:id]
 		nama_menu = TMenu.find(@idmenu)
 		@nama_form = " - Perbaharui Sub Menu Dari "+nama_menu.menu_name
-		@aksi_form = params[:idsub] + "/update_submenu"
+		@aksi_form = @idmenu+"/"+params[:idsub]+"/update_submenu"
 		gen_visible = TMenu.find(params[:id])
 		array_visito = gen_visible.visible_to.split(',')
 		visito = array_visito.join(',')
@@ -64,9 +64,18 @@ class SubMenuController < ApplicationController
 	end
 
 	def update_submenu
-		
+		menu_sub = TSubmenu.find(params[:idsub])
+		menu_sub.menu_name = params[:name_menu]
+		menu_sub.url = params[:menu_url]
+		menu_sub.visible_to = ','+params[:role_id].join(',')+','
+		menu_sub.save
+
+		redirect_to "/"+params[:id]+"/add-sub-menu/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
 	end
 
 	def delete_sub
+		menu_sub = TSubmenu.find(params[:idsub])
+		menu_sub.destroy
+		redirect_to "/"+params[:id]+"/add-sub-menu/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
 	end
 end
