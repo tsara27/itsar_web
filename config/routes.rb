@@ -25,6 +25,9 @@ ItsarWeb::Application.routes.draw do
 
   #SUB MENU ROUTES
   match '/:id/add-sub-menu/' => 'sub_menu#index'
+  match '/:id/:idsub/edit-sub-menu/' => 'sub_menu#edit_sub'
+  match '/:id/:idsub/delete-sub-menu/' => 'sub_menu#delete_sub'
+
 
   #LOGIN ROUTES
   match '/sign_in/' => 'login#signin'

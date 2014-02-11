@@ -1,0 +1,91 @@
+$(document).ready(function(){
+	urlnya = $(location).attr('href').split('?');
+	atr_isian = $('#form_isian').attr('action');
+	ini_url = (atr_isian + "?" + urlnya[1]);
+    val_submit = $('#submit_btn').val();
+	$('#form_isian').attr('action', ini_url);
+	$('#submit_btn').attr('disabled','disabled');
+    if(val_submit == "Perbaharui")
+    {
+        menuname_validation = 1;
+        urlmenu_validation = 1;
+    }
+    else if(val_submit == "Simpan")
+    {
+        menuname_validation = 0;
+        urlmenu_validation = 0;
+    }
+
+    //Validasi nama menu
+	$('#name_menu').bind("keyup keypress change",function(){
+      nms = /^([a-z ])+$/i.test($('#name_menu').val());
+         if(!nms)
+        {
+            menuname_validation = 0;
+            $("#v_name_menu").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, underscore, dan dash.</div>').hide().fadeIn(300);
+        }
+        else if($('#name_menu').val().length < 3 || $('#name_menu').val().length > 45)
+        {
+            menuname_validation = 0;
+            $("#v_name_menu").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 45 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            menuname_validation = 1;
+            $("#v_name_menu").html('');
+        }
+    });
+
+    //Validasi url menu
+    $('#menu_url').bind("keyup keypress change",function(){
+        nms = /^([a-z0-9_/#])+$/i.test($('#menu_url').val());
+        if(!nms)
+        {
+            urlmenu_validation = 0;
+            $("#v_menu_url").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dan underscore.</div>').hide().fadeIn(300);
+        }
+        else if($('#menu_url').val().length < 1 || $('#menu_url').val().length > 25)
+        {
+            urlmenu_validation = 0;
+            $("#v_menu_url").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            urlmenu_validation = 1;
+            $("#v_menu_url").html('');
+           
+        }
+    });
+
+    $('#form_isian').change(function(){
+        // console.log(menuname_validation+","+urlmenu_validation+","+password_validation+","+email_address_validation+","+val_submit); 
+        if(menuname_validation == 1 && urlmenu_validation)
+        {
+            $('#submit_btn').removeAttr('disabled','disabled');
+        }
+        else if(menuname_validation == 0 || urlmenu_validation == 0)
+        {
+            $('#submit_btn').attr('disabled','disabled');
+        }
+    });
+
+
+    	// $('#submit_btn').removeAttr('disabled','disabled');
+// $("#ajax_paginate").find("a").each(function(){
+// 	var linkElement = $(this);
+// 	var paginationURL = linkElement.attr("href");
+// 	linkElement.attr({"url": paginationURL,"href":"#"});
+// 	linkElement.click(function(){
+// 		$("#post_id").html('<div align="center"><br/><img src="/assets/images/loading.gif"/></div>')
+// 		$("#post_id").load($(this).attr('url'));
+// 		return false;
+// 	}); 
+// 	});
+
+ $('#clear_form').click(function(){
+         $("input").val('');
+     });
+
+});
+
+

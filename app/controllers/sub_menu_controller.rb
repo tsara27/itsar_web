@@ -3,9 +3,10 @@ class SubMenuController < ApplicationController
 	layout "admin_layout"
 	def index
 		@nama_btn = "Simpan"
-		@nama_form = " - Buat Sub Menu"
 		@aksi_form = "save_sub"
 		@idmenu = params[:id]
+		nama_menu = TMenu.find(@idmenu)
+		@nama_form = " - Buat Sub Menu "+nama_menu.menu_name
 		gen_visible = TMenu.find(params[:id])
 		array_visito = gen_visible.visible_to.split(',')
 		visito = array_visito.join(',')
@@ -23,6 +24,35 @@ class SubMenuController < ApplicationController
 	end
 
 	def save_sub
+		@aa = params[:menu_id]
+		@a = params[:name_menu]
+		@b = params[:menu_url]
+		@d = params[:role_id].join(',')
+		@c = session[:cur_id]
+		unless @a && @b.blank?
+			if @c.blank?
+				@simpen = TSubmenu.create({:idpmenu => @aa,:menu_name => @a, :url => @b, :iduser => "", :visible_to =>","+@d+","})
+			else
+				@simpen = TSubmenu.create({:idpmenu => @aa,:menu_name => @a, :url => @b, :iduser => @c, :visible_to =>","+@d+","})
+			end
+			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		end
+
+		if params[:page]
+			redirect_to "/"+@aa+"/add-sub-menu?page="+params[:page]
+		else
+			redirect_to "/"+@aa+"/add-sub-menu/"
+		end
+	end
+
+	def edit_sub
 		
+	end
+
+	def update_sub
+		
+	end
+
+	def delete_sub
 	end
 end

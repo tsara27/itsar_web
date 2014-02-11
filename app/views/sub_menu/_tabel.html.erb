@@ -22,9 +22,8 @@
 		    <td><%= row.nme %></td>
 		    <td><%= row.created_at %></td>
 		    <td><%= row.updated_at %></td>
-		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + row.id.to_s + "/edit_menu" %></td>			
-			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + row.id.to_s + "/delete_menu", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
-			<td class="lable-icon" title="Sub Menu"><%= link_to "d","/" + row.id.to_s + "/add_sub_menu" %></td>
+		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/"+@idmenu+"/" + row.id.to_s + "/edit-sub-menu" %></td>			
+			<td class="lable-icon" title="Hapus"><%= link_to "t","/"+@idmenu+"/" + row.id.to_s + "/delete-sub-menu", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
 		  </tr>
 		<% end %>
 	</tbody>
