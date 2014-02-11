@@ -20,7 +20,7 @@ class UserController < ApplicationController
 	def save_user
 		@a = params[:fullname]
 		@b = params[:name_user]
-		@c = params[:password_user]
+		@c = Base64.encode64(params[:password_user])
 		@d = params[:email_address]
 		@e = params[:organisasi]
 		@f = params[:role_type]
@@ -58,7 +58,7 @@ class UserController < ApplicationController
 		@dd = userdata.gndr.to_s
 		@ee = userdata.usrtype
 		@ff = userdata.itsar_id
-		@gg = userdata.passwd
+		@gg = Base64.decode64(userdata.passwd)
 		@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		respond_to do |format|
 	      format.html { render "index"}
@@ -90,7 +90,7 @@ class UserController < ApplicationController
 		iduser.gndr = params[:gender]
 		iduser.usrtype = params[:role_type]
 		iduser.itsar_id = params[:organisasi]
-		iduser.passwd = params[:password_user]
+		iduser.passwd = Base64.encode64(params[:password_user])
 		iduser.save
 		redirect_to "/user/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
 	end
