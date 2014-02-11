@@ -24,7 +24,7 @@
 		    <td><%= row.updated_at %></td>
 		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + row.id.to_s + "/edit_menu" %></td>			
 			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + row.id.to_s + "/delete_menu", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
-			<td class="lable-icon" title="Sub Menu"><%= link_to "d","/" + row.id.to_s + "/add_sub_menu" %></td>
+			<td class="lable-icon" title="Sub Menu"><%= link_to "d","/" + row.id.to_s + "/add-sub-menu/" %></td>
 		  </tr>
 		<% end %>
 	</tbody>

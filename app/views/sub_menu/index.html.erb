@@ -12,6 +12,7 @@
   <div class="form-group">
     <label for="name_menu" class="col-lg-2 control-label">Nama Menu</label>
     <div class="col-lg-4">
+      <%= hidden_field_tag 'menu_id', @idmenu %>
     	<%= 
     	 	text_field_tag(:name_menu,@aa,:class => "form-control", :placeholder => "Menu", :id => "name_menu") 
     	%>

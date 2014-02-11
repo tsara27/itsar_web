@@ -23,6 +23,8 @@ ItsarWeb::Application.routes.draw do
   match '/:id/delete_menu' => 'menu#delete_menu'
   match '/menu/:id/update_menu' => 'menu#update_menu'
 
+  #SUB MENU ROUTES
+  match '/:id/add-sub-menu/' => 'sub_menu#index'
 
   #LOGIN ROUTES
   match '/sign_in/' => 'login#signin'
