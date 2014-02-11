@@ -11,7 +11,6 @@ class SubMenuController < ApplicationController
 		array_visito = gen_visible.visible_to.split(',')
 		visito = array_visito.join(',')
 		count_visito = array_visito.count
-		# visitob = visito.join(',')
 		@records_role = TUsertype.find_by_sql('SELECT id, utypename FROM t_usertypes WHERE id IN ('+visito[1..count_visito]+')')
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
@@ -46,10 +45,25 @@ class SubMenuController < ApplicationController
 	end
 
 	def edit_sub
-		
+		@nama_btn = "Perbaharui"
+		@idmenu = params[:id]
+		nama_menu = TMenu.find(@idmenu)
+		@nama_form = " - Perbaharui Sub Menu Dari "+nama_menu.menu_name
+		@aksi_form = params[:idsub] + "/update_submenu"
+		gen_visible = TMenu.find(params[:id])
+		array_visito = gen_visible.visible_to.split(',')
+		visito = array_visito.join(',')
+		count_visito = array_visito.count
+		@records_role = TUsertype.find_by_sql('SELECT id, utypename FROM t_usertypes WHERE id IN ('+visito[1..count_visito]+')')
+		submenu_dtl = TSubmenu.find(params[:idsub])
+		@aa = submenu_dtl.menu_name.to_s
+		@bb = submenu_dtl.url.to_s
+		@cc = submenu_dtl.visible_to.split(',')
+		@menu_query = TSubmenu.joins('LEFT JOIN t_users ON t_users.id = t_submenus.iduser').select("t_submenus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		render :index
 	end
 
-	def update_sub
+	def update_submenu
 		
 	end
 

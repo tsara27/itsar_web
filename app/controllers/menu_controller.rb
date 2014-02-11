@@ -49,7 +49,6 @@ class MenuController < ApplicationController
 		@cc = menu_dtl.visible_to.split(',')
 		@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		render :index
-
 	end
 
 	def search
