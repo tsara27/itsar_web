@@ -6,7 +6,7 @@ class LoginController < ApplicationController
 	def signin
 		username = params[:username].to_s
 		passwd	= Base64.encode64(params[:password].to_s)
-		query = TUser.find_by_sql("SELECT * FROM t_users WHERE usrnme = '"+username+"' AND passwd = '"+passwd+"'")
+		query = TUser.where(:usrnme => username, :passwd => passwd)
 		count_query = query.count
 		if count_query == 1
 			query.each do |row|

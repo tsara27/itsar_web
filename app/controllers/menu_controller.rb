@@ -10,9 +10,9 @@ class MenuController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -47,7 +47,7 @@ class MenuController < ApplicationController
 		@aa = menu_dtl.menu_name.to_s
 		@bb = menu_dtl.url.to_s
 		@cc = menu_dtl.visible_to.split(',')
-		@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		@menu_query = TMenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		render :index
 	end
 
@@ -60,9 +60,9 @@ class MenuController < ApplicationController
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@menu_query = TMenu.joins('LEFT JOIN t_users ON t_users.id = t_menus.iduser').select("t_menus.*, t_users.nme").where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TMenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

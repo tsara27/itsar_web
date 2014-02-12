@@ -340,50 +340,10 @@
 			}
 		},
 		{
-			"file": "app/views/sub_menu/index.html.erb",
+			"file": "app/views/layouts/sub_admin/_header.html.erb",
 			"settings":
 			{
-				"buffer_size": 2868,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/sub_menu/_tabel.html.erb",
-			"settings":
-			{
-				"buffer_size": 1065,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "db/schema.rb",
-			"settings":
-			{
-				"buffer_size": 3325,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/menu_controller.rb",
-			"settings":
-			{
-				"buffer_size": 3231,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/menu/_tabel.html.erb",
-			"settings":
-			{
-				"buffer_size": 1137,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/t_submenu.rb",
-			"settings":
-			{
-				"buffer_size": 134,
+				"buffer_size": 1255,
 				"line_ending": "Unix"
 			}
 		}
@@ -420,11 +380,15 @@
 	},
 	"file_history":
 	[
+		"/Workbook/Charity/itsar_web/app/models/t_submenu.rb",
+		"/Workbook/Charity/itsar_web/app/views/menu/_tabel.html.erb",
+		"/Workbook/Charity/itsar_web/app/controllers/menu_controller.rb",
+		"/Workbook/Charity/itsar_web/app/views/sub_menu/index.html.erb",
+		"/Workbook/Charity/itsar_web/db/schema.rb",
+		"/Workbook/Charity/itsar_web/app/views/sub_menu/_tabel.html.erb",
 		"/Workbook/Charity/itsar_web/app/models/t_menu.rb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/menu/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/views/menu/index.html.erb",
-		"/Workbook/Charity/itsar_web/app/views/menu/_tabel.html.erb",
-		"/Workbook/Charity/itsar_web/app/controllers/menu_controller.rb",
 		"/Workbook/Charity/itsar_web/app/controllers/login_controller.rb",
 		"/Workbook/Charity/itsar_web/app/controllers/user_controller.rb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/user/script.js.erb",
@@ -439,7 +403,6 @@
 		"/home/tsara27/Documents/w.csv",
 		"/Workbook/Indihealth/indihealth_posyandu/backend/modules/menu/controllers/menu.php",
 		"/Workbook/Indihealth/indihealth_posyandu/backend/modules/menu/views/form_page.php",
-		"/Workbook/Charity/itsar_web/db/schema.rb",
 		"/Workbook/Charity/itsar_web/app/models/t_user.rb",
 		"/Workbook/Indihealth/indihealth_posyandu/db/db_posyandu.sql",
 		"/Workbook/Indihealth/indihealth_posyandu/backend/models/menu_generate.php",
@@ -544,10 +507,7 @@
 		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/README.md",
 		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/LICENSE",
 		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/dist/css/bootstrap.css",
-		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/dist/css/bootstrap.min.css",
-		"/home/tsara27/.config/sublime-text-2/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/fancybox/jquery.fancybox.css",
-		"/Workbook/itsar_web/app/assets/stylesheets/admin_layout/metro.css"
+		"/Data/Document/Smart_Medicine/Website/Tool/bootstrap-3.0.0-wip/dist/css/bootstrap.min.css"
 	],
 	"find":
 	{
@@ -690,6 +650,7 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -781,166 +742,26 @@
 				},
 				{
 					"buffer": 3,
-					"file": "app/views/sub_menu/index.html.erb",
+					"file": "app/views/layouts/sub_admin/_header.html.erb",
 					"settings":
 					{
-						"buffer_size": 2868,
+						"buffer_size": 1255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2846,
-								2846
+								867,
+								867
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 67,
+							"function_name_status_row": 18,
 							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 675.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/sub_menu/_tabel.html.erb",
-					"settings":
-					{
-						"buffer_size": 1065,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								834,
-								834
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 25,
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "db/schema.rb",
-					"settings":
-					{
-						"buffer_size": 3325,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1817,
-								1817
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 36,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 225.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/controllers/menu_controller.rb",
-					"settings":
-					{
-						"buffer_size": 3231,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3221,
-								3221
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 80,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 855.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/views/menu/_tabel.html.erb",
-					"settings":
-					{
-						"buffer_size": 1137,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 0,
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/models/t_submenu.rb",
-					"settings":
-					{
-						"buffer_size": 134,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								64,
-								64
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 1,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
