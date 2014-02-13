@@ -16,9 +16,9 @@ class SubMenuController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TSubmenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.where(:t_menu_id => @idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@menu_query = TSubmenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.where(:t_menu_id => @idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -59,7 +59,7 @@ class SubMenuController < ApplicationController
 		@aa = submenu_dtl.menu_name
 		@bb = submenu_dtl.url.to_s
 		@cc = submenu_dtl.visible_to.split(',')
-		@menu_query = TSubmenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		@menu_query = TSubmenu.where(:t_menu_id => @idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		render :index
 	end
 
@@ -95,9 +95,9 @@ class SubMenuController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TSubmenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.where("menu_name LIKE ? AND t_menu_id = ?","%"+@a+"%",@idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@menu_query = TSubmenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.where("menu_name LIKE ? AND t_menu_id = ?","%"+@a+"%",@idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

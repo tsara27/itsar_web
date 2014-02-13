@@ -1,14 +1,20 @@
 class ApplicationController < ActionController::Base
   	protect_from_forgery
-	helper_method :define_menus 
+	# after_filter :define_sub_menus,:only => :define_menus
+	helper_method :define_menus
+
 	def check_login
 		unless session[:login_status] == "true"
-		redirect_to root_url
+			redirect_to root_url
+		end
 	end
 
 	def define_menus
-		@query_menu = TMenu.find_by_sql("SELECT menu_name, url FROM t_menus WHERE visible_to LIKE '%,"+session[:cur_tipe].to_s+",%'")
+		@query_menu = TMenu.where("visible_to LIKE '%,"+session[:cur_tipe].to_s+",%'")
 	end
 
-	end
+	# def define_sub_menus
+		
+	# end
+
 end
