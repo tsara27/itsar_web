@@ -9,9 +9,9 @@ class ItsarGroupController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -21,9 +21,9 @@ class ItsarGroupController < ApplicationController
 		@c = session[:cur_id]
 		unless @a && @b.blank?
 			if @c.blank?
-				@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => ""})
+				@simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => ""})
 			else
-				@simpen = TItsar.create({:gname => @a, :schname => @b, :iduser => @c})
+				@simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c})
 			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
@@ -43,10 +43,8 @@ class ItsarGroupController < ApplicationController
 		ugroupf = TItsar.find(params[:id])
 		@aa = ugroupf.gname.to_s
 		@bb = ugroupf.schname.to_s
-		@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		respond_to do |format|
-	      format.html { render "index"}
-	    end
+		@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		render :index
 	end
 
 	def search
@@ -57,9 +55,9 @@ class ItsarGroupController < ApplicationController
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@itsar_grp = TItsar.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@itsar_grp = TItsar.joins('LEFT JOIN t_users ON t_users.id = t_itsars.iduser').select("t_itsars.*,t_users.nme").where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@itsar_grp = TItsar.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

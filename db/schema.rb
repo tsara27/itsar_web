@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(:version => 20140212134251) do
   add_index "t_menus", ["t_user_id"], :name => "iduser"
 
   create_table "t_submenus", :force => true do |t|
-    t.integer  "idpmenu",                  :null => false
+    t.integer  "t_menu_id",                :null => false
     t.string   "menu_name",  :limit => 50, :null => false
     t.string   "url",                      :null => false
     t.string   "visible_to",               :null => false
@@ -43,16 +43,16 @@ ActiveRecord::Schema.define(:version => 20140212134251) do
   end
 
   create_table "t_users", :force => true do |t|
-    t.string   "nme",        :limit => 45,                   :null => false
-    t.string   "usrnme",     :limit => 25,                   :null => false
-    t.string   "passwd",     :limit => 100,                  :null => false
-    t.string   "mail",       :limit => 25,                   :null => false
-    t.integer  "gndr",       :limit => 1,                    :null => false
-    t.integer  "usrtype",    :limit => 1,                    :null => false
-    t.integer  "itsar_id",   :limit => 1,                    :null => false
-    t.datetime "created_at",                                 :null => false
-    t.datetime "updated_at",                                 :null => false
-    t.string   "iduser",                    :default => "0", :null => false
+    t.string   "nme",           :limit => 45,  :null => false
+    t.string   "usrnme",        :limit => 25,  :null => false
+    t.string   "passwd",        :limit => 100, :null => false
+    t.string   "mail",          :limit => 25,  :null => false
+    t.integer  "gndr",          :limit => 1,   :null => false
+    t.integer  "t_usertype_id", :limit => 1,   :null => false
+    t.integer  "t_itsar_id",    :limit => 1,   :null => false
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
+    t.integer  "t_user_id"
   end
 
   create_table "t_usertypes", :force => true do |t|

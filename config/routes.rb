@@ -28,6 +28,7 @@ ItsarWeb::Application.routes.draw do
   match '/:id/:idsub/edit-sub-menu/' => 'sub_menu#edit_sub'
   match '/:id/:idsub/delete-sub-menu/' => 'sub_menu#delete_sub'
   match '/sub_menu/:id/:idsub/update_submenu' => 'sub_menu#update_submenu'
+  match '/sub_menu/:id/search_submenu/' => 'sub_menu#search'
 
   #LOGIN ROUTES
   match '/sign_in/' => 'login#signin'
@@ -37,7 +38,7 @@ ItsarWeb::Application.routes.draw do
   match '/pengguna/cek' => 'user#callback_username'
   match '/user/:id/update_user' => 'user#update_user'
   match '/:id/delete_user' => 'user#delete_user'
-  match '/search_itsargroup' => 'user#search'
+  match '/search_user' => 'user#search'
   match '/:id/edit_user' => 'user#edit_user'
 
 

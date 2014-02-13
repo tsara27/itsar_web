@@ -11,9 +11,9 @@ class UserController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -29,10 +29,10 @@ class UserController < ApplicationController
 
 		unless @a && @b && @c && @d && @e && @f.blank?
 			if @h.blank?
-				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e, :iduser => "0"})
+				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => "0"})
 
 			else
-				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :usrtype => @f, :itsar_id => @e, :iduser => @h})
+				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => @h})
 			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
@@ -56,13 +56,11 @@ class UserController < ApplicationController
 		@bb = userdata.usrnme.to_s
 		@cc = userdata.mail.to_s
 		@dd = userdata.gndr.to_s
-		@ee = userdata.usrtype
-		@ff = userdata.itsar_id
+		@ee = userdata.t_usertype_id
+		@ff = userdata.t_itsar_id
 		@gg = Base64.decode64(userdata.passwd)
-		@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		respond_to do |format|
-	      format.html { render "index"}
-	    end
+		@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		render :index
 	end
 
 	def search
@@ -75,9 +73,9 @@ class UserController < ApplicationController
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@usr_table = TUser.joins('JOIN t_itsars ON t_itsars.id = t_users.itsar_id','JOIN t_usertypes ON t_usertypes.id = t_users.usrtype').select("t_users.*,t_itsars.gname, t_usertypes.utypename").where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr_table = TUser.where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end
@@ -88,8 +86,8 @@ class UserController < ApplicationController
 		iduser.usrnme = params[:name_user]
 		iduser.mail = params[:email_address]
 		iduser.gndr = params[:gender]
-		iduser.usrtype = params[:role_type]
-		iduser.itsar_id = params[:organisasi]
+		iduser.t_usertype_id = params[:role_type]
+		iduser.t_itsar_id = params[:organisasi]
 		iduser.passwd = Base64.encode64(params[:password_user])
 		iduser.save
 		redirect_to "/user/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe

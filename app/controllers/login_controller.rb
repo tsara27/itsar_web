@@ -12,7 +12,7 @@ class LoginController < ApplicationController
 			query.each do |row|
 				@iduser = row.id
 				@nama = row.nme.to_s
-				@tipe_user = row.usrtype	
+				@tipe_user = row.t_usertype_id	
 			end
 			session[:cur_id] = @iduser
 			session[:cur_nama] = @nama

@@ -29,11 +29,11 @@
 		    		end
 
 		    %></td>
-		    <td><%= row.utypename %></td>
-		    <td><%= row.gname %></td>
-		    <td><%= if row.iduser != "0"
-		    	 		a =  TUser.find(row.iduser)
-		    	 		row.iduser = a.usrnme.to_s
+		    <td><%= row.t_usertype.utypename %></td>
+		    <td><%= row.t_itsar.gname %></td>
+		    <td><%= if row.t_user_id?
+		    	 		a =  TUser.find(row.t_user_id)
+		    	 		row.t_user_id = a.nme.to_s
 		    	 	end
 		    	 %></td>
 		    <td><%= row.created_at %></td>

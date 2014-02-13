@@ -19,7 +19,7 @@
 		    <td><%= row.menu_name %></td>
 		    <td><%= row.url %></td>
 		    <td><%= row.visible_to %></td>
-		    <td><%= row.nme %></td>
+		    <td><%= row.t_user.nme %></td>
 		    <td><%= row.created_at %></td>
 		    <td><%= row.updated_at %></td>
 		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/"+@idmenu+"/" + row.id.to_s + "/edit-sub-menu" %></td>			

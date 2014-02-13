@@ -14,7 +14,7 @@
 		  <tr>
 		  	<td><%= (@hhh.to_i + hh + 1) %></td>
 		    <td><%= usertype.utypename %></td>
-		    <td><%= usertype.nme %></td>
+		    <td><%= usertype.t_user.nme %></td>
 		    <td><%= usertype.created_at %></td>
 		    <td><%= usertype.updated_at %></td>
 		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + usertype.id.to_s + "/edit_usertype" %></td>			

@@ -52,7 +52,7 @@
     <a class="navbar-brand" href="#">Tabel Menu</a>
   </div>
   
-  <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
+  <%= form_tag({:action => @idmenu+"/search_submenu/"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
   <div class="form-group">
         <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari nama menu...") %>
       </div>

@@ -23,9 +23,9 @@ class MenuController < ApplicationController
 		@c = session[:cur_id]
 		unless @a && @b.blank?
 			if @c.blank?
-				@simpen = TMenu.create({:menu_name => @a, :url => @b, :iduser => "", :visible_to =>","+@d+","})
+				@simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => "", :visible_to =>","+@d+","})
 			else
-				@simpen = TMenu.create({:menu_name => @a, :url => @b, :iduser => @c, :visible_to =>","+@d+","})
+				@simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
 			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end

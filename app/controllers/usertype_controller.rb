@@ -9,9 +9,9 @@ class UsertypeController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr = TUsertype.joins('LEFT JOIN t_users ON t_users.id = t_usertypes.iduser').select("t_usertypes.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@usr = TUsertype.joins('LEFT JOIN t_users ON t_users.id = t_usertypes.iduser').select("t_usertypes.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -20,9 +20,9 @@ class UsertypeController < ApplicationController
 		@b = session[:cur_id]
 		unless @a.blank?
 			unless @b.blank?
-			 	@simpen = TUsertype.create({:utypename => @a,:iduser => @b})
+			 	@simpen = TUsertype.create({:utypename => @a,:t_user_id => @b})
 			else
-				@simpen = TUsertype.create({:utypename => @a,:iduser => "0"})
+				@simpen = TUsertype.create({:utypename => @a,:t_user_id => "0"})
 			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
@@ -43,9 +43,9 @@ class UsertypeController < ApplicationController
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr = TUsertype.joins('LEFT JOIN t_users ON t_users.id = t_usertypes.iduser').select("t_usertypes.*,t_users.nme").where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr = TUsertype.where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@usr = TUsertype.joins('LEFT JOIN t_users ON t_users.id = t_usertypes.iduser').select("t_usertypes.*,t_users.nme").where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@usr = TUsertype.where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end
@@ -57,11 +57,8 @@ class UsertypeController < ApplicationController
 		@aksi_form = params[:id] + "/update_usertype"
 		utypef = TUsertype.find(params[:id])
 		@aa = utypef.utypename.to_s
-		@usr = TUsertype.joins('LEFT JOIN t_users ON t_users.id = t_usertypes.iduser').select("t_usertypes.*,t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		respond_to do |format|
-	      format.html { render "index"} 
-	      format.json { render json: @usr }
-	    end
+		@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		render :index
 	end
 
 	def update_usertype

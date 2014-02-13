@@ -11,14 +11,14 @@ class SubMenuController < ApplicationController
 		array_visito = gen_visible.visible_to.split(',')
 		visito = array_visito.join(',')
 		count_visito = array_visito.count
-		@records_role = TUsertype.find_by_sql('SELECT id, utypename FROM t_usertypes WHERE id IN ('+visito[1..count_visito]+')')
+		@records_role = TUsertype.find([visito[1..count_visito]])
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
 			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TSubmenu.joins('LEFT JOIN t_users ON t_users.id = t_submenus.iduser').select("t_submenus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		else
-			@menu_query = TSubmenu.joins('LEFT JOIN t_users ON t_users.id = t_submenus.iduser').select("t_submenus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -30,9 +30,9 @@ class SubMenuController < ApplicationController
 		@c = session[:cur_id]
 		unless @a && @b.blank?
 			if @c.blank?
-				@simpen = TSubmenu.create({:idpmenu => @aa,:menu_name => @a, :url => @b, :iduser => "", :visible_to =>","+@d+","})
+				@simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => "", :visible_to =>","+@d+","})
 			else
-				@simpen = TSubmenu.create({:idpmenu => @aa,:menu_name => @a, :url => @b, :iduser => @c, :visible_to =>","+@d+","})
+				@simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
 			end
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
@@ -54,12 +54,12 @@ class SubMenuController < ApplicationController
 		array_visito = gen_visible.visible_to.split(',')
 		visito = array_visito.join(',')
 		count_visito = array_visito.count
-		@records_role = TUsertype.find_by_sql('SELECT id, utypename FROM t_usertypes WHERE id IN ('+visito[1..count_visito]+')')
+		@records_role = TUsertype.find([visito[1..count_visito]])
 		submenu_dtl = TSubmenu.find(params[:idsub])
-		@aa = submenu_dtl.menu_name.to_s
+		@aa = submenu_dtl.menu_name
 		@bb = submenu_dtl.url.to_s
 		@cc = submenu_dtl.visible_to.split(',')
-		@menu_query = TSubmenu.joins('LEFT JOIN t_users ON t_users.id = t_submenus.iduser').select("t_submenus.*, t_users.nme").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		@menu_query = TSubmenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		render :index
 	end
 
@@ -77,5 +77,28 @@ class SubMenuController < ApplicationController
 		menu_sub = TSubmenu.find(params[:idsub])
 		menu_sub.destroy
 		redirect_to "/"+params[:id]+"/add-sub-menu/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
+	end
+
+	def search
+		@nama_btn = "Simpan"
+		@aksi_form = "save_sub"
+		@idmenu = params[:id]
+		nama_menu = TMenu.find(@idmenu)
+		@nama_form = " - Buat Sub Menu "+nama_menu.menu_name
+		gen_visible = TMenu.find(params[:id])
+		array_visito = gen_visible.visible_to.split(',')
+		visito = array_visito.join(',')
+		count_visito = array_visito.count
+		@records_role = TUsertype.find([visito[1..count_visito]])
+		@a = params[:search_form]
+		if params[:page].to_i > 1
+			# @jlm_offset = 15 * params[:page].to_i
+			@hhh = 15 * params[:page].to_i - 15
+			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
+			@menu_query = TSubmenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		else
+			@menu_query = TSubmenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		end
+		render :index
 	end
 end
