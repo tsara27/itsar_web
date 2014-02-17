@@ -15,9 +15,9 @@ $(document).ready(function(){
 
 
 
-	$('#name_usertype').keyup(function(){
-      nms = /^([-a-z ])+$/i.test($('#name_usertype').val());
-         if(!nms)
+	$('#name_usertype').bind("keyup keypress change",function(){
+        nms = /^([-a-z ])+$/i.test($('#name_usertype').val());
+        if(!nms)
         {
             nmsf = 0;
             $("#v_name_usertype").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
@@ -29,8 +29,17 @@ $(document).ready(function(){
         }
         else if(nms)
         {
-            nmsf = 1;
-            $("#v_name_usertype").html('');
+            $.post(alamat_default+"usertype/callback_typename/",{name_usertype : $('#name_usertype').val()},function(msg){
+            if(msg != 0)
+            {
+                nmsf = 0;
+                $("#v_name_usertype").html('<div class="alert alert-danger">Nama tidak dapat digunakan.</div>');
+            }
+            else
+            {
+                nmsf = 1;
+                $("#v_name_usertype").html('<div class="alert alert-success">Nama bisa digunakan.</div>');   
+            }});
         }
     });
 

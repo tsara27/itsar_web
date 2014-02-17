@@ -1,0 +1,2 @@
+class AsalController < ApplicationController
+end

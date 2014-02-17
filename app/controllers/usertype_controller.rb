@@ -16,7 +16,7 @@ class UsertypeController < ApplicationController
 	end
 
 	def save_usertype
-		@a = params[:name_usertype]
+		@a = params[:name_usertype].titleize
 		@b = session[:cur_id]
 		unless @a.blank?
 			unless @b.blank?
@@ -63,7 +63,7 @@ class UsertypeController < ApplicationController
 
 	def update_usertype
 		idperson = TUsertype.find(params[:id])
-		idperson.utypename = params[:name_usertype]
+		idperson.utypename = params[:name_usertype].titleize
 		idperson.save
 
 		redirect_to "/usertype/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
@@ -73,5 +73,10 @@ class UsertypeController < ApplicationController
 		idperson = TUsertype.find(params[:id])
 		idperson.destroy
 		redirect_to "/usertype/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
+	end
+
+	def callback_typename
+		@nama_tipe = TUsertype.where("utypename = ?", params[:name_usertype].titleize).count
+		render text: @nama_tipe
 	end
 end

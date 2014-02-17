@@ -10,11 +10,16 @@ class ApplicationController < ActionController::Base
 	end
 
 	def define_menus
-		@query_menu = TMenu.where("visible_to LIKE '%,"+session[:cur_tipe].to_s+",%'")
+		if session[:login_status] == "true"
+			@query_menu = TMenu.where("visible_to LIKE '%,"+session[:cur_tipe].to_s+",%'")
+		else
+			get_public = TUsertype.where(:utypename => "Public")
+			get_public.each do |row|
+				@idpublic = row.id
+			end
+			@query_menu = TMenu.where("visible_to LIKE '%,"+@idpublic.to_s+",%'")
+		end
 	end
 
-	# def define_sub_menus
-		
-	# end
 
 end

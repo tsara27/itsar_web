@@ -1,0 +1,19 @@
+
+@font-face{
+    src:url('pictos/pictos-regular-webfont.ttf') format("truetype"),
+        url('pictos-regular-webfont.otf') format("opentype"),
+        url('pictos-regular-webfont.svg') format("svg");
+    font-family:icon;
+}
+
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('opensans/OpenSans-Regular-webfont.eot');
+    src: url('opensans/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('opensans/OpenSans-Regular-webfont.woff') format('woff'),
+         url('opensans/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('opensans/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -15,7 +15,8 @@ ItsarWeb::Application.routes.draw do
   #resources :itsar_group
 
   #HOME ROUTES
-  match '/home/' => 'home#index'
+  match '/home/public/' => 'home#index'
+  match '/admin_home/' => 'home_admin#index'
  
   #MENU ROUTES
   match '/menu_cfg/' => 'menu#index'
@@ -91,7 +92,7 @@ ItsarWeb::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'login#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 

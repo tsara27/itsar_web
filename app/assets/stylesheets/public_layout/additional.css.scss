@@ -1,0 +1,53 @@
+body{
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background-color: #ffc119;
+	font-family: 'open_sansregular';
+}
+#logo_header_itsar
+{
+	margin-top:11px;
+}
+.navigasi
+{
+	background: #1f1f1f !important;
+	font-family: 'open_sansregular';
+	li a:hover{
+		color: #e2e2e2;
+		background-color: #444444;
+	}
+
+	li a.dropdown-toggle:focus{
+		background: transparent;
+		}
+}
+
+.lable-icon
+{
+	font-family: icon;
+	text-align: center;
+	font-size: 22px;
+}
+
+.tabelku
+{
+	thead{
+		background: #ededed;
+	}
+	
+}
+
+.keterangan
+{
+	font-size: 12px;
+}
+
+.navbar-fixed-top
+{
+	border-width: 0 0 0px;
+}
+
+.nav>li>a 
+{
+	color: whitesmoke
+}

@@ -63,9 +63,12 @@ $(document).ready(function(){
             {
                 name_user_validation = 0;
                 $("#v_name_user").html('<div class="alert alert-danger">Username tidak dapat digunakan.</div>');
+            }
+            else
+            {
+                name_user_validation = 1;
+                $("#v_name_user").html('<div class="alert alert-success">Username bisa digunakan.</div>');
             }});
-            name_user_validation = 1;
-            $("#v_name_user").html('<div class="alert alert-success">Username bisa digunakan.</div>');
            
         }
     });

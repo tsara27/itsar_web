@@ -18,14 +18,14 @@ class LoginController < ApplicationController
 			session[:cur_nama] = @nama
 			session[:cur_tipe] = @tipe_user
 			session[:login_status] = "true"
-			redirect_to "/home"
+			redirect_to "/admin_home/"
 		else
-			redirect_to root_url
+			redirect_to "/login"
 		end
 	end
 
 	def signout
 		reset_session
-		redirect_to root_url
+		redirect_to "/login"
 	end
 end

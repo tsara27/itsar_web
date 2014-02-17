@@ -1,0 +1,2 @@
+module AsalHelper
+end

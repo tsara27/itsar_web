@@ -13,10 +13,7 @@
 
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Beranda","/admin_home/" %></li>
-            <% if session[:cur_tipe] == 1 %>
-              <li><%= link_to "Konfigurasi Menu","/menu_cfg/" %></li>
-            <% end %>
+            <li><%= link_to "Beranda","/home/public/" %></li>
             <% define_menus.each do |row|
                   sub_stat = TSubmenu.where(:t_menu_id => row.id).count
                   if sub_stat == 0 %>
