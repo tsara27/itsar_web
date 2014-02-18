@@ -22,10 +22,10 @@ $(document).ready(function(){
             nmsf = 0;
             $("#v_name_usertype").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
         }
-        else if($('#name_usertype').val().length < 3 || $('#name_usertype').val().length > 30)
+        else if($('#name_usertype').val().length < 3 || $('#name_usertype').val().length > 25)
         {
             nmsf = 0;
-            $("#v_name_usertype").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 30 karakter.</div> ');
+            $("#v_name_usertype").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
         }
         else if(nms)
         {

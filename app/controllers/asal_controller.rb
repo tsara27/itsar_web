@@ -1,2 +1,0 @@
-class AsalController < ApplicationController
-end

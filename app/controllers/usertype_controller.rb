@@ -18,13 +18,11 @@ class UsertypeController < ApplicationController
 	def save_usertype
 		@a = params[:name_usertype].titleize
 		@b = session[:cur_id]
-		unless @a.blank?
-			unless @b.blank?
-			 	@simpen = TUsertype.create({:utypename => @a,:t_user_id => @b})
-			else
-				@simpen = TUsertype.create({:utypename => @a,:t_user_id => "0"})
-			end
+		@simpen = TUsertype.create({:utypename => @a,:t_user_id => @b})
+		if @simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		else
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
 		end
 
 		if params[:page]
@@ -64,9 +62,13 @@ class UsertypeController < ApplicationController
 	def update_usertype
 		idperson = TUsertype.find(params[:id])
 		idperson.utypename = params[:name_usertype].titleize
-		idperson.save
+		unless idperson.save
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
+		else
+			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		end
 
-		redirect_to "/usertype/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
+		redirect_to "/usertype/"
 	end
 
 	def delete_usertype
