@@ -16,7 +16,7 @@ $(document).ready(function(){
 
 
 	$('#name_usertype').bind("keyup keypress change",function(){
-        nms = /^([-a-z ])+$/i.test($('#name_usertype').val());
+        nms = /^([a-z ])+$/i.test($('#name_usertype').val());
         if(!nms)
         {
             nmsf = 0;

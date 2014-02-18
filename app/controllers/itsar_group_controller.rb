@@ -19,13 +19,11 @@ class ItsarGroupController < ApplicationController
 		@a = params[:name_group]
 		@b = params[:name_school]
 		@c = session[:cur_id]
-		unless @a && @b.blank?
-			if @c.blank?
-				@simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => ""})
-			else
-				@simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c})
-			end
+		@simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c})
+		if @simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		else
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
 		end
 
 		if params[:page]
@@ -66,9 +64,13 @@ class ItsarGroupController < ApplicationController
 		idgroup = TItsar.find(params[:id])
 		idgroup.gname = params[:name_group]
 		idgroup.schname = params[:name_school]
-		idgroup.save
+		unless idgroup.save
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
+		else
+			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		end
 
-		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
+		redirect_to "/itsar_group/"
 	end
 
 	def delete_itsar_group
