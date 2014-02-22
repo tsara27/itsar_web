@@ -31,10 +31,10 @@ $(document).ready(function(){
             fullname_validation = 0;
             $("#v_fullname").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
         }
-        else if($('#fullname').val().length < 3 || $('#fullname').val().length > 45)
+        else if($('#fullname').val().length < 2 || $('#fullname').val().length > 45)
         {
             fullname_validation = 0;
-            $("#v_fullname").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 45 karakter.</div> ');
+            $("#v_fullname").html('<div class="alert alert-danger">Isian harus terdiri dari 2 sampai 45 karakter.</div> ');
         }
         else if(nms)
         {
@@ -51,10 +51,10 @@ $(document).ready(function(){
             name_user_validation = 0;
             $("#v_name_user").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dan underscore.</div>').hide().fadeIn(300);
         }
-        else if($('#name_user').val().length < 3 || $('#name_user').val().length > 25)
+        else if($('#name_user').val().length < 5 || $('#name_user').val().length > 25)
         {
             name_user_validation = 0;
-            $("#v_name_user").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+            $("#v_name_user").html('<div class="alert alert-danger">Isian harus terdiri dari 5 sampai 25 karakter.</div> ');
         }
         else if(nms)
         {
@@ -74,20 +74,20 @@ $(document).ready(function(){
     });
 
     //Validasi password
-    $('#password_user_b, #password_user').bind("keyup keypress change",function(){
-      nms = /^([a-z0-9_ -])+$/i.test($('#password_user').val());
-      nma = /^([a-z0-9_ -])+$/i.test($('#password_user_b').val());
+    $('#passwd, #passwd_confirmation').bind("keyup keypress change",function(){
+      nms = /^([a-z0-9_ -])+$/i.test($('#passwd').val());
+      nma = /^([a-z0-9_ -])+$/i.test($('#passwd_confirmation').val());
         if(!nms || !nma)
         {
             password_validation = 0;
             $("#v_password_user").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dan underscore. Kedua kolom harus diisi.</div>').hide().fadeIn(300);
         }
-        else if($('#password_user').val().length < 3 || $('#password_user').val().length > 25 || $('#password_user_b').val().length < 3 || $('#password_user_b').val().length > 25)
+        else if($('#passwd').val().length < 5 || $('#passwd').val().length > 100 || $('#passwd_confirmation').val().length < 5 || $('#passwd_confirmation').val().length > 100)
         {
             password_validation = 0;
-            $("#v_password_user").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+            $("#v_password_user").html('<div class="alert alert-danger">Isian harus terdiri dari 5 sampai 100 karakter.</div> ');
         }
-        else if($('#password_user').val() != $('#password_user_b').val())
+        else if($('#passwd').val() != $('#passwd_confirmation').val())
         {
             password_validation = 0;
             $("#v_password_user").html('<div class="alert alert-danger">Password harus sama.</div> ');
@@ -107,10 +107,10 @@ $(document).ready(function(){
             email_address_validation = 0;
             $("#v_email_address").html('<div class="alert alert-danger">Isi dengan email yang valid.</div>').hide().fadeIn(300);
         }
-        else if($('#email_address').val().length < 5 || $('#email_address').val().length > 50)
+        else if($('#email_address').val().length < 5 || $('#email_address').val().length > 25)
         {
             email_address_validation = 0;
-            $("#v_email_address").html('<div class="alert alert-danger">Isian harus terdiri dari 5 sampai 50 karakter.</div> ');
+            $("#v_email_address").html('<div class="alert alert-danger">Isian harus terdiri dari 5 sampai 25 karakter.</div> ');
         }
         else if(nms)
         {

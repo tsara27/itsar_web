@@ -28,13 +28,16 @@ class SubMenuController < ApplicationController
 		@b = params[:menu_url]
 		@d = params[:role_id].join(',')
 		@c = session[:cur_id]
-		unless @a && @b.blank?
-			if @c.blank?
-				@simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => "", :visible_to =>","+@d+","})
-			else
-				@simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
-			end
+		if @d.blank?
+			@d = "0"
+		else
+			@d = params[:role_id].join(',')
+		end 
+		@simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
+		if @simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		else
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
 		end
 
 		if params[:page]
@@ -67,7 +70,13 @@ class SubMenuController < ApplicationController
 		menu_sub = TSubmenu.find(params[:idsub])
 		menu_sub.menu_name = params[:name_menu]
 		menu_sub.url = params[:menu_url]
-		menu_sub.visible_to = ','+params[:role_id].join(',')+','
+		d = params[:role_id]
+		if d.blank?
+			d = "0"
+		else
+			d = params[:role_id].join(',')
+		end 
+		menu_sub.visible_to = ','+d+','
 		menu_sub.save
 
 		redirect_to "/"+params[:id]+"/add-sub-menu/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe

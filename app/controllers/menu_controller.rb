@@ -19,15 +19,18 @@ class MenuController < ApplicationController
 	def save_menu
 		@a = params[:name_menu]
 		@b = params[:menu_url]
-		@d = params[:role_id].join(',')
+		@d = params[:role_id]
+		if @d.blank?
+			@d = "0"
+		else
+			@d = params[:role_id].join(',')
+		end 
 		@c = session[:cur_id]
-		unless @a && @b.blank?
-			if @c.blank?
-				@simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => "", :visible_to =>","+@d+","})
-			else
-				@simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
-			end
+		@simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
+		if @simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		else
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
 		end
 
 		if params[:page]
@@ -71,8 +74,19 @@ class MenuController < ApplicationController
 		idmenu = TMenu.find(params[:id])
 		idmenu.menu_name = params[:name_menu]
 		idmenu.url = params[:menu_url]
-		idmenu.visible_to = ','+params[:role_id].join(',')+','
-		idmenu.save
+		d = params[:role_id]
+		if d.blank?
+			d = "0"
+		else
+			d = params[:role_id].join(',')
+		end 
+		idmenu.visible_to = ','+d+','
+
+		unless idmenu.save
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
+		else
+			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		end
 
 		redirect_to "/menu_cfg/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
 	end

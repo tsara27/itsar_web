@@ -7,6 +7,7 @@ class UserController < ApplicationController
 		@aksi_form = "save_user"
 		@records = TItsar.order('created_at ASC')
 		@records_role = TUsertype.order('created_at ASC')
+		@dd = "1"
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
@@ -18,25 +19,23 @@ class UserController < ApplicationController
 	end
 
 	def save_user
-		@a = params[:fullname]
-		@b = params[:name_user]
-		@c = Base64.encode64(params[:password_user])
+		@a = params[:fullname].titleize
+		@b = params[:name_user].downcase
+		@c = params[:password_f][:passwd_confirmation]
 		@d = params[:email_address]
 		@e = params[:organisasi]
 		@f = params[:role_type]
 		@g = params[:gender]
 		@h = session[:cur_id]
+		@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => @h})
 
-		unless @a && @b && @c && @d && @e && @f.blank?
-			if @h.blank?
-				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => "0"})
-
-			else
-				@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => @h})
-			end
+		if @simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		else
+			# flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
+			flash[:notice_failed] = @simpen.errors.full_messages
 		end
-
+		
 		if params[:page]
 			redirect_to "/user?page="+params[:page]
 		else
@@ -70,6 +69,7 @@ class UserController < ApplicationController
 		@aksi_form = "save_user"
 		@records = TItsar.order('created_at ASC')
 		@records_role = TUsertype.order('created_at ASC')
+		@dd = "1"
 		if params[:page].to_i > 1
 			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
@@ -82,14 +82,18 @@ class UserController < ApplicationController
 
 	def update_user
 		iduser = TUser.find(params[:id])
-		iduser.nme = params[:fullname]
-		iduser.usrnme = params[:name_user]
+		iduser.nme = params[:fullname].titleize
+		iduser.usrnme = params[:name_user].downcase
 		iduser.mail = params[:email_address]
 		iduser.gndr = params[:gender]
 		iduser.t_usertype_id = params[:role_type]
 		iduser.t_itsar_id = params[:organisasi]
-		iduser.passwd = Base64.encode64(params[:password_user])
-		iduser.save
+		iduser.passwd = params[:password_f][:passwd_confirmation]
+		unless iduser.save
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
+		else
+			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		end
 		redirect_to "/user/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil diperbaharui.".html_safe
 	end
 
@@ -100,7 +104,7 @@ class UserController < ApplicationController
 	end
 
 	def callback_username
-		@nama_user = TUser.where("usrnme = ?", params[:name_user]).count
+		@nama_user = TUser.where("usrnme = ?", params[:name_user].downcase).count
 		render text: @nama_user
 	end
 end

@@ -24,10 +24,10 @@ $(document).ready(function(){
             menuname_validation = 0;
             $("#v_name_menu").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, underscore, dan dash.</div>').hide().fadeIn(300);
         }
-        else if($('#name_menu').val().length < 3 || $('#name_menu').val().length > 45)
+        else if($('#name_menu').val().length < 3 || $('#name_menu').val().length > 50)
         {
             menuname_validation = 0;
-            $("#v_name_menu").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 45 karakter.</div> ');
+            $("#v_name_menu").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 50 karakter.</div> ');
         }
         else if(nms)
         {
@@ -38,16 +38,16 @@ $(document).ready(function(){
 
     //Validasi url menu
     $('#menu_url').bind("keyup keypress change",function(){
-        nms = /^([a-z0-9_/#])+$/i.test($('#menu_url').val());
+        nms = /^([a-z0-9-\/#])+$/i.test($('#menu_url').val());
         if(!nms)
         {
             urlmenu_validation = 0;
-            $("#v_menu_url").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dan underscore.</div>').hide().fadeIn(300);
+            $("#v_menu_url").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, dash, tanda pagar, dan underscore.</div>').hide().fadeIn(300);
         }
-        else if($('#menu_url').val().length < 1 || $('#menu_url').val().length > 25)
+        else if($('#menu_url').val().length < 1 || $('#menu_url').val().length > 100)
         {
             urlmenu_validation = 0;
-            $("#v_menu_url").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+            $("#v_menu_url").html('<div class="alert alert-danger">Isian harus terdiri dari 1 sampai 100 karakter.</div> ');
         }
         else if(nms)
         {

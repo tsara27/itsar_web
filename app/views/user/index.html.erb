@@ -32,19 +32,19 @@
   </div>
   <!-- Isian -->
   <div class="form-group">
-    <label for="password_user" class="col-lg-2 control-label">Password</label>
+    <label for="password_f" class="col-lg-2 control-label">Password</label>
     <div class="col-lg-4">
     	<%= 
-    	 	password_field_tag(:password_user, @gg, :class => "form-control", :id => "password_user",:placeholder => "Masukkan password..") 
+    	 	password_field(:password_f, :passwd, :value => @gg, :class => "form-control", :id => "passwd",:placeholder => "Masukkan password..") 
     	%>
     </div>
   </div>
   <!-- Isian -->
   <div class="form-group">
-    <label for="password_user_b" class="col-lg-2 control-label"></label>
+    <label for="password_f" class="col-lg-2 control-label"></label>
     <div class="col-lg-4">
     	<%= 
-    	 	password_field_tag(:password_user_b, @gg, :class => "form-control", :id => "password_user_b",:placeholder => "Ketik ulang password..") 
+    	 	password_field(:password_f,:passwd_confirmation, :value => @gg, :class => "form-control", :id => "passwd_confirmation",:placeholder => "Ketik ulang password..") 
     	%>
     	<span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf dan angka.</span>
     </div>
