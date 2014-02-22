@@ -26,7 +26,7 @@ class SubMenuController < ApplicationController
 		@aa = params[:menu_id]
 		@a = params[:name_menu]
 		@b = params[:menu_url]
-		@d = params[:role_id].join(',')
+		@d = params[:role_id]
 		@c = session[:cur_id]
 		if @d.blank?
 			@d = "0"

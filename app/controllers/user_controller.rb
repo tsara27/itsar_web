@@ -32,8 +32,7 @@ class UserController < ApplicationController
 		if @simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
-			# flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
-			flash[:notice_failed] = @simpen.errors.full_messages
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
 		end
 		
 		if params[:page]

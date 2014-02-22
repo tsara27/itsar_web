@@ -25,7 +25,7 @@
                     <li class="dropdown">
                       <a href=<%= row.url %> class="dropdown-toggle" data-toggle="dropdown"> <%= row.menu_name %><b class="caret"></b></a>
                       <ul class="dropdown-menu">
-                        <% query_sub = TSubmenu.where(:t_menu_id => row.id)
+                        <% query_sub = TSubmenu.where("visible_to LIKE '%,"+session[:cur_tipe].to_s+",%' AND t_menu_id ="+row.id.to_s)
                         query_sub.each do |subs| %>
                           <li><%=link_to subs.menu_name,subs.url %></li>
                         <% end %>
