@@ -5,13 +5,9 @@ class ItsarGroupController < ApplicationController
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Daftar Organisasi ITSAR"
 		@aksi_form = "save_itsargroup"
+		@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -19,8 +15,8 @@ class ItsarGroupController < ApplicationController
 		@a = params[:name_group]
 		@b = params[:name_school]
 		@c = session[:cur_id]
-		@simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c})
-		if @simpen.valid?
+		simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c})
+		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
@@ -50,12 +46,9 @@ class ItsarGroupController < ApplicationController
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Daftar Organisasi ITSAR"
 		@aksi_form = "save_itsargroup"
+		@itsar_grp = TItsar.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@itsar_grp = TItsar.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@itsar_grp = TItsar.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

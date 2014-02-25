@@ -12,13 +12,9 @@ class SubMenuController < ApplicationController
 		visito = array_visito.join(',')
 		count_visito = array_visito.count
 		@records_role = TUsertype.find([visito[1..count_visito]])
+		@menu_query = TSubmenu.where(:t_menu_id => @idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TSubmenu.where(:t_menu_id => @idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@menu_query = TSubmenu.where(:t_menu_id => @idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -33,8 +29,8 @@ class SubMenuController < ApplicationController
 		else
 			@d = params[:role_id].join(',')
 		end 
-		@simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
-		if @simpen.valid?
+		simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
+		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
@@ -100,13 +96,9 @@ class SubMenuController < ApplicationController
 		count_visito = array_visito.count
 		@records_role = TUsertype.find([visito[1..count_visito]])
 		@a = params[:search_form]
+		@menu_query = TSubmenu.where("menu_name LIKE ? AND t_menu_id = ?","%"+@a+"%",@idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TSubmenu.where("menu_name LIKE ? AND t_menu_id = ?","%"+@a+"%",@idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@menu_query = TSubmenu.where("menu_name LIKE ? AND t_menu_id = ?","%"+@a+"%",@idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

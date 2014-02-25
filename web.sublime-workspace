@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"nm",
+				"nme"
+			],
+			[
 				"do",
 				"downcase"
 			],
@@ -360,26 +364,26 @@
 	"buffers":
 	[
 		{
-			"file": "app/assets/javascripts/user/script.js.erb",
+			"file": "app/views/layouts/sub_admin/_header.html.erb",
 			"settings":
 			{
-				"buffer_size": 5867,
+				"buffer_size": 2009,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/controllers/user_controller.rb",
+			"file": "app/controllers/application_controller.rb",
 			"settings":
 			{
-				"buffer_size": 3583,
+				"buffer_size": 607,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/user/index.html.erb",
+			"file": "README.rdoc",
 			"settings":
 			{
-				"buffer_size": 4991,
+				"buffer_size": 14,
 				"line_ending": "Unix"
 			}
 		}
@@ -392,7 +396,7 @@
 		[
 			[
 				"Package Control: ",
-				"Package Control: Install Package"
+				"Package Control: Upgrade Package"
 			],
 			[
 				"pac",
@@ -403,7 +407,7 @@
 				"Package Control: Enable Package"
 			]
 		],
-		"width": 530.0
+		"width": 449.0
 	},
 	"console":
 	{
@@ -420,13 +424,20 @@
 	},
 	"file_history":
 	[
+		"/Study/Programming/Ruby_RoR/Practice/ruby-on-rails-tutorial-learn-web-development-with-rails/README.md",
+		"/Workbook/Charity/itsar_web/app/assets/javascripts/user/script.js.erb",
+		"/Workbook/Charity/itsar_web/app/controllers/user_controller.rb",
+		"/Workbook/Charity/itsar_web/app/models/t_user.rb",
+		"/Workbook/Charity/itsar_web/app/views/user/index.html.erb",
+		"/Workbook/Charity/itsar_web/db/schema.rb",
+		"/Workbook/Charity/itsar_web/app/models/t_menu.rb",
+		"/Workbook/Charity/itsar_web/app/controllers/sub_menu_controller.rb",
+		"/Workbook/Charity/itsar_web/app/views/sub_menu/index.html.erb",
+		"/home/tsara27/.config/sublime-text-2/Packages/Function Name Display/Function Name Display.sublime-settings",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/menu/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/sub_menu/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/controllers/menu_controller.rb",
-		"/Workbook/Charity/itsar_web/app/models/t_menu.rb",
 		"/Study/Codeigniter/CodeIgniter_2.1.4/system/libraries/Form_validation.php",
-		"/Workbook/Charity/itsar_web/db/schema.rb",
-		"/Workbook/Charity/itsar_web/app/controllers/sub_menu_controller.rb",
 		"/Workbook/Charity/itsar_web/app/models/t_submenu.rb",
 		"/Workbook/Charity/itsar_web/app/models/t_itsar.rb",
 		"/Workbook/Charity/itsar_web/app/controllers/usertype_controller.rb",
@@ -442,7 +453,6 @@
 		"/Workbook/Charity/itsar_web/app/assets/stylesheets/asal.css.scss",
 		"/Workbook/Charity/itsar_web/app/assets/stylesheets/admin_layout.css.scss",
 		"/Workbook/Charity/itsar_web/config/locales/en.yml",
-		"/Workbook/Charity/itsar_web/app/assets/javascripts/user/script.js.erb",
 		"/Workbook/Charity/itsar_web/config/routes.rb",
 		"/Workbook/Charity/itsar_web/app/views/layouts/sub_admin/_header.html.erb",
 		"/Workbook/Charity/itsar_web/app/controllers/home_controller.rb",
@@ -459,14 +469,11 @@
 		"/Workbook/Charity/itsar_web/test/unit/helpers/login_helper_test.rb",
 		"/Data/Web_Dev_Plugins/bootstrap-3.0.3/js/dropdown.js",
 		"/Workbook/Charity/itsar_web/db/migrate/20140212134251_ubah_idnya.rb",
-		"/Workbook/Charity/itsar_web/app/views/sub_menu/index.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/sub_menu/_tabel.html.erb",
-		"/Workbook/Charity/itsar_web/app/models/t_user.rb",
 		"/Workbook/Charity/itsar_web/app/views/itsar_group/_tabel.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/itsar_group/index.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/menu/_tabel.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/usertype/_tabel.html.erb",
-		"/Workbook/Charity/itsar_web/app/controllers/user_controller.rb",
 		"/Workbook/Charity/itsar_web/db/migrate/20140212134012_ubah_id.rb",
 		"/Workbook/Charity/itsar_web/db/migrate/20140212133507_ubah_id_user.rb",
 		"/Workbook/Charity/itsar_web/app/views/menu/index.html.erb",
@@ -483,7 +490,6 @@
 		"/Workbook/Indihealth/indihealth_posyandu/backend/modules/menu/models/menu_model.php",
 		"/home/tsara27/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 		"/Workbook/Charity/itsar_web/db/migrate/20140204135427_create_menu_table.rb",
-		"/Workbook/Charity/itsar_web/app/views/user/index.html.erb",
 		"/Data/Web_Dev_Plugins/bootstrap-3.0.3/README.md",
 		"/Workbook/Charity/itsar_web/db/migrate/20130804062220_t_user.rb",
 		"/Workbook/Charity/itsar_web/db/migrate/20131224071921_tambah_kolom.rb",
@@ -494,7 +500,6 @@
 		"/home/tsara27/.config/sublime-text-2/Packages/User/Package Control.sublime-settings",
 		"/home/tsara27/.config/sublime-text-2/Packages/SideBarEnhancements/Side Bar.sublime-settings",
 		"/home/tsara27/.config/sublime-text-2/Packages/User/Function Name Display.sublime-settings",
-		"/home/tsara27/.config/sublime-text-2/Packages/Function Name Display/Function Name Display.sublime-settings",
 		"/Workbook/Charity/itsar_web/app/assets/stylesheets/login.css",
 		"/opt/lampp/htdocs/Basic/agent/modules/menu_parent/views/menu_form.php",
 		"/Workbook/Charity/itsar_web/app/views/user/callback_username.html.erb",
@@ -546,8 +551,7 @@
 		"/Workbook/itsar_web/app/views/layouts/sub_admin/_content.html.erb",
 		"/Data/Backup/DB/localhost.sql",
 		"/Workbook/itsar_web/app/views/layouts/sub_admin/_header.html.erb",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/db/schema.rb",
-		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/app/views/people/index.html.erb"
+		"/Data/Document/Smart_Medicine/RoR/Learn_Ruby/guestbook/db/schema.rb"
 	],
 	"find":
 	{
@@ -565,6 +569,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"=\"+",
+			",\",\"+",
+			"%?%\",",
+			"nil",
+			"passwd",
+			"passwd_confirmation",
+			"password_field",
+			"params[:passwd]",
+			" },",
 			"#password_user",
 			"url",
 			"idperson",
@@ -663,6 +676,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"passwd_confirmation",
+			"passwd",
+			"params[:passwd_confirmation]",
 			"#passwd",
 			"titleize",
 			"public",
@@ -720,90 +736,91 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/assets/javascripts/user/script.js.erb",
+					"file": "app/views/layouts/sub_admin/_header.html.erb",
 					"settings":
 					{
-						"buffer_size": 5867,
+						"buffer_size": 2009,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2880,
-								2880
+								1439,
+								1439
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 78,
-							"syntax": "Packages/Rails/JavaScript (Rails).tmLanguage",
-							"tab_size": 4,
+							"function_name_status_row": 0,
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1249.0,
+						"translation.y": 1.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/controllers/user_controller.rb",
+					"file": "app/controllers/application_controller.rb",
 					"settings":
 					{
-						"buffer_size": 3583,
+						"buffer_size": 607,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3146,
-								3146
+								395,
+								395
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 90,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 90.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/views/user/index.html.erb",
+					"file": "README.rdoc",
 					"settings":
 					{
-						"buffer_size": 4991,
+						"buffer_size": 14,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1929,
-								1929
+								12,
+								12
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 46,
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"function_name_status_row": -1,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

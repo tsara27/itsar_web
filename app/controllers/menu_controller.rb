@@ -6,13 +6,9 @@ class MenuController < ApplicationController
 		@nama_form = " - Buat Menu"
 		@aksi_form = "save_menu"
 		@records_role = TUsertype.order('created_at ASC')
+		@menu_query = TMenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@menu_query = TMenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@menu_query = TMenu.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -26,8 +22,8 @@ class MenuController < ApplicationController
 			@d = params[:role_id].join(',')
 		end 
 		@c = session[:cur_id]
-		@simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
-		if @simpen.valid?
+		simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
+		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
@@ -60,12 +56,9 @@ class MenuController < ApplicationController
 		@nama_form = " - Buat Menu"
 		@aksi_form = "save_menu"
 		@records_role = TUsertype.order('created_at ASC')
+		@menu_query = TMenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@menu_query = TMenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@menu_query = TMenu.where("menu_name LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

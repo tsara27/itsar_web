@@ -8,13 +8,10 @@ class UserController < ApplicationController
 		@records = TItsar.order('created_at ASC')
 		@records_role = TUsertype.order('created_at ASC')
 		@dd = "1"
+		@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@usr_table = TUser.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
@@ -27,9 +24,9 @@ class UserController < ApplicationController
 		@f = params[:role_type]
 		@g = params[:gender]
 		@h = session[:cur_id]
-		@simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => @h})
+		simpen = TUser.create({:nme => @a, :usrnme => @b, :passwd => @c, :mail => @d, :gndr => @g, :t_usertype_id => @f, :t_itsar_id => @e, :t_user_id => @h})
 
-		if @simpen.valid?
+		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
@@ -69,12 +66,9 @@ class UserController < ApplicationController
 		@records = TItsar.order('created_at ASC')
 		@records_role = TUsertype.order('created_at ASC')
 		@dd = "1"
+		@usr_table = TUser.where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			@usr_table = TUser.where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@usr_table = TUser.where("nme LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end

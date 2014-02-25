@@ -5,21 +5,17 @@ class UsertypeController < ApplicationController
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Tipe Pengguna Baru"
 		@aksi_form = "save_usertype"
+		@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 	end
 
 	def save_usertype
 		@a = params[:name_usertype].titleize
 		@b = session[:cur_id]
-		@simpen = TUsertype.create({:utypename => @a,:t_user_id => @b})
-		if @simpen.valid?
+		simpen = TUsertype.create({:utypename => @a,:t_user_id => @b})
+		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
@@ -37,13 +33,9 @@ class UsertypeController < ApplicationController
 		@nama_btn = "Simpan"
 		@nama_form = " - Buat Tipe Pengguna Baru"
 		@aksi_form = "save_usertype"
+		@usr = TUsertype.where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
-			# @jlm_offset = 15 * params[:page].to_i
 			@hhh = 15 * params[:page].to_i - 15
-			# @usr = TUsertype.limit(15).offset(@jlm_offset).paginate(:page => params[:page], :per_page => 15)
-			@usr = TUsertype.where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
-		else
-			@usr = TUsertype.where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		end
 		render :index
 	end
