@@ -5,9 +5,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -24,6 +21,12 @@ gem 'jquery-rails'
 gem 'database_cleaner'
 
 gem 'will_paginate'
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'sqlite3','1.3.8'
+  gem 'capybara'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
