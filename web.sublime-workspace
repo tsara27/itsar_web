@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"le",
+				"length"
+			],
+			[
+				"expe",
+				"expect"
+			],
+			[
+				"is",
+				"is_at_least"
+			],
+			[
+				"be",
+				"be_valid"
+			],
+			[
+				"us",
+				"usertype"
+			],
+			[
 				"nm",
 				"nme"
 			],
@@ -204,10 +224,6 @@
 				"attr"
 			],
 			[
-				"us",
-				"usr"
-			],
-			[
 				"re",
 				"respond_to"
 			],
@@ -386,6 +402,30 @@
 				"buffer_size": 2995,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "spec/models/usertype_spec.rb",
+			"settings":
+			{
+				"buffer_size": 962,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "db/schema.rb",
+			"settings":
+			{
+				"buffer_size": 3153,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/t_usertype.rb",
+			"settings":
+			{
+				"buffer_size": 285,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "",
@@ -424,6 +464,7 @@
 	},
 	"file_history":
 	[
+		"/Workbook/Charity/itsar_web/app/models/t_usertype.rb",
 		"/Data/Font, Themes, Icons/Icons/faenza-icon-theme_1.3/README",
 		"/Workbook/Charity/itsar_web/Gemfile",
 		"/Workbook/Charity/itsar_web/app/controllers/sub_menu_controller.rb",
@@ -449,7 +490,6 @@
 		"/Workbook/Charity/itsar_web/app/models/t_submenu.rb",
 		"/Workbook/Charity/itsar_web/app/models/t_itsar.rb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/itsar_group/script.js.erb",
-		"/Workbook/Charity/itsar_web/app/models/t_usertype.rb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/usertype/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/views/usertype/index.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/user/_tabel.html.erb",
@@ -569,6 +609,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TUsertype",
 			"=\"+",
 			",\",\"+",
 			"%?%\",",
@@ -736,7 +777,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -757,7 +798,7 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 28,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -785,11 +826,11 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 36,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 45.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -822,6 +863,98 @@
 						"zoom_level": 1.0
 					},
 					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "spec/models/usertype_spec.rb",
+					"settings":
+					{
+						"buffer_size": 962,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								559,
+								603
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 25,
+							"syntax": "Packages/RSpec/RSpec.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "db/schema.rb",
+					"settings":
+					{
+						"buffer_size": 3153,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/models/t_usertype.rb",
+					"settings":
+					{
+						"buffer_size": 285,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								285,
+								285
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 7,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
 				}
 			]
 		}
@@ -843,11 +976,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -1086,6 +1226,6 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 289.0,
+	"side_bar_width": 242.0,
 	"status_bar_visible": true
 }
