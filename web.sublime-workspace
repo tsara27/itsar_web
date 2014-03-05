@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"utype",
+				"utypename"
+			],
+			[
+				"ex",
+				"exp	expect(subject).to something"
+			],
+			[
+				"ut",
+				"utype"
+			],
+			[
+				"user",
+				"usertype"
+			],
+			[
 				"le",
 				"length"
 			],
@@ -168,10 +184,6 @@
 				"to_s"
 			],
 			[
-				"user",
-				"username"
-			],
-			[
 				"TU",
 				"TUser"
 			],
@@ -232,10 +244,6 @@
 				"utypef"
 			],
 			[
-				"ut",
-				"utypename"
-			],
-			[
 				"fo",
 				"form-control"
 			],
@@ -294,10 +302,6 @@
 			[
 				"photo",
 				"photo_filename"
-			],
-			[
-				"ex",
-				"exist"
 			],
 			[
 				"file",
@@ -391,7 +395,7 @@
 			"file": "Gemfile",
 			"settings":
 			{
-				"buffer_size": 889,
+				"buffer_size": 914,
 				"line_ending": "Unix"
 			}
 		},
@@ -407,23 +411,7 @@
 			"file": "spec/models/usertype_spec.rb",
 			"settings":
 			{
-				"buffer_size": 962,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "db/schema.rb",
-			"settings":
-			{
-				"buffer_size": 3153,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/t_usertype.rb",
-			"settings":
-			{
-				"buffer_size": 285,
+				"buffer_size": 1257,
 				"line_ending": "Unix"
 			}
 		}
@@ -465,6 +453,7 @@
 	"file_history":
 	[
 		"/Workbook/Charity/itsar_web/app/models/t_usertype.rb",
+		"/Workbook/Charity/itsar_web/db/schema.rb",
 		"/Data/Font, Themes, Icons/Icons/faenza-icon-theme_1.3/README",
 		"/Workbook/Charity/itsar_web/Gemfile",
 		"/Workbook/Charity/itsar_web/app/controllers/sub_menu_controller.rb",
@@ -480,7 +469,6 @@
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/user/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/models/t_user.rb",
 		"/Workbook/Charity/itsar_web/app/views/user/index.html.erb",
-		"/Workbook/Charity/itsar_web/db/schema.rb",
 		"/Workbook/Charity/itsar_web/app/models/t_menu.rb",
 		"/Workbook/Charity/itsar_web/app/views/sub_menu/index.html.erb",
 		"/home/tsara27/.config/sublime-text-2/Packages/Function Name Display/Function Name Display.sublime-settings",
@@ -609,6 +597,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			")\n",
 			"TUsertype",
 			"=\"+",
 			",\",\"+",
@@ -798,7 +787,7 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 0,
+							"function_name_status_row": 28,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -813,20 +802,20 @@
 					"file": "Gemfile",
 					"settings":
 					{
-						"buffer_size": 889,
+						"buffer_size": 914,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								791,
-								791
+								628,
+								628
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 0,
+							"function_name_status_row": 28,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -869,20 +858,20 @@
 					"file": "spec/models/usertype_spec.rb",
 					"settings":
 					{
-						"buffer_size": 962,
+						"buffer_size": 1257,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								559,
-								603
+								709,
+								709
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 25,
+							"function_name_status_row": 31,
 							"syntax": "Packages/RSpec/RSpec.tmLanguage",
 							"translate_tabs_to_spaces": false,
 							"word_wrap": true
@@ -896,66 +885,8 @@
 			]
 		},
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 4,
-					"file": "db/schema.rb",
-					"settings":
-					{
-						"buffer_size": 3153,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 0,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/models/t_usertype.rb",
-					"settings":
-					{
-						"buffer_size": 285,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								285,
-								285
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 7,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
