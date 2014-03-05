@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"t_",
+				"t_itsar"
+			],
+			[
+				"t_me",
+				"t_menu_id"
+			],
+			[
 				"utype",
 				"utypename"
 			],
@@ -90,10 +98,6 @@
 			[
 				"in",
 				"index"
-			],
-			[
-				"t_",
-				"t_itsar"
 			],
 			[
 				"it",
@@ -387,31 +391,31 @@
 			"file": "app/controllers/menu_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2627,
+				"buffer_size": 2587,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Gemfile",
+			"file": "app/models/t_user.rb",
 			"settings":
 			{
-				"buffer_size": 914,
+				"buffer_size": 1119,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "config/application.rb",
+			"file": "app/models/t_menu.rb",
 			"settings":
 			{
-				"buffer_size": 2995,
+				"buffer_size": 399,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "spec/models/usertype_spec.rb",
+			"file": "app/models/t_submenu.rb",
 			"settings":
 			{
-				"buffer_size": 1257,
+				"buffer_size": 427,
 				"line_ending": "Unix"
 			}
 		}
@@ -452,10 +456,20 @@
 	},
 	"file_history":
 	[
+		"/Workbook/Charity/itsar_web/Gemfile",
+		"/Workbook/Charity/itsar_web/config/application.rb",
+		"/Workbook/Charity/itsar_web/spec/models/user_spec.rb",
+		"/Workbook/Charity/itsar_web/spec/models/sub_menu_spec.rb",
+		"/Workbook/Charity/itsar_web/app/models/t_itsar.rb",
+		"/Workbook/Charity/itsar_web/spec/models/usertype_spec.rb",
+		"/Workbook/Charity/itsar_web/spec/models/itsar_group_spec.rb",
+		"/Workbook/Charity/itsar_web/spec/models/menu_spec.rb",
+		"/Workbook/Charity/itsar_web/app/helpers/home_admin_helper.rb",
+		"/Data/Font, Themes, Icons/Icons/Plateau/index.theme",
+		"/Data/Font, Themes, Icons/Icons/Matrilineare/COPYING",
 		"/Workbook/Charity/itsar_web/app/models/t_usertype.rb",
 		"/Workbook/Charity/itsar_web/db/schema.rb",
 		"/Data/Font, Themes, Icons/Icons/faenza-icon-theme_1.3/README",
-		"/Workbook/Charity/itsar_web/Gemfile",
 		"/Workbook/Charity/itsar_web/app/controllers/sub_menu_controller.rb",
 		"/Workbook/Charity/itsar_web/app/controllers/user_controller.rb",
 		"/Workbook/Charity/itsar_web/app/controllers/usertype_controller.rb",
@@ -476,13 +490,11 @@
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/sub_menu/script.js.erb",
 		"/Study/Codeigniter/CodeIgniter_2.1.4/system/libraries/Form_validation.php",
 		"/Workbook/Charity/itsar_web/app/models/t_submenu.rb",
-		"/Workbook/Charity/itsar_web/app/models/t_itsar.rb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/itsar_group/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/assets/javascripts/usertype/script.js.erb",
 		"/Workbook/Charity/itsar_web/app/views/usertype/index.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/user/_tabel.html.erb",
 		"/Workbook/Charity/itsar_web/app/views/layouts/public/_header.html.erb",
-		"/Workbook/Charity/itsar_web/app/helpers/home_admin_helper.rb",
 		"/Workbook/Charity/itsar_web/app/assets/stylesheets/asal.css.scss",
 		"/Workbook/Charity/itsar_web/app/assets/stylesheets/admin_layout.css.scss",
 		"/Workbook/Charity/itsar_web/config/locales/en.yml",
@@ -571,15 +583,7 @@
 		"/media/tsara27/TOSHIBA/Beyond the Blackboard/Beyond_The_Blackboard.srt",
 		"/home/tsara27/W7Act/Ask Me.txt",
 		"/Workbook/itsar_web/#Itsar_HTML_sample/assets/font-awesome/docs/assets/less/twbs-222/pagination.less",
-		"/Workbook/itsar_web/app/views/usertype/_posts.html.erb",
-		"/home/tsara27/.cache/.fr-6fZRKI/readme.txt",
-		"/Data/Theme, Icon, Fonts/Fonts/Rockwell/stylesheet.css",
-		"/Workbook/itsar_web/app/assets/javascripts/usertype/script.js",
-		"/Workbook/itsar_web/app/assets/javascripts/usertype/jsa.js.erb",
-		"/Workbook/itsar_web/Gemfile",
-		"/Workbook/itsar_web/app/views/layouts/sub_admin/_footer.html.erb",
-		"/Workbook/itsar_web/app/views/layouts/sub_admin/_content.html.erb",
-		"/Data/Backup/DB/localhost.sql"
+		"/Workbook/itsar_web/app/views/usertype/_posts.html.erb"
 	],
 	"find":
 	{
@@ -766,7 +770,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -774,107 +778,22 @@
 					"file": "app/controllers/menu_controller.rb",
 					"settings":
 					{
-						"buffer_size": 2627,
+						"buffer_size": 2587,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								853,
-								853
+								413,
+								413
 							]
 						],
 						"settings":
 						{
-							"function_name_status_row": 28,
+							"function_name_status_row": 13,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 135.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Gemfile",
-					"settings":
-					{
-						"buffer_size": 914,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								628,
-								628
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 28,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "config/application.rb",
-					"settings":
-					{
-						"buffer_size": 2995,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 0,
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "spec/models/usertype_spec.rb",
-					"settings":
-					{
-						"buffer_size": 1257,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								709,
-								709
-							]
-						],
-						"settings":
-						{
-							"function_name_status_row": 31,
-							"syntax": "Packages/RSpec/RSpec.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -885,8 +804,92 @@
 			]
 		},
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "app/models/t_user.rb",
+					"settings":
+					{
+						"buffer_size": 1119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								668,
+								668
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/t_menu.rb",
+					"settings":
+					{
+						"buffer_size": 399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								281,
+								281
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 233.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/t_submenu.rb",
+					"settings":
+					{
+						"buffer_size": 427,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								380,
+								380
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -930,7 +933,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 27.0
+		"height": 29.0
 	},
 	"replace":
 	{

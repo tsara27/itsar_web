@@ -16,11 +16,7 @@ class MenuController < ApplicationController
 		@a = params[:name_menu]
 		@b = params[:menu_url]
 		@d = params[:role_id]
-		if @d.blank?
-			@d = "0"
-		else
-			@d = params[:role_id].join(',')
-		end 
+		@d = (@d.blank?) ? "0" : params[:role_id].join(',')
 		@c = session[:cur_id]
 		simpen = TMenu.create({:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
 		if simpen.valid?
@@ -68,11 +64,8 @@ class MenuController < ApplicationController
 		idmenu.menu_name = params[:name_menu]
 		idmenu.url = params[:menu_url]
 		d = params[:role_id]
-		if d.blank?
-			d = "0"
-		else
-			d = params[:role_id].join(',')
-		end 
+		@d = (@d.blank?) ? "0" : params[:role_id].join(',')
+
 		idmenu.visible_to = ','+d+','
 
 		unless idmenu.save
