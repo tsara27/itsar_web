@@ -2,9 +2,7 @@ class UsertypeController < ApplicationController
 	before_filter :check_login
 	layout "admin_layout"
 	def index
-		@nama_btn = "Simpan"
-		@nama_form = " - Buat Tipe Pengguna Baru"
-		@aksi_form = "save_usertype"
+		view_form("Simpan"," - Buat Tipe Pengguna Baru","save_usertype")
 		@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
 			@hhh = 15 * params[:page].to_i - 15
@@ -30,9 +28,7 @@ class UsertypeController < ApplicationController
 
 	def search
 		@a = params[:search_form]
-		@nama_btn = "Simpan"
-		@nama_form = " - Buat Tipe Pengguna Baru"
-		@aksi_form = "save_usertype"
+		view_form("Simpan"," - Buat Tipe Pengguna Baru","save_usertype")
 		@usr = TUsertype.where("utypename LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
 			@hhh = 15 * params[:page].to_i - 15
@@ -41,10 +37,7 @@ class UsertypeController < ApplicationController
 	end
 
 	def edit_usertype
-		# Dynamic Variables
-		@nama_btn = "Perbaharui"
-		@nama_form = " - Perbaharui Tipe Pengguna"
-		@aksi_form = params[:id] + "/update_usertype"
+		view_form("Perbaharui"," - Perbaharui Tipe Pengguna",params[:id] + "/update_usertype")		
 		utypef = TUsertype.find(params[:id])
 		@aa = utypef.utypename.to_s
 		@usr = TUsertype.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
@@ -73,4 +66,11 @@ class UsertypeController < ApplicationController
 		@nama_tipe = TUsertype.where("utypename = ?", params[:name_usertype].titleize).count
 		render text: @nama_tipe
 	end
+
+	def view_form(nama_btn,nama_form,aksi_form)
+		@nama_btn = nama_btn
+		@nama_form = nama_form
+		@aksi_form = aksi_form
+	end
+
 end

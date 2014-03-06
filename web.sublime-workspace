@@ -404,6 +404,14 @@
 			}
 		},
 		{
+			"file": "/home/tsara27/Downloads/ec2-54-221-12-170.compute-1.amazonaws.com.rdp",
+			"settings":
+			{
+				"buffer_size": 793,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/models/t_menu.rb",
 			"settings":
 			{
@@ -791,7 +799,7 @@
 						],
 						"settings":
 						{
-							"function_name_status_row": 13,
+							"function_name_status_row": 0,
 							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
@@ -804,7 +812,7 @@
 			]
 		},
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -838,6 +846,35 @@
 				},
 				{
 					"buffer": 2,
+					"file": "/home/tsara27/Downloads/ec2-54-221-12-170.compute-1.amazonaws.com.rdp",
+					"settings":
+					{
+						"buffer_size": 793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"function_name_status_row": 0,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 6,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "app/models/t_menu.rb",
 					"settings":
 					{
@@ -864,7 +901,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "app/models/t_submenu.rb",
 					"settings":
 					{

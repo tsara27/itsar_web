@@ -24,11 +24,7 @@ class SubMenuController < ApplicationController
 		@b = params[:menu_url]
 		@d = params[:role_id]
 		@c = session[:cur_id]
-		if @d.blank?
-			@d = "0"
-		else
-			@d = params[:role_id].join(',')
-		end 
+		@d = (@d.blank?) ? "0" : params[:role_id].join(',')
 		simpen = TSubmenu.create({:t_menu_id => @aa,:menu_name => @a, :url => @b, :t_user_id => @c, :visible_to =>","+@d+","})
 		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
@@ -67,11 +63,7 @@ class SubMenuController < ApplicationController
 		menu_sub.menu_name = params[:name_menu]
 		menu_sub.url = params[:menu_url]
 		d = params[:role_id]
-		if d.blank?
-			d = "0"
-		else
-			d = params[:role_id].join(',')
-		end 
+		d = (d.blank?) ? "0" : params[:role_id].join(',')
 		menu_sub.visible_to = ','+d+','
 		menu_sub.save
 
