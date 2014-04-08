@@ -13,10 +13,11 @@ class TUser < ActiveRecord::Base
   before_save :enc_passwd 
   after_save :clear_passwd
 
-	belongs_to :t_usertype
-	belongs_to :t_itsar
+  belongs_to :t_usertype
+  belongs_to :t_itsar
 
-	has_many :t_itsars
+  has_many :t_itsars
+  has_many :t_profiles
   has_many :t_menus
   has_many :t_usertypes
   has_many :t_submenus

@@ -2,7 +2,7 @@ $(document).ready(function(){
 	urlnya = $(location).attr('href').split('?');
 	atr_isian = $('#form_isian').attr('action');
 	ini_url = (atr_isian + "?" + urlnya[1]);
-    val_submit = $('#submit_btn').val();
+        val_submit = $('#submit_btn').val();
 	$('#form_isian').attr('action', ini_url);
 	$('#submit_btn').attr('disabled','disabled');
     if(val_submit == "Perbaharui")
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
     //Validasi url menu
     $('#menu_url').bind("keyup keypress change",function(){
-        nms = /^([a-z0-9-\/#])+$/i.test($('#menu_url').val());
+        nms = /^([a-z0-9-_\/#])+$/i.test($('#menu_url').val());
         if(!nms)
         {
             urlmenu_validation = 0;

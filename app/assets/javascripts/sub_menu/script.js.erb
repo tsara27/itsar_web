@@ -38,7 +38,7 @@ $(document).ready(function(){
 
     //Validasi url menu
     $('#menu_url').bind("keyup keypress change",function(){
-        nms = /^([a-z0-9-\/#])+$/i.test($('#menu_url').val());
+        nms = /^([a-z0-9-_\/#])+$/i.test($('#menu_url').val());
         if(!nms)
         {
             urlmenu_validation = 0;

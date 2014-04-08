@@ -12,7 +12,6 @@ ItsarWeb::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   # resources :user
-  #resources :itsar_group
 
   #HOME ROUTES
   match '/home/public/' => 'home#index'
@@ -55,7 +54,7 @@ ItsarWeb::Application.routes.draw do
   match '/:id/delete_usertype' => 'usertype#delete_usertype'
   match '/search_usertype' => 'usertype#search'
 
-  
+ resources :profile_organisasi  
 
   # Sample resource route with options:
   #   resources :products do

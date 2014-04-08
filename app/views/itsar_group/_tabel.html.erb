@@ -4,6 +4,7 @@
 			<th>No</th>
 			<th>Nama Organisasi</th>
 			<th>Nama Sekolah</th>
+			<th>Kode</th>
 			<th>Dibuat Oleh</th>
 			<th>Waktu Dibuat</th>
 			<th>Terakhir Diperbaharui</th>
@@ -17,6 +18,7 @@
 		  	<td><%= (@hhh.to_i + hh + 1) %></td>
 		    <td><%= itsar.gname %></td>
 		    <td><%= itsar.schname %></td>
+		    <td><%= itsar.shortname %></td>
 		    <td><%= itsar.t_user.nme  %></td>
 		    <td><%= itsar.created_at %></td>
 		    <td><%= itsar.updated_at %></td>

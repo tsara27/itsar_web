@@ -14,8 +14,9 @@ class ItsarGroupController < ApplicationController
 	def save_itsargroup
 		@a = params[:name_group]
 		@b = params[:name_school]
+		@d = params[:code_input]
 		@c = session[:cur_id]
-		simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c})
+		simpen = TItsar.create({:gname => @a, :schname => @b, :t_user_id => @c, :shortname => @d})
 		if simpen.valid?
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		else
@@ -37,6 +38,7 @@ class ItsarGroupController < ApplicationController
 		ugroupf = TItsar.find(params[:id])
 		@aa = ugroupf.gname.to_s
 		@bb = ugroupf.schname.to_s
+		@cc = ugroupf.shortname
 		@itsar_grp = TItsar.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		render :index
 	end
@@ -57,6 +59,7 @@ class ItsarGroupController < ApplicationController
 		idgroup = TItsar.find(params[:id])
 		idgroup.gname = params[:name_group]
 		idgroup.schname = params[:name_school]
+		idgroup.shortname = params[:code_input]
 		unless idgroup.save
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
 		else

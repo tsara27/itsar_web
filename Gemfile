@@ -18,6 +18,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'RedCloth'
 gem 'database_cleaner'
 
 gem 'will_paginate'

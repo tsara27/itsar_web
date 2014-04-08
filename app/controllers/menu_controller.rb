@@ -63,10 +63,9 @@ class MenuController < ApplicationController
 		idmenu = TMenu.find(params[:id])
 		idmenu.menu_name = params[:name_menu]
 		idmenu.url = params[:menu_url]
-		d = params[:role_id]
+		@d = params[:role_id]
 		@d = (@d.blank?) ? "0" : params[:role_id].join(',')
-
-		idmenu.visible_to = ','+d+','
+		idmenu.visible_to = ','+@d+','
 
 		unless idmenu.save
 			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe

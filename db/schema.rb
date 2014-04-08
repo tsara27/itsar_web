@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140212134251) do
+ActiveRecord::Schema.define(:version => 20140408030920) do
 
   create_table "t_itsars", :force => true do |t|
     t.string   "gname",      :limit => 25,                  :null => false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(:version => 20140212134251) do
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.string   "t_user_id",                :default => "0", :null => false
+    t.string   "shortname",  :limit => 30
   end
 
   create_table "t_menus", :force => true do |t|
@@ -31,6 +32,14 @@ ActiveRecord::Schema.define(:version => 20140212134251) do
   end
 
   add_index "t_menus", ["t_user_id"], :name => "iduser"
+
+  create_table "t_profiles", :force => true do |t|
+    t.string   "shortname_itsar", :limit => 30, :null => false
+    t.text     "self_profile",                  :null => false
+    t.integer  "t_user_id",                     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
 
   create_table "t_submenus", :force => true do |t|
     t.integer  "t_menu_id",                :null => false
