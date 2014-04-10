@@ -7,6 +7,6 @@ class TItsar < ActiveRecord::Base
   #ITSAR group has many users
   has_many :t_users
   belongs_to :t_user
-  has_one :t_profile, foreign_key: "shortname_itsar", :dependent => :destroy
+  has_one :t_profile,  :dependent => :destroy
 
 end

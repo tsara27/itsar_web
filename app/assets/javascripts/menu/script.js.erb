@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     //Validasi nama menu
 	$('#name_menu').bind("keyup keypress change",function(){
-      nms = /^([a-z0-9 ])+$/i.test($('#name_menu').val());
+      nms = /^([a-z0-9-_ ,])+$/i.test($('#name_menu').val());
          if(!nms)
         {
             menuname_validation = 0;

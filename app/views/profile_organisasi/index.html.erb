@@ -11,28 +11,15 @@
  <div class="form-group">
     <label for="organisasi" class="col-lg-2 control-label">Organisasi</label>
     <div class="col-lg-4">
-      <%= select_tag(:organisasi, options_from_collection_for_select(@get_organization, :shortname, :gname,@aa),:class => "form-control") %>
+      <%= (@op == "create") ? select_tag(:organisasi, options_from_collection_for_select(@get_organization, :shortname, :gname),:class => "form-control") : label_tag(:org_label, @aa) %>
     </div>
   </div>
   <div class="form-group">
-    <label for="name_school" class="col-lg-2 control-label">Nama Sekolah</label>
+    <label for="profile_input" class="col-lg-2 control-label">Profile</label>
     <div class="col-lg-4">
-    	<%= 
-    	 	text_field_tag(:name_school,@bb,:class => "form-control", :placeholder => "SMPN 11 Bandung", :id => "name_school") 
-    	%>
-      <span class="help-block keterangan">Maksimal 25 karakter dan hanya menggunakan karakter huruf dan angka.</span>
+    	 	<%= text_area_tag(:profile_input, @bb, :size => "300x6", :class => "form-control", :id => "profile_input") %>
     </div>
-    <div class="col-lg-4" id="v_name_school"></div>
-  </div>
-  <div class="form-group">
-    <label for="code_input" class="col-lg-2 control-label">Kode</label>
-    <div class="col-lg-4">
-      <%= 
-        text_field_tag(:code_input,@cc,:class => "form-control", :placeholder => "kamusebelas", :id => "code_input") 
-      %>
-      <span class="help-block keterangan">Maksimal 30 karakter dan hanya menggunakan karakter huruf dan angka.</span>
-    </div>
-    <div class="col-lg-4" id="v_code_input"></div>
+    <div class="col-lg-4" id="v_profile_input"></div>
   </div>
   <div class="form-group">
     <div class="col-lg-offset-2 col-lg-10 btn-group">
@@ -43,7 +30,7 @@
 <% end %>
 <nav class="navbar" role="navigation">
 	<div class="navbar-header">
-    <a class="navbar-brand" href="#">Tabel Organisasi ITSAR</a>
+    <a class="navbar-brand" href="#">Tabel Profile Organisasi ITSAR</a>
   </div>
   
   <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
@@ -53,10 +40,8 @@
         <button type="submit" class="btn btn-default">Cari</button>
     <% end %>
 </nav>
-
-
+<%= javascript_include_tag "tinymce.min.js" %>
+<%= javascript_include_tag "profile_organisasi/script.js.erb" %>
 <div id="table_itsar">
 	<%= render partial: 'tabel' %>
 </div>
-
-<%= javascript_include_tag "itsar_group/script.js.erb" %>

@@ -65,7 +65,6 @@ class ItsarGroupController < ApplicationController
 		else
 			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
 		end
-
 		redirect_to "/itsar_group/"
 	end
 

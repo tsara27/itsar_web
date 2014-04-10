@@ -10,8 +10,8 @@
 
 @font-face{
     src:url('pictos/pictos-regular-webfont.ttf') format("truetype"),
-        url('pictos-regular-webfont.otf') format("opentype"),
-        url('pictos-regular-webfont.svg') format("svg");
+        url('pictos/pictos-regular-webfont.otf') format("opentype"),
+    url('pictos/pictos-regular-webfont.svg') format("svg");
     font-family:icon;
 }
 

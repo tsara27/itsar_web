@@ -4,11 +4,11 @@
    <title>ITSAR - Admin Panel</title>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <%= stylesheet_link_tag    "bootstrap.min.css", :media => "screen" %>
+   <%= stylesheet_link_tag    "font-awesome.min.css" %>
    <%= stylesheet_link_tag    "admin_layout/additional.css" %>
    <%= javascript_include_tag "jquery.js" %>
    <%= javascript_include_tag "jquery_ujs.js" %>
    <%= javascript_include_tag "bootstrap.min.js" %>
-   <%= javascript_include_tag "dropdown.js" %>
    <%= javascript_include_tag "mandatory.js" %>
    <%= csrf_meta_tags %>
 </head>
@@ -25,8 +25,5 @@
 <!-- FOOTER - BEGINNING  -->
  <%= render "layouts/sub_admin/footer" %>
 <!-- FOOTER - END -->
-
-<%= javascript_include_tag "bootstrap.min.js" %>
-
 </body>
 </html>

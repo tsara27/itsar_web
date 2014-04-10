@@ -1,0 +1,21 @@
+$(document).ready(function(){
+  tinymce.init({
+  selector: "textarea#profile_input",
+  theme: "modern",
+  width: 600,
+  height: 300,
+  resize: false,
+  content_css: "assets/bootstrap.min.css",
+  menubar: false,
+  toolbar: " undo redo | styleselect | bold italic | hyperlink | subscript superscript | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent |  ", 
+  style_formats: [
+        {title: 'Header1', block: 'h1'},
+        {title: 'Header2', block: 'h2'},
+        {title: 'Header3', block: 'h3'},
+        {title: 'Header4', block: 'h4'},
+        {title: 'Header5', block: 'h5'},
+
+    ]
+ }); 
+});
+

@@ -1,0 +1,32 @@
+<table class="table table-striped table-bordered tabelku">
+	<thead>
+		<tr>
+			<th>No</th>
+			<th>Nama Organisasi</th>
+			<th>Nama Sekolah</th>
+			<th>Deskripsi</th>
+			<th>Dibuat Oleh</th>
+			<th>Waktu Dibuat</th>
+			<th>Terakhir Diperbaharui</th>
+			<th colspan="3" style="text-align: center">Operasi</th>			
+		</tr>
+	</thead>
+	<tbody>
+		
+		<% @profile.each_with_index do |prf, hh| %>
+		  <tr>
+		  	<td><%= (@hhh.to_i + hh + 1) %></td>
+		    <td><%= prf.t_itsar.gname %></td>
+		    <td><%= prf.t_itsar.schname %></td>
+		    <td><%= prf.self_profile.truncate(10).html_safe %></td>
+		    <td><%= prf.t_user.nme  %></td>
+		    <td><%= prf.created_at %></td>
+		    <td><%= prf.updated_at %></td>
+		    <td class="lable-icon" title="Modifikasi"><%= link_to "i", edit_profile_organisasi_path(prf.id) %></td>			
+			<td class="lable-icon" title="Hapus"><%= link_to "t", delete_profile_organisasi_path(prf.id), :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
+			<td class="lable-icon" title="Lihat"><%= link_to "e", profile_organisasi_path(prf.id) %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+	</table>
+	<%= will_paginate @profile, :id => "ajax_paginate" %>

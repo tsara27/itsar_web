@@ -53,8 +53,20 @@ ItsarWeb::Application.routes.draw do
   match '/usertype/:id/update_usertype' => 'usertype#update_usertype'
   match '/:id/delete_usertype' => 'usertype#delete_usertype'
   match '/search_usertype' => 'usertype#search'
+  
+  # PROFILE_ORGANISASI ADMIN ROUTES
+  match "/profile_organisasi/:id/renew" => 'profile_organisasi#renew'
+  resources :profile_organisasi, :except => [:update, :destroy] do
+   member do
+    get 'delete'
+  end
+ end
 
- resources :profile_organisasi  
+#PROFILE ORGANISASI PUBLIC ROUTES'
+
+scope :module => "public" do
+    match "/profile/:shortname" => 'profile_organisasi#show'
+end
 
   # Sample resource route with options:
   #   resources :products do
