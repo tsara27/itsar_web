@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140408030920) do
+ActiveRecord::Schema.define(:version => 20140411032834) do
+
+  create_table "t_articles", :force => true do |t|
+    t.string   "title",      :limit => 50,  :null => false
+    t.string   "the_text",   :limit => 500, :null => false
+    t.string   "writer",     :limit => 25,  :null => false
+    t.integer  "t_type_id",                 :null => false
+    t.integer  "t_user_id",                 :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
 
   create_table "t_itsars", :force => true do |t|
     t.string   "gname",      :limit => 25,                  :null => false
@@ -49,6 +59,22 @@ ActiveRecord::Schema.define(:version => 20140408030920) do
     t.integer  "t_user_id",                :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "t_tags", :force => true do |t|
+    t.integer  "t_article_id",               :null => false
+    t.string   "tag",          :limit => 20, :null => false
+    t.integer  "t_user_id",                  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  create_table "t_types", :force => true do |t|
+    t.string   "type_code",    :limit => 15, :null => false
+    t.string   "article_type", :limit => 20, :null => false
+    t.integer  "t_user_id",                  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "t_users", :force => true do |t|
