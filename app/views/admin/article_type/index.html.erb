@@ -1,0 +1,53 @@
+<nav class="navbar" role="navigation">
+	<div class="navbar-header"><a class="navbar-brand" href="#">Form Isian<%= @nama_form %></a></div>
+</nav>
+<% if flash[:notice_success] %>
+	<div class="alert alert-success"><%= flash[:notice_success] %></div>
+<% end %>
+<% if flash[:notice_failed] %>
+	<div class="alert alert-danger"><%= flash[:notice_failed] %></div>
+<% end %>
+<%= form_tag({:action => @aksi_form},:class => "form-horizontal", :role => "form", :id => "form_isian") do %>
+  <div class="form-group">
+    <label for="the_code" class="col-lg-2 control-label">Kode Tipe Artikel</label>
+    <div class="col-lg-4">
+    	<%= 
+    	 	text_field_tag(:the_code,@aa,:class => "form-control", :placeholder => "mentoring", :id => "the_code") 
+    	%>
+      <span class="help-block keterangan">Maksimal 15 karakter dan hanya menggunakan karakter huruf tanpa spasi.</span>
+    </div>
+    <div class="col-lg-4" id="v_the_code"></div>
+  </div>
+  <div class="form-group">
+    <label for="the_type" class="col-lg-2 control-label">Tipe Artikel</label>
+    <div class="col-lg-4">
+    	<%= 
+    	 	text_field_tag(:the_type,@bb,:class => "form-control", :placeholder => "Materi Mentoring", :id => "the_type") 
+    	%>
+      <span class="help-block keterangan">Maksimal 20 karakter dan hanya menggunakan karakter huruf dan dash (-).</span>
+    </div>
+    <div class="col-lg-4" id="v_the_type"></div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10 btn-group">
+      <button type="button" class="btn btn-default" id="clear_form">Bersihkan</button>
+      <button type="submit" class="btn btn-default" id="submit_btn" value=<%= @nama_btn %>><%= @nama_btn %></button>
+    </div>
+  </div>
+<% end %>
+<nav class="navbar" role="navigation">
+	<div class="navbar-header">
+    <a class="navbar-brand" href="#">Tabel Tipe Artikel</a>
+  </div>
+  <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
+  <div class="form-group">
+        <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari tipe article...") %>
+      </div>
+        <button type="submit" class="btn btn-default">Cari</button>
+    <% end %>
+</nav>
+<div id="table_tipe_artikel">
+	<%= render partial: 'tabel' %>
+</div>
+
+<%= javascript_include_tag "itsar_group/script.js.erb" %>

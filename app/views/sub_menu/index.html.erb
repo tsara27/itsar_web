@@ -35,7 +35,7 @@
   <div class="form-group">
     <label for="role_id" class="col-lg-2 control-label">Tipe Pengguna</label>
     <div class="col-lg-4">
-      <%= select_tag(:role_id, options_from_collection_for_select(@records_role, :id, :utypename, @cc),:class => "form-control",:multiple => true) %>
+      <%= select_tag(:role_id, options_from_collection_for_select(@records_role, "id", "utypename", @cc),:class => "form-control",:multiple => true) %>
       <span class="help-block keterangan">Harus memilih setidaknya satu tipe pengguna.</span>
     </div>
     <div class="col-lg-4" id="v_role_id"></div>

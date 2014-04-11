@@ -17,6 +17,7 @@ class TUser < ActiveRecord::Base
   belongs_to :t_itsar
 
   has_many :t_itsars
+  has_many :t_types
   has_many :t_profiles
   has_many :t_menus
   has_many :t_usertypes

@@ -56,16 +56,19 @@ ItsarWeb::Application.routes.draw do
   
   # PROFILE_ORGANISASI ADMIN ROUTES
   match "/profile_organisasi/:id/renew" => 'profile_organisasi#renew'
-  resources :profile_organisasi, :except => [:update, :destroy] do
+  resources :profile_organisasi, :except => [:update, :new, :destroy] do
    member do
     get 'delete'
   end
  end
 
-#PROFILE ORGANISASI PUBLIC ROUTES'
-
+# PROFILE ORGANISASI PUBLIC ROUTES'
 scope :module => "public" do
     match "/profile/:shortname" => 'profile_organisasi#show'
+end
+# TIPE ARTIKEL UNTUK ADMIN
+scope :module => "admin" do
+     resources :article_type, :except => [:update, :new, :destroy]
 end
 
   # Sample resource route with options:
