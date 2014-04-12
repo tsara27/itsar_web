@@ -65,4 +65,19 @@ class ProfileOrganisasiController < ApplicationController
 		idprofile.destroy
 		redirect_to profile_organisasi_index_path, :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
 	end
+
+	def search
+		@a = params[:search_form]
+		@nama_btn = "Simpan"
+		@nama_form = " - Buat Profile Organisasi ITSAR"
+		@aksi_form = "create"
+		get_exist = TProfile.select('shortname_itsar').map(&:shortname_itsar)
+		@get_organization = TItsar.select('shortname, schname, gname').where('shortname NOT IN (?)', get_exist)
+		@op = "create"
+		@profile = TProfile.joins(:t_itsar).where("t_itsars.gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		if params[:page].to_i > 1
+			@hhh = 15 * params[:page].to_i - 15
+		end
+		render :index
+	end
 end

@@ -1,0 +1,85 @@
+$(document).ready(function(){
+    urlnya = $(location).attr('href').split('?');
+    atr_isian = $('#form_isian').attr('action');
+    ini_url = (atr_isian + "?" + urlnya[1]);
+
+    $('#form_isian').attr('action', ini_url);
+    $('#submit_btn').attr('disabled','disabled');
+    val_submit = $('#submit_btn').val();
+    if(val_submit == "Perbaharui"){
+        the_code = 1;
+        the_type = 1;
+    }
+    else if(val_submit == "Simpan"){
+        the_code = 0;
+        the_type = 0;
+    }
+
+    $('#the_code').bind("keyup keypress change",function(){
+    nms = /^([a-z])+$/i.test($('#the_code').val());
+    if(!nms){
+        the_code = 0;
+        $("#v_the_code").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
+    }
+    else if($('#the_code').val().length < 3 || $('#the_code').val().length > 15){
+        the_code = 0;
+        $("#v_the_code").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 15 karakter.</div> ');
+    }
+    else if(nms){
+        the_code = 1;
+        $("#v_the_code").html('');
+    }});
+
+    $('#the_type').bind("keyup keypress change",function(){
+    nms = /^([a-z \-])+$/i.test($('#the_type').val());
+    if(!nms){
+        the_type = 0;
+        $("#v_the_type").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z dan dash (-).</div>').hide().fadeIn(300);
+    }
+    else if($('#the_type').val().length < 3 || $('#the_type').val().length > 20){
+        the_type = 0;
+        $("#v_the_type").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 20 karakter.</div> ');
+    }
+    else if(nms){
+        the_type = 1;
+        $("#v_the_type").html('');
+    }});
+
+    //Validasi kode organisasi
+    $('#code_input').bind("keyup keypress change",function(){
+      nms = /^([a-z 0-9])+$/i.test($('#code_input').val());
+         if(!nms)
+        {
+            the_code = 0;
+            $("#v_code_input").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z dan 0-9.</div>').hide().fadeIn(300);
+        }
+        else if($('#code_input').val().length < 3 || $('#code_input').val().length > 25)
+        {
+            the_code = 0;
+            $("#v_code_input").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 30 karakter.</div> ');
+        }
+        else if(nms)
+        {
+            the_code = 1;
+            $("#v_code_input").html('');
+        }
+    });
+
+    $('#form_isian').change(function(){
+        if(the_code == 0 || the_type == 0)
+        {
+            $('#submit_btn').attr('disabled','disabled');
+        }
+        else if(the_code == 1 && the_type == 1)
+        {
+            $('#submit_btn').removeAttr('disabled','disabled');
+        }
+    });
+
+ $('#clear_form').click(function(){
+         $("input").val('');
+     });
+
+
+
+});

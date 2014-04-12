@@ -84,11 +84,12 @@ class SubMenuController < ApplicationController
 		@idmenu = params[:id]
 		nama_menu = TMenu.find(@idmenu)
 		@nama_form = " - Buat Sub Menu "+nama_menu.menu_name
-		gen_visible = TMenu.find(params[:id])
-		array_visito = gen_visible.visible_to.split(',')
-		visito = array_visito.join(',')
-		count_visito = array_visito.count
-		@records_role = TUsertype.find([visito[1..count_visito]])
+		gen_visible = TMenu.select('visible_to').where(:id => params[:id]).map(&:visible_to)
+		array_visito = gen_visible.split(',')
+		visito = array_visito.join(',').from(1)
+		len = visito.length - 2
+		visible = visito.at(0..len).split(',')
+		@records_role = TUsertype.find([visible])
 		@a = params[:search_form]
 		@menu_query = TSubmenu.where("menu_name LIKE ? AND t_menu_id = ?","%"+@a+"%",@idmenu).order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1

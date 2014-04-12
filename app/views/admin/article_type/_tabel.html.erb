@@ -20,8 +20,8 @@
 		    <td><%= key.t_user.nme  %></td>
 		    <td><%= key.created_at %></td>
 		    <td><%= key.updated_at %></td>
-		    <td class="lable-icon" title="Modifikasi"><%= link_to "i","/" + key.id.to_s + "/edit_keygroup" %></td>			
-			<td class="lable-icon" title="Hapus"><%= link_to "t","/" + key.id.to_s + "/delete_keygroup", :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
+		    <td class="lable-icon" title="Modifikasi"><%= link_to "i", edit_article_type_path(key.id) %></td>			
+			<td class="lable-icon" title="Hapus"><%= link_to "t", delete_article_type_path(key.id), :confirm => 'Anda yakin akan menghapus data ini? Data tidak bisa dikembalikan.' %></td>
 		  </tr>
 		<% end %>
 	</tbody>

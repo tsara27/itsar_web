@@ -28,47 +28,44 @@ class Admin::ArticleTypeController < ApplicationController
 		end
 	end
 
-	def edit_itsargroup
-		# Dynamic Variables
+	def edit
 		@nama_btn = "Perbaharui"
-		@nama_form = " - Perbaharui Daftar Organisasi ITSAR"
-		@aksi_form = params[:id] + "/update_itsar_group"
-		ugroupf = TType.find(params[:id])
-		@aa = ugroupf.gname.to_s
-		@bb = ugroupf.schname.to_s
-		@cc = ugroupf.shortname
-		@itsar_grp = TType.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		@nama_form = " - Perbaharui Tipe Artikel"
+		@aksi_form = "#{params[:id]}/renew"
+		key = TType.find(params[:id])
+		@aa = key.type_code
+		@bb = key.article_type
+		@types = TType.order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		render :index
+	end
+
+	def renew
+		the_type = TType.find(params[:id])
+		the_type.type_code = params[:the_code]
+		the_type.article_type = params[:the_type]
+		unless the_type.save
+			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
+		else
+			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
+		end
+		redirect_to article_type_index_path
+	end
+
+	def delete
+		the_type = TType.find(params[:id])
+		the_type.destroy
+		redirect_to article_type_index_path, :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
 	end
 
 	def search
 		@a = params[:search_form]
 		@nama_btn = "Simpan"
-		@nama_form = " - Buat Daftar Organisasi ITSAR"
-		@aksi_form = "save_itsargroup"
-		@itsar_grp = TType.where("gname LIKE ?", "%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
+		@nama_form = " - Buat Tipe Artikel"
+		@aksi_form = "create"
+		@types = TType.where("article_type LIKE ?","%"+@a+"%").order('created_at ASC').paginate(:page => params[:page], :per_page => 15)
 		if params[:page].to_i > 1
 			@hhh = 15 * params[:page].to_i - 15
 		end
 		render :index
-	end
-
-	def update_itsargroup
-		idgroup = TType.find(params[:id])
-		idgroup.gname = params[:name_group]
-		idgroup.schname = params[:name_school]
-		idgroup.shortname = params[:code_input]
-		unless idgroup.save
-			flash[:notice_failed] = "<b>Terdapat kesalahan pada pengisian form.</b>".html_safe
-		else
-			flash[:notice_success] = "<b>Alhamdulillah!</b> Data berhasil disimpan.".html_safe
-		end
-		redirect_to "/itsar_group/"
-	end
-
-	def delete_itsar_group
-		idgroup = TType.find(params[:id])
-		idgroup.destroy
-		redirect_to "/itsar_group/", :notice_success => "<b>Alhamdulillah!</b> Data berhasil dihapus.".html_safe
 	end
 end
