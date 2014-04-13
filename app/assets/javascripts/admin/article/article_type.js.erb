@@ -45,26 +45,6 @@ $(document).ready(function(){
         $("#v_the_type").html('');
     }});
 
-    //Validasi kode organisasi
-    $('#code_input').bind("keyup keypress change",function(){
-      nms = /^([a-z 0-9])+$/i.test($('#code_input').val());
-         if(!nms)
-        {
-            the_code = 0;
-            $("#v_code_input").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z dan 0-9.</div>').hide().fadeIn(300);
-        }
-        else if($('#code_input').val().length < 3 || $('#code_input').val().length > 25)
-        {
-            the_code = 0;
-            $("#v_code_input").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 30 karakter.</div> ');
-        }
-        else if(nms)
-        {
-            the_code = 1;
-            $("#v_code_input").html('');
-        }
-    });
-
     $('#form_isian').change(function(){
         if(the_code == 0 || the_type == 0)
         {

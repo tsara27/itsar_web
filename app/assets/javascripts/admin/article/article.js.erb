@@ -1,0 +1,97 @@
+$(document).ready(function(){
+  tinymce.init({
+  selector: "textarea#the_text",
+  theme: "modern",
+  width: 600,
+  height: 300,
+  resize: false,
+  content_css: "assets/bootstrap.min.css",
+  menubar: false,
+  toolbar: " undo redo | styleselect | bold italic strikethrough blockquote | subscript superscript | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent | ", 
+  style_formats: [
+        {title: 'Header1', block: 'h1'},
+        {title: 'Header2', block: 'h2'},
+        {title: 'Header3', block: 'h3'},
+        {title: 'Header4', block: 'h4'},
+        {title: 'Header5', block: 'h5'},
+        {title: 'Header5', block: 'p'}
+
+    ]
+ });
+
+    urlnya = $(location).attr('href').split('?');
+    atr_isian = $('#form_isian').attr('action');
+    ini_url = (atr_isian + "?" + urlnya[1]);
+
+    $('#form_isian').attr('action', ini_url);
+    $('#submit_btn').attr('disabled','disabled');
+    val_submit = $('#submit_btn').val();
+    if(val_submit == "Perbaharui"){
+        the_title = 1;
+        the_writer = 1;
+        the_tag = 1;
+    }
+    else if(val_submit == "Simpan"){
+        the_title = 0;
+        the_writer = 0;
+        the_tag = 0;
+    }
+
+    $('#the_title').bind("keyup keypress change",function(){
+    nms = /^([a-z 0-9!?])+$/i.test($('#the_title').val());
+    if(!nms){
+        the_title = 0;
+        $("#v_the_title").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z, 0-9, !, & ?.</div>').hide().fadeIn(300);
+    }
+    else if($('#the_title').val().length < 3 || $('#the_title').val().length > 50){
+        the_title = 0;
+        $("#v_the_title").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 50 karakter.</div> ');
+    }
+    else if(nms){
+        the_title = 1;
+        $("#v_the_title").html('');
+    }});
+
+    $('#the_writer').bind("keyup keypress change",function(){
+    nms = /^([a-z .,])+$/i.test($('#the_writer').val());
+    if(!nms){
+        the_writer = 0;
+        $("#v_the_writer").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z.</div>').hide().fadeIn(300);
+    }
+    else if($('#the_writer').val().length < 3 || $('#the_writer').val().length > 25){
+        the_writer = 0;
+        $("#v_the_writer").html('<div class="alert alert-danger">Isian harus terdiri dari 3 sampai 25 karakter.</div> ');
+    }
+    else if(nms){
+        the_writer = 1;
+        $("#v_the_writer").html('');
+    }});
+
+    $('#the_tag').bind("keyup keypress change",function(){
+    nms = /^([a-z ,])+$/i.test($('#the_tag').val());
+    if(!nms){
+        the_tag = 0;
+        $("#v_the_tag").html('<div class="alert alert-danger">Tidak boleh diisi dengan selain a-z dan koma (,).</div>').hide().fadeIn(300);
+    }else if(nms){
+        the_tag = 1;
+        $("#v_the_tag").html('');
+    }});
+    
+    $('#form_isian').change(function(){
+        if(the_title == 0 || the_writer == 0 || the_tag == 0)
+        {
+            $('#submit_btn').attr('disabled','disabled');
+        }
+        else if(the_title == 1 && the_writer == 1 && the_tag == 1)
+        {
+            $('#submit_btn').removeAttr('disabled','disabled');
+        }
+    });
+
+ $('#clear_form').click(function(){
+         $("input").val('');
+     });
+
+
+
+});

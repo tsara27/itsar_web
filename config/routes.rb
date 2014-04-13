@@ -67,15 +67,23 @@ ItsarWeb::Application.routes.draw do
 scope :module => "public" do
     match "/profile/:shortname" => 'profile_organisasi#show'
 end
-# TIPE ARTIKEL UNTUK ADMIN
+
+# ADMIN SCOPE
 scope :module => "admin" do
-     resources :article_type, :except => [:update, :new, :destroy] do
-      member  do
-        get 'delete'
-      end
+  #Article Type 
+  resources :article_type, :except => [:update, :new, :destroy] do
+    member  do
+      get 'delete'
     end
-    match 'admin/article_type/:id/renew' => 'article_type#renew'
-    match '/search_article_type/' => 'article_type#search'
+  end
+  match 'admin/article_type/:id/renew' => 'article_type#renew'
+  match '/search_article_type/' => 'article_type#search'
+  #Article entry
+  resources :article, :except => [:update, :new, :destroy] do
+    member do
+      get 'delete'
+    end
+  end 
 end
 
   # Sample resource route with options:

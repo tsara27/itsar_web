@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140411032834) do
+ActiveRecord::Schema.define(:version => 20140413130949) do
+
+  create_table "t_article_relations", :force => true do |t|
+    t.integer  "t_article_id", :null => false
+    t.integer  "t_tag_id",     :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "t_articles", :force => true do |t|
     t.string   "title",      :limit => 50,  :null => false
@@ -62,11 +69,10 @@ ActiveRecord::Schema.define(:version => 20140411032834) do
   end
 
   create_table "t_tags", :force => true do |t|
-    t.integer  "t_article_id",               :null => false
-    t.string   "tag",          :limit => 20, :null => false
-    t.integer  "t_user_id",                  :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "tag",        :limit => 20, :null => false
+    t.integer  "t_user_id",                :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   create_table "t_types", :force => true do |t|

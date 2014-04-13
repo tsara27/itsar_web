@@ -1,0 +1,68 @@
+<nav class="navbar" role="navigation">
+	<div class="navbar-header"><a class="navbar-brand" href="#">Form Isian<%= @nama_form %></a></div>
+</nav>
+<% if flash[:notice_success] %>
+	<div class="alert alert-success"><%= flash[:notice_success] %></div>
+<% end %>
+<% if flash[:notice_failed] %>
+	<div class="alert alert-danger"><%= flash[:notice_failed] %></div>
+<% end %>
+<%= form_tag({:action => @aksi_form},:class => "form-horizontal", :role => "form", :id => "form_isian") do %>
+ <div class="form-group">
+    <label for="the_title" class="col-lg-2 control-label">Judul</label>
+    <div class="col-lg-4">
+      <%= text_field_tag(:the_title,@the_title,:class => "form-control", :placeholder => "Melihat Awan", :id => "the_title")  %>
+    </div>
+    <div class="col-lg-4" id="v_the_title"></div>
+  </div>
+  <div class="form-group">
+    <label for="the_text" class="col-lg-2 control-label">Artikel</label>
+    <div class="col-lg-4">
+    	 	<%= text_area_tag(:the_text, @the_text, :size => "300x6", :class => "form-control", :id => "the_text") %>
+    </div>
+    <div class="col-lg-4" id="v_the_text"></div>
+  </div>
+  <div class="form-group">
+    <label for="the_writer" class="col-lg-2 control-label">Penulis</label>
+    <div class="col-lg-4">
+      <%= text_field_tag(:the_writer,@the_writer,:class => "form-control", :placeholder => "John Doe", :id => "the_writer", :maxlength => 25)  %>
+    </div>
+    <div class="col-lg-4" id="v_the_writer"></div>
+  </div>
+   <div class="form-group">
+    <label for="the_type" class="col-lg-2 control-label">Kategori Artikel</label>
+    <div class="col-lg-4">
+      <%= select_tag(:the_type, options_from_collection_for_select(@get_type, :id, :article_type, @the_type),:class => "form-control") %>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="the_tag" class="col-lg-2 control-label">Tag</label>
+    <div class="col-lg-4">
+      <%= text_field_tag(:the_tag, @the_tag, :class => "form-control", :placeholder => "mentoring, akhlak, cerdas", :id => "the_tag")  %>
+    </div>
+     <div class="col-lg-4" id="v_the_tag"></div>
+  </div>
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10 btn-group">
+      <button type="button" class="btn btn-default" id="clear_form">Bersihkan</button>
+      <button type="submit" class="btn btn-default" id="submit_btn" value=<%= @nama_btn %>><%= @nama_btn %></button>
+    </div>
+  </div>
+<% end %>
+<nav class="navbar" role="navigation">
+	<div class="navbar-header">
+    <a class="navbar-brand" href="#">Tabel Artikel ITSAR</a>
+  </div>
+  
+  <%= form_tag({:action => "search"},:class => "navbar-form navbar-right", :role => "search", :id => "form_pencarian") do %>
+  <div class="form-group">
+        <%= text_field_tag(:search_form,"",:class => "form-control", :placeholder => "Cari nama organisasi...") %>
+      </div>
+        <button type="submit" class="btn btn-default">Cari</button>
+    <% end %>
+</nav>
+<%= javascript_include_tag "tinymce.min.js" %>
+<%= javascript_include_tag "admin/article/article.js.erb" %>
+<div id="table_article">
+	<%= render partial: 'tabel' %>
+</div>
